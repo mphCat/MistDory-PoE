@@ -478,3 +478,16 @@ body {
 }
 .footer-copy { font-size: 12px; color: #2a2a2a; letter-spacing: 1px; }
 .footer-copy span { color: var(--accent); transition: color 0.3s; }
+
+/* ── SCROLLABLE GUIDE CARD ── */
+.guide-card.scrollable { display: flex; flex-direction: column; }
+.guide-card.scrollable .guide-rows-wrap {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+  flex: 1;
+}
+.guide-card.scrollable .guide-rows-wrap::-webkit-scrollbar { width: 4px; }
+.guide-card.scrollable .guide-rows-wrap::-webkit-scrollbar-track { background: #0f0f0f; border-radius: 2px; }
+.guide-card.scrollable .guide-rows-wrap::-webkit-scrollbar-thumb { background: var(--red-dark); border-radius: 2px; }
+.guide-card.scrollable .guide-rows-wrap::-webkit-scrollbar-thumb:hover { background: var(--red); }

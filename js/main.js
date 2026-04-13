@@ -67,17 +67,15 @@ function applyRealm(r) {
   Object.keys(d.guideRows).forEach(gcId => {
     const section  = d.guideRows[gcId];
     const card     = document.getElementById(gcId);
-    card.className = 'guide-card' + (p2 ? ' poe2' : '');
+    card.className = 'guide-card' + (p2 ? ' poe2' : '') + (section.scrollable ? ' scrollable' : '');
     card.querySelector('.guide-card-title').textContent = section.title;
-    const rows     = card.querySelectorAll('.guide-row');
-    section.rows.forEach((row, i) => {
-      if (!rows[i]) return;
-      rows[i].querySelector('.guide-row-label').textContent = row.label;
-      const btn = rows[i].querySelector('.guide-btn');
-      btn.className = 'guide-btn' + (p2 ? ' poe2' : '');
-      btn.href      = row.url;
-      btn.target    = row.url !== '#' ? '_blank' : '_self';
-    });
+    const rowWrap = card.querySelector('.guide-rows-wrap');
+    rowWrap.innerHTML = section.rows.map(row => `
+      <div class="guide-row">
+        <span class="guide-row-label">${row.label}</span>
+        <a href="${row.url}" class="guide-btn${p2 ? ' poe2' : ''}"
+           ${row.url !== '#' ? 'target="_blank" rel="noopener"' : ''}>Watch</a>
+      </div>`).join('');
   });
 
   /* footer accent */
