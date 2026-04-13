@@ -507,3 +507,19 @@ body {
   vertical-align: middle;
   font-family: 'Barlow', sans-serif;
 }
+
+/* ── MOST VIEWED BADGE on card ── */
+.card-most-viewed {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  color: #fbbf24;
+  background: #1c1500;
+  border: 1px solid #3d2f00;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-left: 6px;
+  vertical-align: middle;
+}

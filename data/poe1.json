@@ -3,9 +3,9 @@
     "ver": "PoE 3.25",
     "badge": "Path of Exile",
     "sub": "Your go-to hub for Path of Exile builds, crafting guides, and featured gameplay moments. All content handcrafted and tested in-league.",
-    "stats": ["12", "8", "24"],
-    "ytId": "",
-    "ytHint": "Featured YouTube Video — PoE 1",
+    "stats": ["10", "0", "10"],
+    "ytId": "xJE7j7LNx88",
+    "ytHint": "Most Viewed — Occultist CoWB Uber Melting 3.28",
     "mainDiscordUrl": "https://discord.gg/REPLACE_ME",
     "cowbDiscordUrl": "https://discord.gg/REPLACE_ME"
   },
@@ -56,34 +56,84 @@
   },
   "cards": [
     {
-      "id": 1, "title": "RF Chieftain Starter", "type": "BUILD", "ver": "v3.25",
-      "desc": "Righteous Fire Chieftain — tankiest league start, great for SSF. Scales into red maps with ease.",
-      "tags": ["league-start","SSF","fire"], "image": "", "url": "#", "featured": false
+      "id": 1, "viewRank": 1,
+      "title": "Occultist - CoWB Uber Melting",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Cast on Ward Break Occultist melting Uber bosses on a budget. One of the most viewed guides on the channel.",
+      "tags": ["CoWB","occultist","uber","3.28"],
+      "image": "", "url": "https://youtu.be/xJE7j7LNx88"
     },
     {
-      "id": 2, "title": "Spark Inquisitor", "type": "BUILD", "ver": "v3.25",
-      "desc": "High damage Spark build for mapping and bossing. Great for currency farming with minimal investment.",
-      "tags": ["mapping","lightning","meta"], "image": "", "url": "#", "featured": false
+      "id": 2, "viewRank": 2,
+      "title": "Chieftain - 500% Rarity MF RF",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Magic Find Righteous Fire Chieftain pushing 500% item rarity. Full guide on gear, flasks and atlas strategy.",
+      "tags": ["MF","chieftain","RF","3.28"],
+      "image": "", "url": "https://youtu.be/1rXt0QGJOfA"
     },
     {
-      "id": 3, "title": "Elevated Mod Crafting", "type": "CRAFTING", "ver": "advanced",
-      "desc": "Step-by-step guide to elevated modifiers on influenced items. Includes cost estimates.",
-      "tags": ["influenced","endgame","currency"], "image": "", "url": "#", "featured": false
+      "id": 3, "viewRank": 3,
+      "title": "Occultist - CA-DA Expedition",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Caustic Arrow / Death Aura Occultist built for Expedition farming. Smooth mapper with great clear.",
+      "tags": ["occultist","CA","expedition","3.28"],
+      "image": "", "url": "https://youtu.be/W6vJFK-b4wU"
     },
     {
-      "id": 4, "title": "Uber Elder Down", "type": "VIDEO", "ver": "highlight",
-      "desc": "First Uber Elder kill of the league — clutch moment with 100 life left. Full fight commentary.",
-      "tags": ["boss-kill","uber","highlight"], "image": "", "url": "#", "featured": false
+      "id": 4, "viewRank": 4,
+      "title": "Deadeye - Icicle Mine Sanctum",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Icicle Mine Deadeye built for Sanctum farming. High damage, great evasion, and strong Sanctum survivability.",
+      "tags": ["deadeye","mine","sanctum","3.28"],
+      "image": "", "url": "https://youtu.be/sUuBz-tSNfM"
     },
     {
-      "id": 5, "title": "Fossil Crafting 101", "type": "CRAFTING", "ver": "beginner",
-      "desc": "How to use fossils effectively for budget crafting. Perfect for early-to-mid league.",
-      "tags": ["fossil","budget","delve"], "image": "", "url": "#", "featured": false
+      "id": 5, "viewRank": 5,
+      "title": "Champion Aurabot & Merc Culler",
+      "type": "VIDEO", "ver": "3.26",
+      "desc": "Full duo setup — Champion Aurabot buffing a Mercenary Culler. Great for party play and currency farming.",
+      "tags": ["champion","aurabot","merc","3.26"],
+      "image": "", "url": "https://youtu.be/eRWbHWeavf4"
     },
     {
-      "id": 6, "title": "100 Div in 3 Days", "type": "VIDEO", "ver": "guide",
-      "desc": "Full breakdown of my currency farming strategy to reach 100 Divine Orbs in the first 3 days.",
-      "tags": ["currency","farming","strategy"], "image": "", "url": "#", "featured": false
+      "id": 6, "viewRank": 6,
+      "title": "Elementalist - CoWB Uber Budget",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Budget Cast on Ward Break Elementalist clearing Uber content without breaking the bank.",
+      "tags": ["CoWB","elementalist","uber","3.28"],
+      "image": "", "url": "https://youtu.be/Vicb2gktJyU"
+    },
+    {
+      "id": 7, "viewRank": 7,
+      "title": "Gladiator - Crushing Fist",
+      "type": "VIDEO", "ver": "3.27",
+      "desc": "Crushing Fist Gladiator smashing through content in 3.27. Solid league starter with great bleed scaling.",
+      "tags": ["gladiator","bleed","melee","3.27"],
+      "image": "", "url": "https://youtu.be/Wzes7TQyrJs"
+    },
+    {
+      "id": 8, "viewRank": 8,
+      "title": "Chieftain - CwS Ultimatum AFK",
+      "type": "VIDEO", "ver": "3.26",
+      "desc": "Cast when Stunned Chieftain going AFK through Ultimatum encounters. Fully automated and surprisingly powerful.",
+      "tags": ["chieftain","CwS","ultimatum","3.26"],
+      "image": "", "url": "https://youtu.be/lZhgB38mux8"
+    },
+    {
+      "id": 9, "viewRank": 9,
+      "title": "Juggeranaut - Penance Brand",
+      "type": "VIDEO", "ver": "3.26",
+      "desc": "Penance Brand Juggernaut with incredible tanking ability. Slow and steady with great endgame scaling.",
+      "tags": ["juggernaut","brand","lightning","3.26"],
+      "image": "", "url": "https://youtu.be/4IjRCGyhHiA"
+    },
+    {
+      "id": 10, "viewRank": 10,
+      "title": "Scarvenger - Hexblast Phrecia",
+      "type": "VIDEO", "ver": "3.25",
+      "desc": "Hexblast Scavenger build from the Phrecia event in 3.25. Unique mechanics and explosive chaos damage.",
+      "tags": ["hexblast","chaos","phrecia","3.25"],
+      "image": "", "url": "https://youtu.be/5hly5i_A0vQ"
     }
   ]
 }

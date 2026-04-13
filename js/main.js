@@ -155,7 +155,8 @@ function renderCards() {
 
   if (sort === 'name')   filtered.sort((a, b) => a.title.localeCompare(b.title));
   if (sort === 'type')   filtered.sort((a, b) => a.type.localeCompare(b.type));
-  if (sort === 'newest') filtered.reverse();
+  if (sort === 'newest') filtered.sort((a, b) => parseFloat(b.ver) - parseFloat(a.ver));
+  if (sort === 'views')  filtered.sort((a, b) => (a.viewRank || 99) - (b.viewRank || 99));
 
   if (filtered.length === 0) {
     grid.innerHTML = '<div class="no-results">No results found</div>';
@@ -173,7 +174,10 @@ function renderCards() {
           <div class="card-pin${p2 ? ' poe2' : ''}">${PIN[c.type]}</div>
         </div>
         <div class="card-body">
-          <div class="card-title">${c.title}</div>
+        <div class="card-title">
+            ${c.title}
+            ${c.viewRank === 1 ? '<span class="card-most-viewed">★ Most Viewed</span>' : ''}
+          </div>
           <div class="card-meta">
             <span class="badge-type ${TYPE_CLASS[c.type]}">${c.type}</span>
             <span class="badge-ver-small">${c.ver}</span>
