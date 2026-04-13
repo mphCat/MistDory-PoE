@@ -59,8 +59,17 @@ function applyRealm(r) {
     el.className   = 'stat-num' + (p2 ? ' poe2' : '');
   });
 
-  /* youtube */
-  setYoutube(d.meta.ytId, d.meta.ytHint, p2);
+  /* youtube — use meta.ytId if set, else fall back to featured video row */
+  let ytId    = d.meta.ytId;
+  let ytHint  = d.meta.ytHint;
+  if (!ytId) {
+    const featuredRow = d.guideRows.gc1 && d.guideRows.gc1.rows.find(r => r.featured);
+    if (featuredRow) {
+      const match = featuredRow.url.match(/(?:youtu\.be\/|v=)([\w-]+)/);
+      if (match) { ytId = match[1]; ytHint = featuredRow.label; }
+    }
+  }
+  setYoutube(ytId, ytHint, p2);
 
   /* guides grid */
   document.getElementById('guideTitle').className = 'section-title' + (p2 ? ' poe2' : '');
@@ -70,11 +79,15 @@ function applyRealm(r) {
     card.className = 'guide-card' + (p2 ? ' poe2' : '') + (section.scrollable ? ' scrollable' : '');
     card.querySelector('.guide-card-title').textContent = section.title;
     const rowWrap = card.querySelector('.guide-rows-wrap');
+    const btnLabel = section.scrollable ? 'Watch' : 'Click Here';
     rowWrap.innerHTML = section.rows.map(row => `
       <div class="guide-row">
-        <span class="guide-row-label">${row.label}</span>
+        <span class="guide-row-label">
+          ${row.ver ? `<span class="row-ver-badge">${row.ver}</span>` : ''}
+          ${row.label}
+        </span>
         <a href="${row.url}" class="guide-btn${p2 ? ' poe2' : ''}"
-           ${row.url !== '#' ? 'target="_blank" rel="noopener"' : ''}>Watch</a>
+           ${row.url !== '#' ? 'target="_blank" rel="noopener"' : ''}>${btnLabel}</a>
       </div>`).join('');
   });
 

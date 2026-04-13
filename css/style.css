@@ -491,3 +491,19 @@ body {
 .guide-card.scrollable .guide-rows-wrap::-webkit-scrollbar-track { background: #0f0f0f; border-radius: 2px; }
 .guide-card.scrollable .guide-rows-wrap::-webkit-scrollbar-thumb { background: var(--red-dark); border-radius: 2px; }
 .guide-card.scrollable .guide-rows-wrap::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+/* ── VERSION BADGE on guide rows ── */
+.row-ver-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--red-dark);
+  background: #1a0a0a;
+  border: 1px solid #2a1010;
+  padding: 1px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  margin-right: 6px;
+  vertical-align: middle;
+  font-family: 'Barlow', sans-serif;
+}

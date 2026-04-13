@@ -14,43 +14,43 @@
       "title": "Video Guides",
       "scrollable": true,
       "rows": [
-        { "label": "Scarvenger - Hexblast - Phrecia 3.25",   "url": "https://youtu.be/5hly5i_A0vQ" },
-        { "label": "Juggeranaut - Penance Brand 3.26",        "url": "https://youtu.be/4IjRCGyhHiA" },
-        { "label": "Chieftain - CwS Ultimatum AFK 3.26",      "url": "https://youtu.be/lZhgB38mux8" },
-        { "label": "Champion Aurabot & Merc Culler 3.26",     "url": "https://youtu.be/eRWbHWeavf4" },
-        { "label": "Gladiator - Crushing First 3.27",         "url": "https://youtu.be/Wzes7TQyrJs" },
-        { "label": "Deadeye - Iciclemine Sanctum 3.28",       "url": "https://youtu.be/sUuBz-tSNfM" },
-        { "label": "Occultist - CA-DA Expedition 3.28",       "url": "https://youtu.be/W6vJFK-b4wU" },
-        { "label": "Chieftain - 500% Rarity MF RF 3.28",      "url": "https://youtu.be/1rXt0QGJOfA" },
-        { "label": "Occultist - CoWB - Uber Melting 3.28",    "url": "https://youtu.be/xJE7j7LNx88" },
-        { "label": "Elementalist - CoWB - Uber budget 3.28",  "url": "https://youtu.be/Vicb2gktJyU" }
+        { "label": "Elementalist - CoWB - Uber budget 3.28",  "ver": 3.28, "url": "https://youtu.be/Vicb2gktJyU" },
+        { "label": "Occultist - CoWB - Uber Melting 3.28",    "ver": 3.28, "url": "https://youtu.be/xJE7j7LNx88" },
+        { "label": "Chieftain - 500% Rarity MF RF 3.28",      "ver": 3.28, "url": "https://youtu.be/1rXt0QGJOfA" },
+        { "label": "Occultist - CA-DA Expedition 3.28",       "ver": 3.28, "url": "https://youtu.be/W6vJFK-b4wU" },
+        { "label": "Deadeye - Iciclemine Sanctum 3.28",       "ver": 3.28, "url": "https://youtu.be/sUuBz-tSNfM" },
+        { "label": "Gladiator - Crushing First 3.27",         "ver": 3.27, "url": "https://youtu.be/Wzes7TQyrJs" },
+        { "label": "Champion Aurabot & Merc Culler 3.26",     "ver": 3.26, "url": "https://youtu.be/eRWbHWeavf4" },
+        { "label": "Chieftain - CwS Ultimatum AFK 3.26",      "ver": 3.26, "url": "https://youtu.be/lZhgB38mux8" },
+        { "label": "Juggeranaut - Penance Brand 3.26",        "ver": 3.26, "url": "https://youtu.be/4IjRCGyhHiA" },
+        { "label": "Scarvenger - Hexblast - Phrecia 3.25",   "ver": 3.25, "url": "https://youtu.be/5hly5i_A0vQ" }
       ]
     },
     "gc2": {
       "title": "Written Guides",
       "scrollable": false,
       "rows": [
-        { "label": "Beginner's Handbook",    "url": "#" },
-        { "label": "Skill Gem Breakdown",    "url": "#" },
-        { "label": "Flask Setup Guide",      "url": "#" }
+        { "label": "Beginner's Handbook",    "ver": null, "url": "#" },
+        { "label": "Skill Gem Breakdown",    "ver": null, "url": "#" },
+        { "label": "Flask Setup Guide",      "ver": null, "url": "#" }
       ]
     },
     "gc3": {
       "title": "Leveling",
       "scrollable": false,
       "rows": [
-        { "label": "Act 1-5 Leveling Tips",  "url": "#" },
-        { "label": "Act 6-10 Progression",   "url": "#" },
-        { "label": "League Start Checklist", "url": "#" }
+        { "label": "Act 1-5 Leveling Tips",  "ver": null, "url": "#" },
+        { "label": "Act 6-10 Progression",   "ver": null, "url": "#" },
+        { "label": "League Start Checklist", "ver": null, "url": "#" }
       ]
     },
     "gc4": {
       "title": "Miscellaneous",
       "scrollable": false,
       "rows": [
-        { "label": "Loot Filter Setup",      "url": "#" },
-        { "label": "Atlas Passive Guide",    "url": "#" },
-        { "label": "Top 10 Exile Tips",      "url": "#" }
+        { "label": "Loot Filter Setup",      "ver": null, "url": "#" },
+        { "label": "Atlas Passive Guide",    "ver": null, "url": "#" },
+        { "label": "Top 10 Exile Tips",      "ver": null, "url": "#" }
       ]
     }
   },
@@ -58,32 +58,32 @@
     {
       "id": 1, "title": "RF Chieftain Starter", "type": "BUILD", "ver": "v3.25",
       "desc": "Righteous Fire Chieftain — tankiest league start, great for SSF. Scales into red maps with ease.",
-      "tags": ["league-start","SSF","fire"], "image": "images/thumbnails/rf-chieftain.jpg", "url": "#"
+      "tags": ["league-start","SSF","fire"], "image": "", "url": "#", "featured": false
     },
     {
       "id": 2, "title": "Spark Inquisitor", "type": "BUILD", "ver": "v3.25",
       "desc": "High damage Spark build for mapping and bossing. Great for currency farming with minimal investment.",
-      "tags": ["mapping","lightning","meta"], "image": "images/thumbnails/spark-inquisitor.jpg", "url": "#"
+      "tags": ["mapping","lightning","meta"], "image": "", "url": "#", "featured": false
     },
     {
       "id": 3, "title": "Elevated Mod Crafting", "type": "CRAFTING", "ver": "advanced",
       "desc": "Step-by-step guide to elevated modifiers on influenced items. Includes cost estimates.",
-      "tags": ["influenced","endgame","currency"], "image": "", "url": "#"
+      "tags": ["influenced","endgame","currency"], "image": "", "url": "#", "featured": false
     },
     {
       "id": 4, "title": "Uber Elder Down", "type": "VIDEO", "ver": "highlight",
       "desc": "First Uber Elder kill of the league — clutch moment with 100 life left. Full fight commentary.",
-      "tags": ["boss-kill","uber","highlight"], "image": "", "url": "#"
+      "tags": ["boss-kill","uber","highlight"], "image": "", "url": "#", "featured": false
     },
     {
       "id": 5, "title": "Fossil Crafting 101", "type": "CRAFTING", "ver": "beginner",
       "desc": "How to use fossils effectively for budget crafting. Perfect for early-to-mid league.",
-      "tags": ["fossil","budget","delve"], "image": "", "url": "#"
+      "tags": ["fossil","budget","delve"], "image": "", "url": "#", "featured": false
     },
     {
       "id": 6, "title": "100 Div in 3 Days", "type": "VIDEO", "ver": "guide",
       "desc": "Full breakdown of my currency farming strategy to reach 100 Divine Orbs in the first 3 days.",
-      "tags": ["currency","farming","strategy"], "image": "", "url": "#"
+      "tags": ["currency","farming","strategy"], "image": "", "url": "#", "featured": false
     }
   ]
 }
