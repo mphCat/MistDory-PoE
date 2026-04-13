@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "ver": "PoE 2 EA",
+    "badge": "Path of Exile 2",
+    "sub": "MistDory's Path of Exile 2 hub — Early Access builds, new crafting systems, and endgame breakdowns. Updated as the game evolves.",
+    "stats": ["6", "4", "11"],
+    "ytId": "",
+    "ytHint": "Featured YouTube Video — PoE 2",
+    "mainDiscordUrl": "https://discord.gg/REPLACE_ME",
+    "cowbDiscordUrl": "https://discord.gg/REPLACE_ME"
+  },
+  "guideRows": {
+    "gc1": {
+      "title": "Video Guides",
+      "rows": [
+        { "label": "Monk Starter Guide",        "url": "#" },
+        { "label": "Endgame Mapping",           "url": "#" },
+        { "label": "Ascendancy Breakdown",      "url": "#" }
+      ]
+    },
+    "gc2": {
+      "title": "Written Guides",
+      "rows": [
+        { "label": "PoE 2 Handbook",            "url": "#" },
+        { "label": "Skill Gem Changes",         "url": "#" },
+        { "label": "Survival Tips",             "url": "#" }
+      ]
+    },
+    "gc3": {
+      "title": "Crafting Recipes",
+      "rows": [
+        { "label": "Rune Crafting Basics",      "url": "#" },
+        { "label": "Socket Strategy",           "url": "#" },
+        { "label": "Currency Efficiency",       "url": "#" }
+      ]
+    },
+    "gc4": {
+      "title": "Miscellaneous",
+      "rows": [
+        { "label": "Loot Filter PoE 2",         "url": "#" },
+        { "label": "Endgame Atlas",             "url": "#" },
+        { "label": "Top 10 Tips PoE 2",         "url": "#" }
+      ]
+    }
+  },
+  "cards": [
+    {
+      "id": 1,
+      "title": "Monk Invoker Starter",
+      "type": "BUILD",
+      "ver": "EA 0.2",
+      "desc": "Fast-clearing Monk build using Invoker ascendancy. Excellent for campaign and early endgame maps.",
+      "tags": ["league-start", "monk", "physical"],
+      "image": "",
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "title": "Stormweaver Sorceress",
+      "type": "BUILD",
+      "ver": "EA 0.2",
+      "desc": "Powerful lightning caster with incredible clear speed. Stormweaver ascendancy for chain-reaction clears.",
+      "tags": ["mapping", "lightning", "caster"],
+      "image": "",
+      "url": "#"
+    },
+    {
+      "id": 3,
+      "title": "Rune Crafting Guide",
+      "type": "CRAFTING",
+      "ver": "intermediate",
+      "desc": "Deep dive into PoE 2's rune socket system. Craft powerful gear without heavy currency investment.",
+      "tags": ["runes", "sockets", "crafting"],
+      "image": "",
+      "url": "#"
+    },
+    {
+      "id": 4,
+      "title": "Arbiter of Ash Kill",
+      "type": "VIDEO",
+      "ver": "highlight",
+      "desc": "First Arbiter of Ash takedown — one of PoE 2's toughest endgame bosses. Full fight breakdown.",
+      "tags": ["boss-kill", "pinnacle", "highlight"],
+      "image": "",
+      "url": "#"
+    },
+    {
+      "id": 5,
+      "title": "Breach Ring Crafting",
+      "type": "CRAFTING",
+      "ver": "beginner",
+      "desc": "Efficiently target-craft Breach rings in PoE 2. Covers modifier targeting and currency efficiency.",
+      "tags": ["breach", "rings", "currency"],
+      "image": "",
+      "url": "#"
+    },
+    {
+      "id": 6,
+      "title": "Atlas Endgame Guide",
+      "type": "VIDEO",
+      "ver": "guide",
+      "desc": "Complete breakdown of the atlas passive tree and endgame progression from white maps to pinnacle.",
+      "tags": ["atlas", "endgame", "strategy"],
+      "image": "",
+      "url": "#"
+    }
+  ]
+}

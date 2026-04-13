@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MistDory — Path of Exile builds, crafting guides and featured videos." />
+  <title>MistDory — Path of Exile Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── NAVIGATION ──────────────────────────────────────────────────── -->
+<nav class="nav">
+  <a class="nav-logo" href="index.html">Mist<span id="navAccent">Dory</span></a>
+  <ul class="nav-links">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">Builds</a></li>
+    <li><a href="#">Crafting</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">FAQ</a></li>
+  </ul>
+  <button class="nav-cta">Support the Site</button>
+</nav>
+
+<!-- ── REALM SWITCHER ──────────────────────────────────────────────── -->
+<div class="realm-bar">
+  <div class="realm-wrap">
+    <div class="realm-toggle">
+      <div class="realm-slider" id="realmSlider"></div>
+      <button class="realm-btn active" id="btnPoe1" onclick="switchRealm('poe1')">⚔ Path of Exile 1</button>
+      <button class="realm-btn"        id="btnPoe2" onclick="switchRealm('poe2')">✦ Path of Exile 2</button>
+    </div>
+    <div class="realm-label" id="realmLabel">Currently showing Path of Exile 1 content</div>
+  </div>
+</div>
+
+<!-- ── HERO ────────────────────────────────────────────────────────── -->
+<section class="hero" id="heroSection">
+  <div class="hero-left">
+    <div class="hero-badges">
+      <span class="badge badge-ver" id="verBadge">PoE 3.25</span>
+      <span class="badge badge-poe" id="poeBadge">Path of Exile</span>
+      <div class="discord-group">
+        <div class="badge-discord-wrap">
+          <span class="badge badge-discord-main" id="discordMain">&#128172; Discord</span>
+          <span class="badge-discord-label">Main server</span>
+        </div>
+        <div class="badge-discord-wrap">
+          <span class="badge badge-discord-cowb" id="discordCowb">&#128172; CoWB Discord</span>
+          <span class="badge-discord-label">Cast on Ward Break</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-title">Mist<span id="heroAccent">Dory</span></div>
+    <div class="hero-tagline">Path of Exile Content Hub</div>
+    <p class="hero-sub" id="heroSub">Loading…</p>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" id="statBuilds">—</span><span class="stat-label">Builds</span></div>
+      <div class="stat"><span class="stat-num" id="statCraft">—</span><span class="stat-label">Craft Guides</span></div>
+      <div class="stat"><span class="stat-num" id="statVideos">—</span><span class="stat-label">Videos</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="yt-wrap" id="ytWrap">
+      <div class="yt-placeholder" id="ytPlaceholder">
+        <div class="yt-play-btn" id="ytPlayBtn"><div class="yt-arrow"></div></div>
+        <div class="yt-hint" id="ytHint">Featured YouTube Video</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GUIDES & INFO ────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="section-title" id="guideTitle">Guides &amp; Info</div>
+  <div class="guides-grid">
+
+    <div class="guide-card" id="gc1">
+      <div class="guide-card-title">Video Guides</div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+    </div>
+
+    <div class="guide-card" id="gc2">
+      <div class="guide-card-title">Written Guides</div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+    </div>
+
+    <div class="guide-card" id="gc3">
+      <div class="guide-card-title">Crafting Recipes</div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+    </div>
+
+    <div class="guide-card" id="gc4">
+      <div class="guide-card-title">Miscellaneous</div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+      <div class="guide-row"><span class="guide-row-label"></span><a href="#" class="guide-btn">Click Here</a></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── FILTER BAR ───────────────────────────────────────────────────── -->
+<div class="filter-bar">
+  <div class="search-wrap">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="searchInput" placeholder="Search builds, guides, videos…" oninput="filterCards()" />
+  </div>
+  <div class="filter-selects">
+    <select id="catFilter" onchange="filterCards()">
+      <option value="">All Categories</option>
+      <option value="BUILD">Builds</option>
+      <option value="CRAFTING">Crafting</option>
+      <option value="VIDEO">Videos</option>
+    </select>
+    <select id="sortFilter" onchange="filterCards()">
+      <option value="name">Sort by Name</option>
+      <option value="newest">Sort by Newest</option>
+      <option value="type">Sort by Type</option>
+    </select>
+  </div>
+</div>
+
+<!-- ── CARD GRID ────────────────────────────────────────────────────── -->
+<div class="card-grid" id="cardGrid">
+  <!-- Populated by js/main.js -->
+</div>
+
+<!-- ── FOOTER ───────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-copy">
+    &copy; 2025 <span id="footerAccent">MistDory</span> &mdash; All rights reserved
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

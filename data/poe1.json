@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "ver": "PoE 3.25",
+    "badge": "Path of Exile",
+    "sub": "Your go-to hub for Path of Exile builds, crafting guides, and featured gameplay moments. All content handcrafted and tested in-league.",
+    "stats": ["12", "8", "24"],
+    "ytId": "",
+    "ytHint": "Featured YouTube Video — PoE 1",
+    "mainDiscordUrl": "https://discord.gg/REPLACE_ME",
+    "cowbDiscordUrl": "https://discord.gg/REPLACE_ME"
+  },
+  "guideRows": {
+    "gc1": {
+      "title": "Video Guides",
+      "rows": [
+        { "label": "Starter Build Guide",   "url": "#" },
+        { "label": "Endgame Progression",   "url": "#" },
+        { "label": "League Mechanic Tips",  "url": "#" }
+      ]
+    },
+    "gc2": {
+      "title": "Written Guides",
+      "rows": [
+        { "label": "Beginner's Handbook",   "url": "#" },
+        { "label": "Skill Gem Breakdown",   "url": "#" },
+        { "label": "Flask Setup Guide",     "url": "#" }
+      ]
+    },
+    "gc3": {
+      "title": "Crafting Recipes",
+      "rows": [
+        { "label": "Easy Early Crafts",     "url": "#" },
+        { "label": "Endgame Item Craft",    "url": "#" },
+        { "label": "Currency Flipping",     "url": "#" }
+      ]
+    },
+    "gc4": {
+      "title": "Miscellaneous",
+      "rows": [
+        { "label": "Loot Filter Setup",     "url": "#" },
+        { "label": "Atlas Passive Guide",   "url": "#" },
+        { "label": "Top 10 Exile Tips",     "url": "#" }
+      ]
+    }
+  },
+  "cards": [
+    {
+      "id": 1,
+      "title": "RF Chieftain Starter",
+      "type": "BUILD",
+      "ver": "v3.25",
+      "desc": "Righteous Fire Chieftain — tankiest league start, great for SSF. Scales into red maps with ease.",
+      "tags": ["league-start", "SSF", "fire"],
+      "image": "images/thumbnails/rf-chieftain.jpg",
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "title": "Spark Inquisitor",
+      "type": "BUILD",
+      "ver": "v3.25",
+      "desc": "High damage Spark build for mapping and bossing. Great for currency farming with minimal investment.",
+      "tags": ["mapping", "lightning", "meta"],
+      "image": "images/thumbnails/spark-inquisitor.jpg",
+      "url": "#"
+    },
+    {
+      "id": 3,
+      "title": "Elevated Mod Crafting",
+      "type": "CRAFTING",
+      "ver": "advanced",
+      "desc": "Step-by-step guide to elevated modifiers on influenced items. Includes cost estimates.",
+      "tags": ["influenced", "endgame", "currency"],
+      "image": "",
+      "url": "#"
+    },
+    {
+      "id": 4,
+      "title": "Uber Elder Down",
+      "type": "VIDEO",
+      "ver": "highlight",
+      "desc": "First Uber Elder kill of the league — clutch moment with 100 life left. Full fight commentary.",
+      "tags": ["boss-kill", "uber", "highlight"],
+      "image": "",
+      "url": "#"
+    },
+    {
+      "id": 5,
+      "title": "Fossil Crafting 101",
+      "type": "CRAFTING",
+      "ver": "beginner",
+      "desc": "How to use fossils effectively for budget crafting. Perfect for early-to-mid league.",
+      "tags": ["fossil", "budget", "delve"],
+      "image": "",
+      "url": "#"
+    },
+    {
+      "id": 6,
+      "title": "100 Div in 3 Days",
+      "type": "VIDEO",
+      "ver": "guide",
+      "desc": "Full breakdown of my currency farming strategy to reach 100 Divine Orbs in the first 3 days.",
+      "tags": ["currency", "farming", "strategy"],
+      "image": "",
+      "url": "#"
+    }
+  ]
+}
