@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "ver": "PoE 3.25",
+    "badge": "Path of Exile",
+    "sub": "Your go-to hub for Path of Exile builds, crafting guides, and featured gameplay moments. All content handcrafted and tested in-league.",
+    "stats": ["10", "0", "10"],
+    "ytId": "xJE7j7LNx88",
+    "ytHint": "Most Viewed — Occultist CoWB Uber Melting 3.28",
+    "mainDiscordUrl": "https://discord.gg/v9C6rXHfet",
+    "cowbDiscordUrl": "https://discord.gg/mpU5FG6MKm"
+  },
+  "guideRows": {
+    "gc1": {
+      "title": "Video Guides",
+      "scrollable": true,
+      "rows": [
+        { "label": "Elementalist - CoWB - Uber budget 3.28",  "ver": 3.28, "url": "https://youtu.be/Vicb2gktJyU" },
+        { "label": "Occultist - CoWB - Uber Melting 3.28",    "ver": 3.28, "url": "https://youtu.be/xJE7j7LNx88" },
+        { "label": "Chieftain - 500% Rarity MF RF 3.28",      "ver": 3.28, "url": "https://youtu.be/1rXt0QGJOfA" },
+        { "label": "Occultist - CA-DA Expedition 3.28",       "ver": 3.28, "url": "https://youtu.be/W6vJFK-b4wU" },
+        { "label": "Deadeye - Iciclemine Sanctum 3.28",       "ver": 3.28, "url": "https://youtu.be/sUuBz-tSNfM" },
+        { "label": "Gladiator - Crushing First 3.27",         "ver": 3.27, "url": "https://youtu.be/Wzes7TQyrJs" },
+        { "label": "Champion Aurabot & Merc Culler 3.26",     "ver": 3.26, "url": "https://youtu.be/eRWbHWeavf4" },
+        { "label": "Chieftain - CwS Ultimatum AFK 3.26",      "ver": 3.26, "url": "https://youtu.be/lZhgB38mux8" },
+        { "label": "Juggeranaut - Penance Brand 3.26",        "ver": 3.26, "url": "https://youtu.be/4IjRCGyhHiA" },
+        { "label": "Scarvenger - Hexblast - Phrecia 3.25",    "ver": 3.25, "url": "https://youtu.be/5hly5i_A0vQ" }
+      ]
+    },
+    "gc2": {
+      "title": "Document",
+      "scrollable": true,
+      "rows": [
+        { "label": "PoE 1 — Build Sheet", "ver": null, "btnLabel": "Open", "url": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit?gid=2005846808#gid=2005846808" },
+        { "label": "PoE 2 — Build Sheet", "ver": null, "btnLabel": "Open", "url": "https://docs.google.com/spreadsheets/d/1aGhWarz7gICqplYfhh7JxqnGgUu7kUDhYwDtnMv2AGk/edit?gid=1434431165#gid=1434431165" }
+      ]
+    },
+    "gc3": {
+      "title": "Leveling",
+      "scrollable": true,
+      "rows": [
+        { "label": "Loot Filter",             "ver": null, "btnLabel": "Open",  "url": "https://www.pathofexile.com/account/view-profile/nockabatashu-5463/item-filters" },
+        { "label": "Alternative Leveling",    "ver": null, "btnLabel": "Watch", "url": "https://youtu.be/nRzOzTolWBA" },
+        { "label": "Act Tips",                "ver": null, "url": "#" },
+        { "label": "Leveling Common Mistake", "ver": null, "url": "#" }
+      ]
+    },
+    "gc4": {
+      "title": "Miscellaneous",
+      "scrollable": true,
+      "rows": [
+        { "label": "Atlas Passives Guide", "ver": null, "url": "#" },
+        { "label": "Moment — Short #1",   "ver": null, "url": "https://www.youtube.com/shorts/Y33s-eQPEqA" },
+        { "label": "Moment — Short #2",   "ver": null, "url": "https://youtube.com/shorts/ssSe8vF_ItM" },
+        { "label": "Moment — Short #3",   "ver": null, "url": "https://youtube.com/shorts/-v_F9MXIYBU" },
+        { "label": "Moment — Short #4",   "ver": null, "url": "https://youtube.com/shorts/BLJqEbCnkfY" },
+        { "label": "Moment — Short #5",   "ver": null, "url": "https://youtube.com/shorts/m6d_J8MqCJY" },
+        { "label": "Moment — Short #6",   "ver": null, "url": "https://youtube.com/shorts/fOvdaJq2twM" }
+      ]
+    }
+  },
+  "cards": [
+    {
+      "id": 1, "viewRank": 1,
+      "title": "Occultist - CoWB Uber Melting",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Cast on Ward Break Occultist melting Uber bosses on a budget. One of the most viewed guides on the channel.",
+      "tags": ["CoWB","occultist","uber","3.28"],
+      "image": "", "url": "https://youtu.be/xJE7j7LNx88"
+    },
+    {
+      "id": 2, "viewRank": 2,
+      "title": "Chieftain - 500% Rarity MF RF",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Magic Find Righteous Fire Chieftain pushing 500% item rarity. Full guide on gear, flasks and atlas strategy.",
+      "tags": ["MF","chieftain","RF","3.28"],
+      "image": "", "url": "https://youtu.be/1rXt0QGJOfA"
+    },
+    {
+      "id": 3, "viewRank": 3,
+      "title": "Occultist - CA-DA Expedition",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Caustic Arrow / Death Aura Occultist built for Expedition farming. Smooth mapper with great clear.",
+      "tags": ["occultist","CA","expedition","3.28"],
+      "image": "", "url": "https://youtu.be/W6vJFK-b4wU"
+    },
+    {
+      "id": 4, "viewRank": 4,
+      "title": "Deadeye - Icicle Mine Sanctum",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Icicle Mine Deadeye built for Sanctum farming. High damage, great evasion, and strong Sanctum survivability.",
+      "tags": ["deadeye","mine","sanctum","3.28"],
+      "image": "", "url": "https://youtu.be/sUuBz-tSNfM"
+    },
+    {
+      "id": 5, "viewRank": 5,
+      "title": "Champion Aurabot & Merc Culler",
+      "type": "VIDEO", "ver": "3.26",
+      "desc": "Full duo setup — Champion Aurabot buffing a Mercenary Culler. Great for party play and currency farming.",
+      "tags": ["champion","aurabot","merc","3.26"],
+      "image": "", "url": "https://youtu.be/eRWbHWeavf4"
+    },
+    {
+      "id": 6, "viewRank": 6,
+      "title": "Elementalist - CoWB Uber Budget",
+      "type": "VIDEO", "ver": "3.28",
+      "desc": "Budget Cast on Ward Break Elementalist clearing Uber content without breaking the bank.",
+      "tags": ["CoWB","elementalist","uber","3.28"],
+      "image": "", "url": "https://youtu.be/Vicb2gktJyU"
+    },
+    {
+      "id": 7, "viewRank": 7,
+      "title": "Gladiator - Crushing Fist",
+      "type": "VIDEO", "ver": "3.27",
+      "desc": "Crushing Fist Gladiator smashing through content in 3.27. Solid league starter with great bleed scaling.",
+      "tags": ["gladiator","bleed","melee","3.27"],
+      "image": "", "url": "https://youtu.be/Wzes7TQyrJs"
+    },
+    {
+      "id": 8, "viewRank": 8,
+      "title": "Chieftain - CwS Ultimatum AFK",
+      "type": "VIDEO", "ver": "3.26",
+      "desc": "Cast when Stunned Chieftain going AFK through Ultimatum encounters. Fully automated and surprisingly powerful.",
+      "tags": ["chieftain","CwS","ultimatum","3.26"],
+      "image": "", "url": "https://youtu.be/lZhgB38mux8"
+    },
+    {
+      "id": 9, "viewRank": 9,
+      "title": "Juggeranaut - Penance Brand",
+      "type": "VIDEO", "ver": "3.26",
+      "desc": "Penance Brand Juggernaut with incredible tanking ability. Slow and steady with great endgame scaling.",
+      "tags": ["juggernaut","brand","lightning","3.26"],
+      "image": "", "url": "https://youtu.be/4IjRCGyhHiA"
+    },
+    {
+      "id": 10, "viewRank": 10,
+      "title": "Scarvenger - Hexblast Phrecia",
+      "type": "VIDEO", "ver": "3.25",
+      "desc": "Hexblast Scavenger build from the Phrecia event in 3.25. Unique mechanics and explosive chaos damage.",
+      "tags": ["hexblast","chaos","phrecia","3.25"],
+      "image": "", "url": "https://youtu.be/5hly5i_A0vQ"
+    }
+  ]
+}
