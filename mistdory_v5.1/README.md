@@ -24,6 +24,21 @@ mistdory/
 
 All content lives in `data/poe1.json` and `data/poe2.json`. Open either file in any text editor and update the fields. No coding required.
 
+### YouTube playlist catalog
+
+The homepage contains a playlist snapshot imported on 2026-10-26, with each video's visibility checked individually on 2026-10-26:
+
+| Homepage tab | Source playlist | Verified public videos | Unlisted videos removed | Private videos removed |
+| --- | --- | ---: | ---: | ---: |
+| PoE 1 | [POE](https://www.youtube.com/playlist?list=PLlj4MOKpBOsb-ZAzTmHLpCap5m_mnMeht) | 34 | 0 | 23 |
+| PoE 2 | [PoE2](https://www.youtube.com/playlist?list=PLlj4MOKpBOsZ38hhrZ1vGERMbzF3TaZYx) | 56 | 1 | 1 |
+
+All retained videos belong to `@mistdory`. Public eligibility requires a signed-out YouTube watch response with explicit `isUnlisted: false`, `isPrivate: false`, playability `OK`, and matching channel/video IDs. Being playable or appearing in a public playlist is insufficient. Private, unlisted, unavailable, and unverified videos are excluded from cards, guide links, and featured videos. The six additional PoE 1 Shorts linked under Miscellaneous also passed this visibility check.
+
+Each JSON file records its playlist/import time and latest visibility audit in `source`; individual video entries record `privacyStatus` and `privacyVerifiedAt`. Cards use YouTube video IDs and retain playlist order. The featured video is the first retained public video in that realm's playlist. The separate livestream playlist is outside this catalog.
+
+This is a static snapshot: new uploads, playlist changes, and later visibility changes do not update the JSON automatically. Recheck each video's visibility before refreshing the catalog. The homepage shows verified video totals; unverified build/crafting totals are omitted. Most Viewed and Newest sorting are available only when every card has the corresponding numeric view count or full publication date. Abbreviated view counts are preserved as text, and relative video ages are not converted into publication dates.
+
 ### Add a YouTube video to the hero
 
 In `data/poe1.json`, find `"ytId": ""` and paste your YouTube video ID inside the quotes.

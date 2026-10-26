@@ -52,19 +52,62 @@ body {
   text-decoration: none;
 }
 .nav-logo span { color: var(--accent); transition: color 0.3s; }
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a {
+.nav-links { display: flex; align-items: center; gap: 12px; list-style: none; }
+.nav-links a,
+.nav-links .nav-soon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
   color: #999;
+  font-family: inherit;
   font-size: 13px;
   text-decoration: none;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 500;
-  transition: color 0.2s;
+  line-height: inherit;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
 .nav-links a:hover,
 .nav-links a.active { color: var(--accent); }
+.nav-links a:hover { background: #141414; }
+.nav-links a:focus-visible,
+.nav-cta:focus-visible,
+.nav-soon:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.nav-soon { position: relative; cursor: default; }
+.nav-label { transition: opacity 0.15s; }
+.nav-soon-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+.nav-soon:hover .nav-label,
+.nav-soon:focus .nav-label { opacity: 0; }
+.nav-soon:hover .nav-soon-label,
+.nav-soon:focus .nav-soon-label { opacity: 1; }
+.nav-links .nav-soon:hover,
+.nav-links .nav-soon:focus {
+  background: #1a1212;
+  border-color: #613030;
+  color: #f3b6b6;
+}
 .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--accent);
   color: #fff;
   border: none;
@@ -73,11 +116,18 @@ body {
   font-size: 13px;
   font-family: 'Barlow', sans-serif;
   font-weight: 600;
+  min-height: 40px;
   cursor: pointer;
+  text-decoration: none;
   letter-spacing: 0.5px;
   transition: background 0.2s;
 }
 .nav-cta:hover { background: var(--red-bright); }
+
+@media (max-width: 780px) {
+  .nav { flex-wrap: wrap; gap: 12px; padding: 12px 20px; }
+  .nav-links { order: 3; flex-basis: 100%; flex-wrap: wrap; justify-content: center; gap: 4px; }
+}
 
 /* ── REALM SWITCHER ── */
 .realm-bar {
@@ -192,6 +242,7 @@ body {
 .hero-sub { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 500px; }
 .hero-stats { display: flex; gap: 32px; margin-top: 4px; }
 .stat { display: flex; flex-direction: column; gap: 2px; }
+.stat[hidden] { display: none; }
 .stat-num {
   font-family: 'Cinzel', serif;
   font-size: 26px;

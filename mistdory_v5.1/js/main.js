@@ -6,6 +6,25 @@
 let DATA    = {};   /* filled after JSON fetch */
 let realm   = 'poe1';
 
+function escapeHtml(value) {
+  const entities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  return String(value ?? '').replace(/[&<>"']/g, char => entities[char]);
+}
+
+function updateSortOptions(cards) {
+  const sort = document.getElementById('sortFilter');
+  const available = {
+    views: cards.length > 0 && cards.every(card => Number.isFinite(card.viewCount)),
+    newest: cards.length > 0 && cards.every(card => card.publishedAt && Number.isFinite(Date.parse(card.publishedAt)))
+  };
+  for (const [value, enabled] of Object.entries(available)) {
+    const option = sort.querySelector('option[value="' + value + '"]');
+    option.disabled = !enabled;
+    option.hidden = !enabled;
+  }
+  if (sort.selectedOptions[0].disabled) sort.value = 'playlist';
+}
+
 /* ── BOOT ──────────────────────────────────────────────────────────────── */
 async function init() {
   try {
@@ -55,7 +74,8 @@ function applyRealm(r) {
   /* stats */
   ['statBuilds','statCraft','statVideos'].forEach((id, i) => {
     const el = document.getElementById(id);
-    el.textContent = d.meta.stats[i];
+    el.parentElement.hidden = d.meta.stats[i] == null;
+    el.textContent = d.meta.stats[i] ?? '';
     el.className   = 'stat-num' + (p2 ? ' poe2' : '');
   });
 
@@ -90,11 +110,11 @@ function applyRealm(r) {
       return `
       <div class="guide-row">
         <span class="guide-row-label">
-          ${row.ver ? `<span class="row-ver-badge">${row.ver}</span>` : ''}
-          ${row.label}
+          ${row.ver ? `<span class="row-ver-badge">${escapeHtml(row.ver)}</span>` : ''}
+          ${escapeHtml(row.label)}
         </span>
-        <a href="${row.url}" class="guide-btn${p2 ? ' poe2' : ''}"
-           ${row.url !== '#' ? 'target="_blank" rel="noopener"' : ''}>${btnLabel}</a>
+        <a href="${escapeHtml(row.url)}" class="guide-btn${p2 ? ' poe2' : ''}"
+           ${row.url !== '#' ? 'target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(btnLabel)}</a>
       </div>`;
     }).join('');
   });
@@ -103,6 +123,7 @@ function applyRealm(r) {
   document.getElementById('footerAccent').style.color = p2 ? 'var(--purple)' : 'var(--red)';
 
   /* cards */
+  updateSortOptions(d.cards);
   renderCards();
 }
 
@@ -153,6 +174,8 @@ function renderCards() {
   const cat    = document.getElementById('catFilter').value;
   const sort   = document.getElementById('sortFilter').value;
   const grid   = document.getElementById('cardGrid');
+  const hasViewCounts = cards.length > 0 && cards.every(card => Number.isFinite(card.viewCount));
+  const mostViews = hasViewCounts ? Math.max(...cards.map(card => card.viewCount)) : 0;
 
   const PIN = { BUILD: '★', CRAFTING: '◆', VIDEO: '▶' };
   const TYPE_CLASS = {
@@ -172,8 +195,9 @@ function renderCards() {
 
   if (sort === 'name')   filtered.sort((a, b) => a.title.localeCompare(b.title));
   if (sort === 'type')   filtered.sort((a, b) => a.type.localeCompare(b.type));
-  if (sort === 'newest') filtered.sort((a, b) => parseFloat(b.ver) - parseFloat(a.ver));
-  if (sort === 'views')  filtered.sort((a, b) => (a.viewRank || 99) - (b.viewRank || 99));
+  if (sort === 'newest') filtered.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  if (sort === 'views')  filtered.sort((a, b) => b.viewCount - a.viewCount);
+  if (sort === 'playlist') filtered.sort((a, b) => (a.playlistPosition ?? 0) - (b.playlistPosition ?? 0));
 
   if (filtered.length === 0) {
     grid.innerHTML = '<div class="no-results">No results found</div>';
@@ -183,30 +207,31 @@ function renderCards() {
   grid.innerHTML = filtered.map(c => {
     /* Thumbnail resolution order:
        1. c.image set manually in JSON
-       2. VIDEO card with a real YouTube URL → auto-fetch YouTube thumbnail
+       2. Card with a real YouTube URL → auto-fetch YouTube thumbnail
        3. Fallback placeholder text                                         */
-    const thumbSrc = c.image || (c.type === 'VIDEO' ? getYtThumb(c.url) : null);
+    const thumbSrc = c.image || getYtThumb(c.url);
     const thumb = thumbSrc
-      ? `<img src="${thumbSrc}" alt="${c.title}" loading="lazy" />`
+      ? `<img src="${escapeHtml(thumbSrc)}" alt="${escapeHtml(c.title)}" loading="lazy" />`
       : `<span class="card-thumb-placeholder">Thumbnail</span>`;
 
     return `
-      <a class="card${p2 ? ' poe2' : ''}" href="${c.url}"${c.url !== '#' ? ' target="_blank"' : ''}>
+      <a class="card${p2 ? ' poe2' : ''}" href="${escapeHtml(c.url)}"${c.url !== '#' ? ' target="_blank" rel="noopener noreferrer"' : ''}>
         <div class="card-thumb">
           ${thumb}
           <div class="card-pin${p2 ? ' poe2' : ''}">${PIN[c.type]}</div>
         </div>
         <div class="card-body">
           <div class="card-title">
-            ${c.title}
-            ${c.viewRank === 1 ? '<span class="card-most-viewed">★ Most Viewed</span>' : ''}
+            ${escapeHtml(c.title)}
+            ${mostViews > 0 && c.viewCount === mostViews ? '<span class="card-most-viewed">★ Most Viewed</span>' : ''}
           </div>
           <div class="card-meta">
-            <span class="badge-type ${TYPE_CLASS[c.type]}">${c.type}</span>
-            <span class="badge-ver-small">${c.ver}</span>
+            <span class="badge-type ${TYPE_CLASS[c.type]}">${escapeHtml(c.type)}</span>
+            ${c.ver ? `<span class="badge-ver-small">${escapeHtml(c.ver)}</span>` : ''}
+            ${c.duration ? `<span class="badge-ver-small">${escapeHtml(c.duration)}</span>` : ''}
           </div>
-          <div class="card-desc">${c.desc}</div>
-          <div class="card-tags">${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+          ${c.desc ? `<div class="card-desc">${escapeHtml(c.desc)}</div>` : ''}
+          <div class="card-tags">${c.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
         </div>
       </a>`;
   }).join('');
