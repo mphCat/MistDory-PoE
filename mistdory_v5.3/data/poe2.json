@@ -1,0 +1,1683 @@
+{
+  "meta": {
+    "ver": "PoE 2",
+    "badge": "Path of Exile 2",
+    "sub": "Public videos from Mist's PoE2 playlist. Browse the collection below.",
+    "stats": [
+      null,
+      null,
+      "56"
+    ],
+    "ytId": "moYuQWWPIXI",
+    "ytHint": "Featured video — PoE 2 - 0.5.5 | Semi Temporalis Infernalist Comet Tanker Variant -  Sekhema Rush",
+    "mainDiscordUrl": "https://discord.gg/v9C6rXHfet",
+    "cowbDiscordUrl": "https://discord.gg/mpU5FG6MKm"
+  },
+  "guideRows": {
+    "gc1": {
+      "title": "WIP Projects",
+      "kind": "projects",
+      "scrollable": true,
+      "rows": [
+        {
+          "label": "Build experiments",
+          "url": "#"
+        },
+        {
+          "label": "Mechanic tests",
+          "url": "#"
+        },
+        {
+          "label": "Upcoming guides",
+          "url": "#"
+        }
+      ]
+    },
+    "gc2": {
+      "title": "Document",
+      "scrollable": true,
+      "rows": [
+        {
+          "label": "PoE 2 Patch Notes",
+          "ver": null,
+          "btnLabel": "Open",
+          "url": "https://www.pathofexile.com/forum/view-forum/2212"
+        },
+        {
+          "label": "Official PoE 2 Site",
+          "ver": null,
+          "btnLabel": "Open",
+          "url": "https://pathofexile2.com/"
+        },
+        {
+          "label": "Mechanics Reference",
+          "ver": null,
+          "btnLabel": "Open",
+          "url": "https://www.poe2wiki.net/wiki/Path_of_Exile_2_Wiki"
+        }
+      ]
+    },
+    "gc3": {
+      "title": "Crafting Recipes",
+      "scrollable": true,
+      "rows": [
+        {
+          "label": "Rune Crafting Basics",
+          "ver": null,
+          "url": "#"
+        },
+        {
+          "label": "Socket Strategy",
+          "ver": null,
+          "url": "#"
+        },
+        {
+          "label": "Currency Efficiency",
+          "ver": null,
+          "url": "#"
+        }
+      ]
+    },
+    "gc4": {
+      "title": "Miscellaneous",
+      "scrollable": true,
+      "rows": [
+        {
+          "label": "Loot Filter PoE 2",
+          "ver": null,
+          "url": "#"
+        },
+        {
+          "label": "Endgame Atlas",
+          "ver": null,
+          "url": "#"
+        },
+        {
+          "label": "Top 10 Tips PoE 2",
+          "ver": null,
+          "url": "#"
+        }
+      ]
+    }
+  },
+  "cards": [
+    {
+      "id": "moYuQWWPIXI",
+      "playlistPosition": 1,
+      "title": "PoE 2 - 0.5.5 | Semi Temporalis Infernalist Comet Tanker Variant -  Sekhema Rush",
+      "type": "VIDEO",
+      "ver": "0.5.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=moYuQWWPIXI",
+      "duration": "21:08",
+      "viewCount": 4582,
+      "viewCountText": "4582",
+      "publishedAt": "2026-10-11T18:55:00.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:29.527Z",
+      "metricsCheckedAt": "2026-10-28T10:35:29.527Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "moYuQWWPIXI"
+      }
+    },
+    {
+      "id": "OWJe1zBDv9A",
+      "playlistPosition": 2,
+      "title": "PoE 2 - 0.5.5 | Semi Temporalis Gemling Comet Sekhema Rush",
+      "type": "VIDEO",
+      "ver": "0.5.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=OWJe1zBDv9A",
+      "duration": "22:28",
+      "viewCount": 16423,
+      "viewCountText": "16423",
+      "publishedAt": "2026-10-06T16:13:21.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:29.892Z",
+      "metricsCheckedAt": "2026-10-28T10:35:29.892Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "OWJe1zBDv9A"
+      }
+    },
+    {
+      "id": "-kSCPR7QT04",
+      "playlistPosition": 3,
+      "title": "PoE2 - 0.5.5 | I got my Incense Relic from a Sekhema Trial #pathofexile2  #riteofpassage",
+      "type": "VIDEO",
+      "ver": "0.5.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=-kSCPR7QT04",
+      "duration": "0:34",
+      "viewCount": 823,
+      "viewCountText": "823",
+      "publishedAt": "2026-10-04T11:50:50.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:30.070Z",
+      "metricsCheckedAt": "2026-10-28T10:35:30.070Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "-kSCPR7QT04"
+      }
+    },
+    {
+      "id": "VYGNYhSaYyw",
+      "playlistPosition": 4,
+      "title": "PoE2 - 0.5.5 | I got my Mageblood from a Wise man - Seer #pathofexile2  #riteofpassage",
+      "type": "VIDEO",
+      "ver": "0.5.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=VYGNYhSaYyw",
+      "duration": "0:11",
+      "viewCount": 1498,
+      "viewCountText": "1498",
+      "publishedAt": "2026-10-03T04:34:05.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:30.184Z",
+      "metricsCheckedAt": "2026-10-28T10:35:30.184Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "VYGNYhSaYyw"
+      }
+    },
+    {
+      "id": "Pd0LjiueWtY",
+      "playlistPosition": 5,
+      "title": "PoE2 - 0.5.5 | EAB Strategy - Expedition Azmeri Spirit Box | Printing like the old days of 0.5",
+      "type": "VIDEO",
+      "ver": "0.5.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=Pd0LjiueWtY",
+      "duration": "7:07",
+      "viewCount": 1648,
+      "viewCountText": "1648",
+      "publishedAt": "2026-09-22T18:27:29.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:30.655Z",
+      "metricsCheckedAt": "2026-10-28T10:35:30.655Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "Pd0LjiueWtY"
+      }
+    },
+    {
+      "id": "Q4LmFrDJ6UI",
+      "playlistPosition": 6,
+      "title": "PoE 2 - 0.5 | 99% AFK Build | Screen Explode - Handicap playstyle - Try before it dissapear",
+      "type": "VIDEO",
+      "ver": "0.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=Q4LmFrDJ6UI",
+      "duration": "6:35",
+      "viewCount": 7457,
+      "viewCountText": "7457",
+      "publishedAt": "2026-07-13T18:28:48.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:30.828Z",
+      "metricsCheckedAt": "2026-10-28T10:35:30.828Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "Q4LmFrDJ6UI"
+      }
+    },
+    {
+      "id": "4JpWn8msRY4",
+      "playlistPosition": 8,
+      "title": "PoE 2 - 0.5 | Glacial Bolt DeadEye - Final Form | Screen Explode",
+      "type": "VIDEO",
+      "ver": "0.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=4JpWn8msRY4",
+      "duration": "8:20",
+      "viewCount": 2444,
+      "viewCountText": "2444",
+      "publishedAt": "2026-06-21T05:50:07.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:31.243Z",
+      "metricsCheckedAt": "2026-10-28T10:35:31.243Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "4JpWn8msRY4"
+      }
+    },
+    {
+      "id": "eJf-i7J2cRo",
+      "playlistPosition": 9,
+      "title": "PoE 2 - 0.5 | Party 2 Cheap Setup Around 45Div/h - 4-5Div/Map | Full Detail",
+      "type": "VIDEO",
+      "ver": "0.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=eJf-i7J2cRo",
+      "duration": "8:20",
+      "viewCount": 2223,
+      "viewCountText": "2223",
+      "publishedAt": "2026-06-18T18:37:49.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:31.545Z",
+      "metricsCheckedAt": "2026-10-28T10:35:31.545Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "eJf-i7J2cRo"
+      }
+    },
+    {
+      "id": "80o3y_LA1Y8",
+      "playlistPosition": 10,
+      "title": "PoE 2 - 0.5 | Cheap Energy Shield Gloves Craft | Full Detail From Scratch",
+      "type": "VIDEO",
+      "ver": "0.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=80o3y_LA1Y8",
+      "duration": "8:15",
+      "viewCount": 5439,
+      "viewCountText": "5439",
+      "publishedAt": "2026-06-04T08:19:25.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:31.473Z",
+      "metricsCheckedAt": "2026-10-28T10:35:31.473Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "80o3y_LA1Y8"
+      }
+    },
+    {
+      "id": "Yc1Kruv4LkE",
+      "playlistPosition": 11,
+      "title": "PoE 2 - 0.5 | Runic Ward and Its Relevant Tech",
+      "type": "VIDEO",
+      "ver": "0.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=Yc1Kruv4LkE",
+      "duration": "8:06",
+      "viewCount": 5960,
+      "viewCountText": "5960",
+      "publishedAt": "2026-06-03T05:00:10.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:31.985Z",
+      "metricsCheckedAt": "2026-10-28T10:35:31.985Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "Yc1Kruv4LkE"
+      }
+    },
+    {
+      "id": "eNtxax4TALw",
+      "playlistPosition": 12,
+      "title": "PoE 2 - 0.5 | DeadEye Glacial Bolt Idea From Start to Day 1-2",
+      "type": "VIDEO",
+      "ver": "0.5",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.5"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=eNtxax4TALw",
+      "duration": "7:51",
+      "viewCount": 1495,
+      "viewCountText": "1495",
+      "publishedAt": "2026-06-02T04:17:35.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:32.259Z",
+      "metricsCheckedAt": "2026-10-28T10:35:32.259Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "eNtxax4TALw"
+      }
+    },
+    {
+      "id": "p4Uk1K_2S-Y",
+      "playlistPosition": 13,
+      "title": "PoE 2 - 0.4 | Temple Rush  - Semi Temporalis AutoBomber",
+      "type": "VIDEO",
+      "ver": "0.4",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.4"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=p4Uk1K_2S-Y",
+      "duration": "17:01",
+      "viewCount": 6045,
+      "viewCountText": "6045",
+      "publishedAt": "2026-01-13T18:01:22.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:32.091Z",
+      "metricsCheckedAt": "2026-10-28T10:35:32.091Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "p4Uk1K_2S-Y"
+      }
+    },
+    {
+      "id": "zARWFpFjmbA",
+      "playlistPosition": 14,
+      "title": "PoE 2 - 0.4 | Feral Wolf Semi-AutoBomber",
+      "type": "VIDEO",
+      "ver": "0.4",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.4"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=zARWFpFjmbA",
+      "duration": "7:14",
+      "viewCount": 2365,
+      "viewCountText": "2365",
+      "publishedAt": "2026-01-01T04:06:24.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:32.752Z",
+      "metricsCheckedAt": "2026-10-28T10:35:32.752Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "zARWFpFjmbA"
+      }
+    },
+    {
+      "id": "ls9_RgCHJ3g",
+      "playlistPosition": 15,
+      "title": "PoE 2 - 0.4 | Quick Ritual Looking while Abyss is GONE",
+      "type": "VIDEO",
+      "ver": "0.4",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.4"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=ls9_RgCHJ3g",
+      "duration": "8:48",
+      "viewCount": 1317,
+      "viewCountText": "1317",
+      "publishedAt": "2025-12-20T21:06:10.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:32.943Z",
+      "metricsCheckedAt": "2026-10-28T10:35:32.943Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "ls9_RgCHJ3g"
+      }
+    },
+    {
+      "id": "7ReEEP8GM7A",
+      "playlistPosition": 16,
+      "title": "PoE 2 - 0.4 | Wolf-Racle Semi Bomber - Boss Melting",
+      "type": "VIDEO",
+      "ver": "0.4",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.4"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=7ReEEP8GM7A",
+      "duration": "6:29",
+      "viewCount": 599,
+      "viewCountText": "599",
+      "publishedAt": "2025-12-16T14:02:15.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:32.796Z",
+      "metricsCheckedAt": "2026-10-28T10:35:32.796Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "7ReEEP8GM7A"
+      }
+    },
+    {
+      "id": "FtOfeJTo3e4",
+      "playlistPosition": 17,
+      "title": "PoE 2 - 0.4 | Wolf-Racle Day 2 Launch of Looking",
+      "type": "VIDEO",
+      "ver": "0.4",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.4"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=FtOfeJTo3e4",
+      "duration": "9:32",
+      "viewCount": 249,
+      "viewCountText": "249",
+      "publishedAt": "2025-12-15T16:25:21.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:33.336Z",
+      "metricsCheckedAt": "2026-10-28T10:35:33.336Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "FtOfeJTo3e4"
+      }
+    },
+    {
+      "id": "giMdCWTrQgk",
+      "playlistPosition": 18,
+      "title": "PoE 2 - 0.4 | Wolf-Racle Day 1 Launch of Looking",
+      "type": "VIDEO",
+      "ver": "0.4",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.4"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=giMdCWTrQgk",
+      "duration": "7:23",
+      "viewCount": 277,
+      "viewCountText": "277",
+      "publishedAt": "2025-12-14T16:44:08.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:33.505Z",
+      "metricsCheckedAt": "2026-10-28T10:35:33.505Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "giMdCWTrQgk"
+      }
+    },
+    {
+      "id": "y0-KK40ma-8",
+      "playlistPosition": 19,
+      "title": "PoE 2 - 0.4 | Wolf-Racle Leauge start rough planning",
+      "type": "VIDEO",
+      "ver": "0.4",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.4"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=y0-KK40ma-8",
+      "duration": "12:08",
+      "viewCount": 495,
+      "viewCountText": "495",
+      "publishedAt": "2025-12-11T17:58:41.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:33.449Z",
+      "metricsCheckedAt": "2026-10-28T10:35:33.449Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "y0-KK40ma-8"
+      }
+    },
+    {
+      "id": "42r1qIN_uuY",
+      "playlistPosition": 20,
+      "title": "PoE 2 - 0.3 | Infinite Flicker Mage with Uptime Power Charge",
+      "type": "VIDEO",
+      "ver": "0.3",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.3"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=42r1qIN_uuY",
+      "duration": "23:21",
+      "viewCount": 463,
+      "viewCountText": "463",
+      "publishedAt": "2025-09-21T18:51:16.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:34.230Z",
+      "metricsCheckedAt": "2026-10-28T10:35:34.230Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "42r1qIN_uuY"
+      }
+    },
+    {
+      "id": "mBHErCrxCyw",
+      "playlistPosition": 21,
+      "title": "PoE 2 - 0.3 | Optimize and Explain for The Reaper Mage",
+      "type": "VIDEO",
+      "ver": "0.3",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.3"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=mBHErCrxCyw",
+      "duration": "7:40",
+      "viewCount": 1295,
+      "viewCountText": "1295",
+      "publishedAt": "2025-09-14T13:56:44.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:34.003Z",
+      "metricsCheckedAt": "2026-10-28T10:35:34.003Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "mBHErCrxCyw"
+      }
+    },
+    {
+      "id": "41eBMxSK6kk",
+      "playlistPosition": 22,
+      "title": "this is the best Bone Storm ever | #mistdory on #Twitch",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=41eBMxSK6kk",
+      "duration": "0:21",
+      "viewCount": 856,
+      "viewCountText": "856",
+      "publishedAt": "2025-09-12T02:25:58.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:34.048Z",
+      "metricsCheckedAt": "2026-10-28T10:35:34.048Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "41eBMxSK6kk"
+      }
+    },
+    {
+      "id": "G1JRfpqvRoc",
+      "playlistPosition": 23,
+      "title": "PoE 2 - 0.3 | The Reaper Mage with 3 type of extra Chaos Damage build idea",
+      "type": "VIDEO",
+      "ver": "0.3",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.3"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=G1JRfpqvRoc",
+      "duration": "13:09",
+      "viewCount": 4601,
+      "viewCountText": "4601",
+      "publishedAt": "2025-09-11T20:59:06.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:34.858Z",
+      "metricsCheckedAt": "2026-10-28T10:35:34.858Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "G1JRfpqvRoc"
+      }
+    },
+    {
+      "id": "VFSwQV4hIDI",
+      "playlistPosition": 24,
+      "title": "PoE 2 - 0.3 | From Nothing to Professional Carry Sekhema",
+      "type": "VIDEO",
+      "ver": "0.3",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.3"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=VFSwQV4hIDI",
+      "duration": "12:18",
+      "viewCount": 2926,
+      "viewCountText": "2926",
+      "publishedAt": "2025-09-08T13:55:40.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:34.721Z",
+      "metricsCheckedAt": "2026-10-28T10:35:34.721Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "VFSwQV4hIDI"
+      }
+    },
+    {
+      "id": "5Tagw49Eu2I",
+      "playlistPosition": 25,
+      "title": "PoE 2 | 0.3 Rise of the Abyss - Campaign to Early Map plan 01 - Bonke Dead Eye Bow",
+      "type": "VIDEO",
+      "ver": "0.3",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.3"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=5Tagw49Eu2I",
+      "duration": "11:29",
+      "viewCount": 933,
+      "viewCountText": "933",
+      "publishedAt": "2025-08-27T18:53:38.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:34.995Z",
+      "metricsCheckedAt": "2026-10-28T10:35:34.995Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "5Tagw49Eu2I"
+      }
+    },
+    {
+      "id": "-4hi3ZTe5SE",
+      "playlistPosition": 26,
+      "title": "PoE 2 | BloodMage Semi AutoCast with many CoC",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=-4hi3ZTe5SE",
+      "duration": "22:04",
+      "viewCount": 1927,
+      "viewCountText": "1927",
+      "publishedAt": "2025-05-05T14:49:39.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:35.454Z",
+      "metricsCheckedAt": "2026-10-28T10:35:35.454Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "-4hi3ZTe5SE"
+      }
+    },
+    {
+      "id": "AwZ1dkJZAic",
+      "playlistPosition": 27,
+      "title": "PoE 2 | Huge Buff & Balancing Patch from GGG 0.2.0g",
+      "type": "VIDEO",
+      "ver": "0.2.0g",
+      "desc": "",
+      "tags": [
+        "PoE 2",
+        "0.2.0g"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=AwZ1dkJZAic",
+      "duration": "10:53",
+      "viewCount": 514,
+      "viewCountText": "514",
+      "publishedAt": "2025-05-01T04:53:45.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:35.428Z",
+      "metricsCheckedAt": "2026-10-28T10:35:35.428Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "AwZ1dkJZAic"
+      }
+    },
+    {
+      "id": "jRNkxLaR_tQ",
+      "playlistPosition": 28,
+      "title": "PoE 2 | Ritualist Culler MF 400 Rarity Budget",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=jRNkxLaR_tQ",
+      "duration": "16:57",
+      "viewCount": 7545,
+      "viewCountText": "7545",
+      "publishedAt": "2025-04-23T13:45:44.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:35.729Z",
+      "metricsCheckedAt": "2026-10-28T10:35:35.729Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "jRNkxLaR_tQ"
+      }
+    },
+    {
+      "id": "iG0Uf1x_OV4",
+      "playlistPosition": 29,
+      "title": "PoE 2 | My knowledge about Companions",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=iG0Uf1x_OV4",
+      "duration": "7:56",
+      "viewCount": 570,
+      "viewCountText": "570",
+      "publishedAt": "2025-04-14T14:16:45.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:36.123Z",
+      "metricsCheckedAt": "2026-10-28T10:35:36.123Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "iG0Uf1x_OV4"
+      }
+    },
+    {
+      "id": "GnVvRoBPeHQ",
+      "playlistPosition": 30,
+      "title": "PoE 2 | Lightning SpeaRist Primal Strike - Double Damage Optimize",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=GnVvRoBPeHQ",
+      "duration": "6:52",
+      "viewCount": 1684,
+      "viewCountText": "1684",
+      "publishedAt": "2025-04-13T11:34:26.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:36.204Z",
+      "metricsCheckedAt": "2026-10-28T10:35:36.204Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "GnVvRoBPeHQ"
+      }
+    },
+    {
+      "id": "kNewyq3orGY",
+      "playlistPosition": 31,
+      "title": "PoE 2 | Lightning SpeaRist Build Idea",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=kNewyq3orGY",
+      "duration": "15:00",
+      "viewCount": 649,
+      "viewCountText": "649",
+      "publishedAt": "2025-04-13T04:15:43.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:36.400Z",
+      "metricsCheckedAt": "2026-10-28T10:35:36.400Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "kNewyq3orGY"
+      }
+    },
+    {
+      "id": "RwjXR0Jb9xU",
+      "playlistPosition": 32,
+      "title": "PoE 2 | Double (Companions) Double Fun & alittle more dmg",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=RwjXR0Jb9xU",
+      "duration": "7:54",
+      "viewCount": 2007,
+      "viewCountText": "2007",
+      "publishedAt": "2025-04-12T04:34:56.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:37.142Z",
+      "metricsCheckedAt": "2026-10-28T10:35:37.142Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "RwjXR0Jb9xU"
+      }
+    },
+    {
+      "id": "IsXbwTbSJkg",
+      "playlistPosition": 33,
+      "title": "PoE 2 | Ritualist Elemental Bow Day 4 Upgrade to Midgame",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=IsXbwTbSJkg",
+      "duration": "9:30",
+      "viewCount": 97,
+      "viewCountText": "97",
+      "publishedAt": "2025-04-10T18:49:57.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:36.802Z",
+      "metricsCheckedAt": "2026-10-28T10:35:36.802Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "IsXbwTbSJkg"
+      }
+    },
+    {
+      "id": "7_y_GSv7ApY",
+      "playlistPosition": 34,
+      "title": "PoE 2 | Ritualist Elemental Bow Build Idea",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=7_y_GSv7ApY",
+      "duration": "12:06",
+      "viewCount": 591,
+      "viewCountText": "591",
+      "publishedAt": "2025-04-07T15:36:10.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:37.047Z",
+      "metricsCheckedAt": "2026-10-28T10:35:37.047Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "7_y_GSv7ApY"
+      }
+    },
+    {
+      "id": "QZHYnqPjSMA",
+      "playlistPosition": 35,
+      "title": "PoE 2 | Explosive Concoction Ailment inflict with Crit Idea",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=QZHYnqPjSMA",
+      "duration": "7:20",
+      "viewCount": 154,
+      "viewCountText": "154",
+      "publishedAt": "2025-02-06T13:58:47.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:37.578Z",
+      "metricsCheckedAt": "2026-10-28T10:35:37.578Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "QZHYnqPjSMA"
+      }
+    },
+    {
+      "id": "aBB97-uvzmQ",
+      "playlistPosition": 36,
+      "title": "T4 Xoph Beatable in under 5div invest my CritMage",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=aBB97-uvzmQ",
+      "duration": "1:10",
+      "viewCount": 97,
+      "viewCountText": "97",
+      "publishedAt": "2025-01-19T15:26:23.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:37.852Z",
+      "metricsCheckedAt": "2026-10-28T10:35:37.852Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "aBB97-uvzmQ"
+      }
+    },
+    {
+      "id": "3O1O-xvzOTc",
+      "playlistPosition": 37,
+      "title": "PoE 2 | BloodMage Cheaper and Better than Stormweaver in SPARK",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=3O1O-xvzOTc",
+      "duration": "10:40",
+      "viewCount": 1620,
+      "viewCountText": "1620",
+      "publishedAt": "2025-01-18T13:18:54.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:38.164Z",
+      "metricsCheckedAt": "2026-10-28T10:35:38.164Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "3O1O-xvzOTc"
+      }
+    },
+    {
+      "id": "JFcrE1MRY3k",
+      "playlistPosition": 38,
+      "title": "PoE 2 | Gemling Impending Doom Optimized More Dmg with Cast on Ignite Tech",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=JFcrE1MRY3k",
+      "duration": "7:56",
+      "viewCount": 2889,
+      "viewCountText": "2889",
+      "publishedAt": "2025-01-13T14:11:33.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:38.362Z",
+      "metricsCheckedAt": "2026-10-28T10:35:38.362Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "JFcrE1MRY3k"
+      }
+    },
+    {
+      "id": "lDqEqbpCzQ0",
+      "playlistPosition": 39,
+      "title": "PoE 2 | Impending Doom Gemling Optimized Adjustment",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=lDqEqbpCzQ0",
+      "duration": "7:55",
+      "viewCount": 982,
+      "viewCountText": "982",
+      "publishedAt": "2025-01-11T14:58:03.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:38.644Z",
+      "metricsCheckedAt": "2026-10-28T10:35:38.644Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "lDqEqbpCzQ0"
+      }
+    },
+    {
+      "id": "tj46BHCeGbU",
+      "playlistPosition": 40,
+      "title": "PoE 2 | Upgrade my Magic Find DeadEye to 300+ rarity",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=tj46BHCeGbU",
+      "duration": "10:11",
+      "viewCount": 117,
+      "viewCountText": "117",
+      "publishedAt": "2025-01-08T13:55:27.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:38.984Z",
+      "metricsCheckedAt": "2026-10-28T10:35:38.984Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "tj46BHCeGbU"
+      }
+    },
+    {
+      "id": "_D7el118-NU",
+      "playlistPosition": 41,
+      "title": "PoE 2 | Impending Doom Gemling Upgrade 700+ Intelligent",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=_D7el118-NU",
+      "duration": "8:23",
+      "viewCount": 602,
+      "viewCountText": "602",
+      "publishedAt": "2025-01-06T23:32:42.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:39.260Z",
+      "metricsCheckedAt": "2026-10-28T10:35:39.260Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "_D7el118-NU"
+      }
+    },
+    {
+      "id": "c_QBdKAjHjI",
+      "playlistPosition": 42,
+      "title": "PoE 2 | Impending Doom Gemling Idea",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=c_QBdKAjHjI",
+      "duration": "24:20",
+      "viewCount": 808,
+      "viewCountText": "808",
+      "publishedAt": "2025-01-03T23:48:54.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:39.323Z",
+      "metricsCheckedAt": "2026-10-28T10:35:39.323Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "c_QBdKAjHjI"
+      }
+    },
+    {
+      "id": "YMrNT3dCQo0",
+      "playlistPosition": 43,
+      "title": "PoE 2 | Spark Gemling Mage Idea",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=YMrNT3dCQo0",
+      "duration": "12:14",
+      "viewCount": 345,
+      "viewCountText": "345",
+      "publishedAt": "2025-01-01T09:07:04.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:39.780Z",
+      "metricsCheckedAt": "2026-10-28T10:35:39.780Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "YMrNT3dCQo0"
+      }
+    },
+    {
+      "id": "yQKQ912WW2Q",
+      "playlistPosition": 44,
+      "title": "PoE 2 | Big Update on MF Bow 200+ Rarity Budget",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=yQKQ912WW2Q",
+      "duration": "13:31",
+      "viewCount": 176,
+      "viewCountText": "176",
+      "publishedAt": "2024-12-31T07:26:31.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:39.979Z",
+      "metricsCheckedAt": "2026-10-28T10:35:39.979Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "yQKQ912WW2Q"
+      }
+    },
+    {
+      "id": "9dyeBAINasM",
+      "playlistPosition": 45,
+      "title": "PoE 2 | Gemling Ice Strike Budget 700+ Strength Stacking Build And Tech",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=9dyeBAINasM",
+      "duration": "10:14",
+      "viewCount": 939,
+      "viewCountText": "939",
+      "publishedAt": "2024-12-28T13:22:32.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:40.174Z",
+      "metricsCheckedAt": "2026-10-28T10:35:40.174Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "9dyeBAINasM"
+      }
+    },
+    {
+      "id": "YFYiyZqA6kU",
+      "playlistPosition": 46,
+      "title": "PoE 2 | New Build - The Gemling Strike",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=YFYiyZqA6kU",
+      "duration": "10:51",
+      "viewCount": 117,
+      "viewCountText": "117",
+      "publishedAt": "2024-12-28T03:19:48.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:40.569Z",
+      "metricsCheckedAt": "2026-10-28T10:35:40.569Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "YFYiyZqA6kU"
+      }
+    },
+    {
+      "id": "7weHqrQGzHw",
+      "playlistPosition": 47,
+      "title": "PoE 2 | Lightning Arrow MF Budget 199 Rarity",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=7weHqrQGzHw",
+      "duration": "20:42",
+      "viewCount": 264,
+      "viewCountText": "264",
+      "publishedAt": "2024-12-23T17:18:47.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:40.757Z",
+      "metricsCheckedAt": "2026-10-28T10:35:40.757Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "7weHqrQGzHw"
+      }
+    },
+    {
+      "id": "q_B8g9unFdw",
+      "playlistPosition": 48,
+      "title": "PoE 2 | New PoE 2 Build of the Chaos - DoomBlast Bloodmage",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=q_B8g9unFdw",
+      "duration": "14:35",
+      "viewCount": 186,
+      "viewCountText": "186",
+      "publishedAt": "2024-12-19T14:27:20.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:40.737Z",
+      "metricsCheckedAt": "2026-10-28T10:35:40.737Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "q_B8g9unFdw"
+      }
+    },
+    {
+      "id": "v5ijkRRVK80",
+      "playlistPosition": 49,
+      "title": "PoE 2 | Temple of Kodec bug!!",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=v5ijkRRVK80",
+      "duration": "0:39",
+      "viewCount": 76,
+      "viewCountText": "76",
+      "publishedAt": "2024-12-19T04:31:27.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:41.218Z",
+      "metricsCheckedAt": "2026-10-28T10:35:41.218Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "v5ijkRRVK80"
+      }
+    },
+    {
+      "id": "8giKt0wx5z0",
+      "playlistPosition": 50,
+      "title": "PoE 2 | DoomBlast BloodMage DEMO",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=8giKt0wx5z0",
+      "duration": "7:26",
+      "viewCount": 63,
+      "viewCountText": "63",
+      "publishedAt": "2024-12-15T03:05:37.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:41.705Z",
+      "metricsCheckedAt": "2026-10-28T10:35:41.705Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "8giKt0wx5z0"
+      }
+    },
+    {
+      "id": "nfnUSpSmOKs",
+      "playlistPosition": 51,
+      "title": "PoE 2 | New build - DoomBlast - BloodMage",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=nfnUSpSmOKs",
+      "duration": "10:48",
+      "viewCount": 297,
+      "viewCountText": "297",
+      "publishedAt": "2024-12-10T15:02:36.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:41.449Z",
+      "metricsCheckedAt": "2026-10-28T10:35:41.449Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "nfnUSpSmOKs"
+      }
+    },
+    {
+      "id": "HYtFFrCTi2c",
+      "playlistPosition": 52,
+      "title": "PoE 2 | Stormweaver Cast on Freeze - 1 Button Semi Caster Build finish!",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=HYtFFrCTi2c",
+      "duration": "7:29",
+      "viewCount": 54,
+      "viewCountText": "54",
+      "publishedAt": "2024-12-09T18:20:03.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:41.891Z",
+      "metricsCheckedAt": "2026-10-28T10:35:41.891Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "HYtFFrCTi2c"
+      }
+    },
+    {
+      "id": "-3p8yCx1Mbo",
+      "playlistPosition": 53,
+      "title": "PoE 2 | Stormweaver Jamanra Fight \"less hit\" Tips & Tech",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=-3p8yCx1Mbo",
+      "duration": "4:53",
+      "viewCount": 320,
+      "viewCountText": "320",
+      "publishedAt": "2024-12-07T14:51:19.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:42.181Z",
+      "metricsCheckedAt": "2026-10-28T10:35:42.181Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "-3p8yCx1Mbo"
+      }
+    },
+    {
+      "id": "2uDzd3jW6xw",
+      "playlistPosition": 54,
+      "title": "PoE 2 | The Ascendancy suggestion (I'm not expect the video length after uploading it..sorry)",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=2uDzd3jW6xw",
+      "duration": "35:59",
+      "viewCount": 18,
+      "viewCountText": "18",
+      "publishedAt": "2024-12-04T19:24:57.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:42.425Z",
+      "metricsCheckedAt": "2026-10-28T10:35:42.425Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "2uDzd3jW6xw"
+      }
+    },
+    {
+      "id": "sdkOvldswlg",
+      "playlistPosition": 55,
+      "title": "PoE 2 | My Build for PoE2 - Socerer Archmage (if notthing change)",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=sdkOvldswlg",
+      "duration": "9:48",
+      "viewCount": 43,
+      "viewCountText": "43",
+      "publishedAt": "2024-12-03T19:28:48.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:42.563Z",
+      "metricsCheckedAt": "2026-10-28T10:35:42.563Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "sdkOvldswlg"
+      }
+    },
+    {
+      "id": "Ko5po_GnxoM",
+      "playlistPosition": 56,
+      "title": "PoE 2 | My Thematic Build Series Idea in Path of Exile 2",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=Ko5po_GnxoM",
+      "duration": "6:44",
+      "viewCount": 28,
+      "viewCountText": "28",
+      "publishedAt": "2024-11-30T05:11:33.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:42.871Z",
+      "metricsCheckedAt": "2026-10-28T10:35:42.871Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "Ko5po_GnxoM"
+      }
+    },
+    {
+      "id": "DfvlRe05Mgc",
+      "playlistPosition": 57,
+      "title": "PoE 2 | What you and me need to know about Path of Exile 2",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 2"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=DfvlRe05Mgc",
+      "duration": "2:45",
+      "viewCount": 20,
+      "viewCountText": "20",
+      "publishedAt": "2024-11-28T19:47:52.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-10-28T10:35:43.194Z",
+      "metricsCheckedAt": "2026-10-28T10:35:43.194Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "DfvlRe05Mgc"
+      }
+    }
+  ],
+  "source": {
+    "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+    "channelUrl": "https://www.youtube.com/@mistdory",
+    "playlistId": "PLlj4MOKpBOsZ38hhrZ1vGERMbzF3TaZYx",
+    "playlistTitle": "PoE2",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PLlj4MOKpBOsZ38hhrZ1vGERMbzF3TaZYx",
+    "importedAt": "2026-10-26T04:47:53.163Z",
+    "publicVideoCount": 56,
+    "unavailableVideoCount": 2,
+    "unavailableNotices": [
+      "2 unavailable videos are hidden"
+    ],
+    "visibilityPolicy": "public-only",
+    "visibilityCheckedAt": "2026-10-28T10:35:43.194Z",
+    "lastVisibilityAudit": {
+      "method": "Complete official playlist plus signed-out watch pages; explicit isUnlisted=false, isPrivate=false, expected owner and playable video ID",
+      "candidateVideoCount": 57,
+      "retainedPublicVideoCount": 56,
+      "removedVideoCounts": {
+        "unlisted": 1
+      },
+      "removedAdditionalVideoLinks": 0
+    },
+    "metricsCheckedAt": "2026-10-28T10:35:43.194Z",
+    "metricsMethod": "Signed-out watch page videoDetails.viewCount and playerMicroformatRenderer.publishDate",
+    "metricsSource": "https://www.youtube.com/watch",
+    "metricsVideoCount": 56,
+    "refreshedAt": "2026-10-28T10:35:43.194Z",
+    "lastRefresh": {
+      "complete": true,
+      "publicVideoListComplete": true,
+      "startedAt": "2026-10-28T10:35:18.473Z",
+      "completedAt": "2026-10-28T10:35:43.194Z",
+      "reportedPlaylistCount": 59,
+      "visiblePlaylistOccurrences": 57,
+      "hiddenUnavailableCount": 2,
+      "playlistPageCount": 1,
+      "verifiedCandidateCount": 57,
+      "publicVideoCount": 56,
+      "auxiliaryLinksChecked": 0
+    }
+  }
+}
