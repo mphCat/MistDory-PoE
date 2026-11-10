@@ -9,6 +9,22 @@ Format: `vX — date — summary`
 
 ## v5.4 — 2026-11-05
 
+### Wrap-up and next-session handoff — 2026-11-10
+
+- Add [HANDOFF.md](HANDOFF.md), a compact project resume pack covering carried-forward features, v5.4 hardening, verification, feature entry points, content backlog and publishing/account work still outstanding.
+- Route new-session/status briefings through the resume pack in root `AGENTS.md`, and link it from the README and Project Map. Known feature edits can still go directly to their code.
+- Finalize the v5.4 source checkpoint without changing the stored video snapshot, older working versions or GitHub Pages settings.
+
+### Security hardening and resource reliability — 2026-11-10
+
+- Add shared browser/Node URL validation for external links and local/HTTPS images; apply it when rendering links, opening Discord and validating catalogs offline. Retain valid destinations and inert placeholders.
+- Add production CSP/referrer meta tags to all four HTML pages. Move game, search, filter and Retry handlers to external listeners; explicitly isolate Discord popups with `noopener,noreferrer`.
+- Self-host 28 official Google Fonts WOFF2 assets (418,772 bytes) with six OFL licenses and source/hash manifests, including Vietnamese subsets. Remove runtime Google Fonts CDN dependencies; retain device-local Niagara comparisons.
+- Add a bounded thumbnail fallback chain ending in a local SVG, plus production-policy security/resource browser checks.
+- Add the loopback-only Live Server adapter with an external reload client and preview-only WebSocket permission. Published HTML retains its production policy; GitHub Pages runs no Node/Live Server process.
+- Pass 61 offline tests, 46 security/resource browser checks, 82 bilingual checks, 191 desktop QC checks and 18 real Live Server browser/reload checks. Decode all 90 stored catalog thumbnails and confirm both featured videos play in the installed Chrome environment.
+- Keep both 34/56 video catalogs and their 2026-10-28 snapshot unchanged. Hosting/account configuration and deployment remain outside these local edits.
+
 ### Project navigation — 2026-11-10
 
 - Add repository-root `AGENTS.md` instructions that identify v5.4 as the active website, scope code searches to the requested feature and keep navigation pointers current.

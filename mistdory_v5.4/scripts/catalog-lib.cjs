@@ -3,6 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
+const urlPolicy = require('../js/url-policy.js');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const CHANNEL_ID = 'UCGoxZMQWwjm3a77wH3nz3PA';
@@ -251,11 +252,17 @@ function verifyCatalogs(catalogs, { requireRefresh = false, maxAgeHours = 24 } =
     assert.equal(data.source?.visibilityPolicy, 'public-only', realm + ': public-only policy missing');
     assert.equal(data.source.publicVideoCount, data.cards.length, realm + ': incorrect public count');
     assert.equal(data.meta?.stats?.[2], String(data.cards.length), realm + ': incorrect displayed count');
+    const placeholder = value => typeof value === 'string' && (!value.trim() || value.trim() === '#');
+    for (const key of ['mainDiscordUrl', 'cowbDiscordUrl']) {
+      assert.ok(placeholder(data.meta?.[key]) || urlPolicy.safeExternalUrl(data.meta?.[key]), realm + ': unsafe ' + key);
+    }
     let previousPosition = -1;
     const cardIds = new Set();
     for (const card of data.cards) {
       assert.match(card.id, VALID_ID);
+      assert.ok(urlPolicy.safeExternalUrl(card.url), realm + ': unsafe video URL');
       assert.equal(videoId(card.url), card.id, realm + ': bad video URL');
+      if (card.image != null) assert.ok(placeholder(card.image) || urlPolicy.safeImageUrl(card.image), card.id + ': unsafe image URL');
       assert.equal(card.privacyStatus, 'public', card.id + ': not public');
       assert.ok(dateIsValid(card.privacyVerifiedAt), card.id + ': missing visibility timestamp');
       assert.ok(typeof card.title === 'string' && card.title.trim(), card.id + ': missing title');
@@ -278,6 +285,7 @@ function verifyCatalogs(catalogs, { requireRefresh = false, maxAgeHours = 24 } =
       assert.ok(Array.isArray(group.rows), realm + ': invalid guide rows');
       for (const row of group.rows) {
         assert.ok(row && typeof row.label === 'string' && typeof row.url === 'string', realm + ': invalid curated guide row');
+        assert.ok(placeholder(row.url) || urlPolicy.safeExternalUrl(row.url), realm + ': unsafe curated guide URL');
         const id = videoId(row.url);
         if (!id) continue;
         assert.equal(row.privacyStatus, 'public', id + ': guide link is not public');

@@ -13,6 +13,7 @@
 
 ## Targeted code navigation
 
+- When starting a new session or answering a project-status request, use [HANDOFF.md](mistdory_v5.4/HANDOFF.md) as the quick resume pack. Check current Git state before reporting delivery; the pack is a summary, not proof that a push or deployment succeeded. It need not be reread before every small edit.
 - If the relevant file or symbol is already known, go directly to it. Otherwise, consult only the matching feature entry in [the active project map](mistdory_v5.4/PROJECT_MAP.md).
 - Use scoped `rg` searches for the feature's function, selector, DOM ID or JSON key, then read the surrounding implementation. Avoid reading every source file before a small edit.
 - Expand to shared dependencies, callers, CSS overrides and affected pages when the change requires it. The map is a starting point, not a restriction against necessary investigation; verify its pointers against current code.
@@ -26,3 +27,4 @@
 - Update the relevant map entry when feature locations, shared dependencies, function names, selectors, data keys or verification commands change. Ordinary text or color edits do not require rewriting the map.
 - Use stable symbols and relative paths as pointers rather than fixed line numbers. Keep detailed implementation and current progress in their existing sources.
 - When a new active version is explicitly created, update the active-version pointer and map link in this file, and create or adapt the map inside that version. Keep historical version maps scoped to their own versions.
+- Refresh the active handoff pack at version wrap-up or after a material change to delivery, verification or next work. When creating a new active version, update the resume-pack link here as well.

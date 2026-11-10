@@ -9,6 +9,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 const utilities = require('../js/catalog-utils.js');
+const urlPolicy = require('../js/url-policy.js');
 
 const root = path.resolve(__dirname, '..');
 const realCatalogs = Object.fromEntries(['poe1', 'poe2'].map(game => [game,
@@ -251,6 +252,7 @@ function createApp({ archive = false, game = 'poe1', failures = {}, search = '',
       return typeof rule === 'function' ? rule(requestedGame, options) : response(requestedGame, rule || 'ok');
     },
     MistCatalogUtils: utilities,
+    MistUrlPolicy: urlPolicy,
     // Use the renderer's real translation registrations with a small adapter;
     // URL/storage preferences and static DOM translation are tested separately.
     MistI18n: {

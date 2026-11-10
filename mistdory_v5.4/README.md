@@ -2,9 +2,13 @@
 
 A personal Path of Exile content hub featuring builds, crafting guides, and featured videos — with a live PoE 1 / PoE 2 realm switcher.
 
+**Resume pack:** [HANDOFF.md](HANDOFF.md) summarizes completed work, current delivery, pending decisions and where to edit each feature for the next session.
+
 **Progress tracker:** [v5.4 implementation, verification and pending content](STATUS.md). This version starts from the local v5.3 site. [Changes from committed v5.3](STATUS.md#changes-from-committed-v53) compares it with `71f1efe`; [CHANGELOG.md](CHANGELOG.md) records the change history.
 
 **Project navigation:** [Project Map](PROJECT_MAP.md) provides the architecture overview, feature locations, dependencies and verification routes. Repository-wide working instructions are in [AGENTS.md](../AGENTS.md).
+
+**Security review:** [Local technical/security assessment](SECURITY_REVIEW.md) records the implemented URL/CSP/popup protections, resource checks and GitHub Pages/account verification still required.
 
 ## Version 5.4
 
@@ -23,10 +27,11 @@ This version lives in its own `mistdory_v5.4` directory. Run preview, content re
 - **Latest** uses real publication timestamps; **Most viewed** uses exact numeric YouTube view counts. Metrics are snapshots recorded on each card and in `source`, rather than live counters or playlist-rank estimates. Only verified public videos are shown.
 - A fixed resource dock links to Awakened Trade, PoE wiki, Craft of Exile, PoEDB, Path of Building and **About**. `js/site.js` measures its height so it never covers the bottom of a page. On small screens its links form two rows.
 - `about.html` introduces MistDory using first-party channel/video sources, linked beside the topics and in the Sources section. Edit its text directly to refine the introduction. Its additional styles are in `css/about.css`.
-- English display headings and branding use **Oxanium SemiBold (600)** from Google Fonts, with Cinzel as the fallback. Vietnamese interface headings use **Barlow** for consistent accented lettering; branding retains its display font. Body text, controls, video titles and guide row labels keep their existing fonts. The separate comparison page retains Niagara and the other candidates for reference.
+- English display headings and branding use **Oxanium SemiBold (600)**, with Cinzel as the fallback. Vietnamese interface headings use **Barlow** for consistent accented lettering; branding retains its display font. All six Google Fonts families used by the site/comparison page are self-hosted as 28 official WOFF2 files, with OFL licenses, source URLs and hashes in [font sources](assets/fonts/SOURCES.md). Visiting the site no longer requires Google Fonts CDN access. Niagara comparisons still use device-installed fonts only.
 - Featured YouTube embeds send the site's actual origin and an explicit referrer policy. A Watch on YouTube link below the player offers direct access if the current browser/preview cannot play it. Browser codecs and preview restrictions remain outside the site's control.
+- A shared URL policy rejects dangerous link protocols and unsafe image paths at rendering/opening boundaries and during offline validation. Discord tabs explicitly use `noopener,noreferrer`. All four HTML pages have an early CSP meta tag allowing local scripts/fonts, the two YouTube thumbnail hosts and the YouTube embed host. Controls use external JavaScript listeners. Failed thumbnails fall back to their YouTube image and then a bundled SVG.
 
-Open this version's folder in VS Code and use **Open with Live Server** on `index.html`. Both homepage and About must be served over HTTP. No package installation or build step is required.
+For interactive development, use `node scripts/preview-live.cjs`: it adapts the installed Live Server to the site's CSP while keeping reload code out of published HTML. Both homepage and About must be served over HTTP. The website itself has no package installation or build step.
 
 Before each release, run the public-only YouTube refresh and offline release check from this folder:
 
@@ -40,8 +45,12 @@ The script uses Node.js or the VS Code runtime, verifies both playlists and auxi
 
 ```
 mistdory_v5.4/
+├── assets/
+│   ├── fonts/             ← Official WOFF2 files, six OFL licenses, manifest and sources
+│   └── images/            ← Local thumbnail fallback SVG
 ├── css/
-│   └── style.css          ← All site styles
+│   ├── fonts.css          ← Same-origin font-face declarations
+│   └── style.css          ← Shared site styles
 ├── data/
 │   ├── poe1.json          ← PoE 1 content (edit this to add your content)
 │   └── poe2.json          ← PoE 2 content (edit this to add your content)
@@ -51,13 +60,16 @@ mistdory_v5.4/
 │   ├── main.js            ← Home/archive rendering, catalog translations and view state
 │   ├── site.js            ← Language switch, build picker, game preference, dock sizing
 │   ├── font-preview.js    ← Live typography-preview controls
+│   ├── url-policy.js      ← Shared browser/Node URL boundaries
 │   └── catalog-utils.js   ← Search, sorting and pagination
-├── scripts/              ← Pre-release YouTube refresh and verification
-├── tests/                ← Catalog helper tests and desktop browser review
+├── scripts/              ← CSP-compatible Live Server launcher and release workflow
+├── tests/                ← Offline, security, resource and browser checks
 ├── .gitignore
 ├── README.md
+├── HANDOFF.md            ← Quick resume pack and next-session briefing
 ├── PROJECT_MAP.md        ← Architecture overview and feature navigation
 ├── STATUS.md             ← v5.4 implementation and verification status
+├── SECURITY_REVIEW.md    ← Hardening status, evidence and hosting limits
 ├── index.html             ← Main page (six-video preview)
 ├── videos.html            ← Video archive (maximum ten per page)
 ├── about.html             ← Creator profile and sources
@@ -118,52 +130,67 @@ For an existing verified card, you may edit its description, tags, version label
 
 Create `images/thumbnails/` if needed, place a `.jpg` or `.png` there and set `"image": "images/thumbnails/yourfile.jpg"` on an imported card.
 
+Local relative asset paths must stay inside this version. The production CSP permits local images and `https://img.youtube.com` / `https://i.ytimg.com`; using another remote image provider requires a reviewed policy change. Invalid or unavailable image sources use the thumbnail fallback chain without changing the video's destination.
+
 ## How to Run Locally
 
 Because the site fetches JSON files, you need a simple local server (browsers block file fetching by default).
 
 Do not double-click `index.html` to preview Home or All videos. An address starting with `file://` prevents JSON loading; refreshing or pressing Try again keeps the same restriction. Open the HTTP preview address below in your normal browser instead. Keep the local server running while reviewing the site.
 
-**Option 1 — VS Code:**<br>
-Install the **Live Server** extension, right-click `index.html` → Open with Live Server.
+**Interactive development — Live Server adapter:**
+```bash
+cd mistdory_v5.4
+node scripts/preview-live.cjs
+```
+The launcher finds an installed `live-server` module or the existing VS Code Live Server extension. `MISTDORY_LIVE_SERVER_MODULE` can select an existing module path. It binds to `127.0.0.1`, injects an external local reload client into preview responses and adds only that local WebSocket to the response's CSP. Published HTML remains unchanged. Do not use the extension's ordinary **Open with Live Server** command: its default inline injection is blocked by the production policy.
 
-**Option 2 — Node.js:**
+Open `http://127.0.0.1:8003/`; use `?lang=vi` for Vietnamese. `PORT` selects another port. Keep the process running while reviewing. On the current Windows machine, Node is absent from PATH; the existing VS Code runtime can run the same launcher:
+
+```powershell
+$previewScript = (Resolve-Path .\scripts\preview-live.cjs).Path
+$previewRuntime = Join-Path $env:LOCALAPPDATA 'Programs\Microsoft VS Code\Code.exe'
+$env:ELECTRON_RUN_AS_NODE = '1'
+Push-Location ([IO.Path]::GetTempPath())
+try { & $previewRuntime $previewScript } finally { Pop-Location }
+```
+
+**Production-policy testing — plain local server:**
 ```bash
 cd mistdory_v5.4
 node tests/local-preview.cjs
 ```
-Then open `http://127.0.0.1:8003/` in your browser. Use `http://127.0.0.1:8003/?lang=vi` to open the Vietnamese interface directly. The preview server serves only this version's files and does not publish the site.
-
-**Option 3 — Python (any OS):**
-```bash
-cd mistdory_v5.4
-python -m http.server 8003
-```
-Then open the same local address above.
+This serves the unchanged production CSP without reload injection. If interactive preview occupies port 8003, use a separate terminal with `PORT=8004` and point browser tests at `http://127.0.0.1:8004`. This setting does not publish the site.
 
 ## Verification
 
 With Node.js available, run the existing offline checks from `mistdory_v5.4`:
 
 ```text
-node --test tests/catalog-utils.test.cjs tests/catalog-loading.test.cjs
+node --test tests/catalog-utils.test.cjs tests/catalog-loading.test.cjs tests/url-policy.test.cjs tests/live-preview.test.cjs
 node scripts/self-test.cjs
 node scripts/verify-catalog.cjs
 ```
 
-Start the local preview on port 8003, then run the language/browser regression checks:
+Start the plain preview, then run the browser suites. Set `MISTDORY_QA_URL` to its origin; `security-browser-review.cjs` defaults to port 8004 while the other browser runners default to port 8003.
 
 ```text
 node tests/language-browser-review.cjs
+node tests/qc-browser-review.cjs
+node tests/security-browser-review.cjs
 ```
 
-Use `tests/local-preview.cjs` for this automated review. Live Server injects reload code that accesses sessionStorage and interferes with the test that deliberately disables browser storage. If Live Server already occupies port 8003, run the helper with another `PORT` and set `MISTDORY_QA_URL` to that HTTP address when running the review.
+Set `MISTDORY_QA_NETWORK=1` for the security review to fetch and decode all catalog thumbnails with bounded concurrency. The default security run isolates third-party requests and tests URL rejection, CSP, local font loading and image fallback. Use the plain helper for these production-policy checks; the Live Server adapter has a deliberately different development response and its own offline tests.
 
-The browser review uses a locally installed Chrome and a disposable profile. It checks the first-party interface without relying on live YouTube playback or external font/image availability. See [STATUS.md](STATUS.md) for the latest verification result and remaining scope.
+Browser reviews use a locally installed Chrome and disposable profiles. General interface suites do not prove media playback. Use `tests/featured-video-diagnostic.cjs` for actual featured-video playback, which requires outbound YouTube access. See [STATUS.md](STATUS.md) for completed results and explicitly pending runtime checks.
+
+With the interactive launcher running, verify real watcher/WebSocket reload using `node tests/live-reload-browser-review.cjs`. Set `MISTDORY_QA_URL=http://127.0.0.1:8003/` for the default launcher port; this runner otherwise defaults to port 8005. It exclusively creates and removes its own temporary probe files, without rewriting application files.
 
 ## How to Publish This Version
 
 Publish the contents of `mistdory_v5.4/` as the site artifact, preserving the relative HTML, CSS, JavaScript and data paths. When serving this repository directly, the version's entry point is `mistdory_v5.4/index.html`; the repository root may contain an older website.
+
+GitHub Pages serves the HTML, JavaScript, CSS, JSON, fonts and image assets. It does not run Node or Live Server; the development launcher is only for the maintainer's computer. The published HTML contains the production CSP and no injected reload script/WebSocket permission. No hosting or publishing settings have been changed by these local hardening edits.
 
 For GitHub Pages, configure the publishing branch/folder or build artifact to contain this version's site files. Selecting `main` and `/ (root)` does not automatically select the nested `mistdory_v5.4` application. Confirm the published homepage is the intended version after deployment. These instructions do not change hosting configuration or publish the site.
 
@@ -176,4 +203,5 @@ For GitHub Pages, configure the publishing branch/folder or build artifact to co
 | Guide row titles & links | `data/poe1.json` and `data/poe2.json` under `"guideRows"`; add matching translations in `js/main.js` |
 | Interface languages | `js/i18n.js`, `js/page-translations.js` and translated dynamic messages in `js/main.js` |
 | Colors | `css/style.css` — edit the `:root` variables at the top |
-| Fonts | `css/style.css` — change the Google Fonts import URL |
+| Fonts | `css/fonts.css` and `assets/fonts/` — preserve licenses and update the source/hash manifest when replacing official files |
+| URL safety and resource policy | `js/url-policy.js`, the CSP meta tag in all four HTML pages, and the security review |

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' https://img.youtube.com https://i.ytimg.com; frame-src https://www.youtube.com; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="MistDory — Path of Exile builds, crafting guides and featured videos." data-i18n-content="MistDory — Path of Exile builds, crafting guides and featured videos." />
   <script src="js/i18n.js"></script>
@@ -31,8 +33,8 @@
   <div class="realm-wrap">
     <div class="realm-toggle">
       <div class="realm-slider" id="realmSlider"></div>
-      <button class="realm-btn active" id="btnPoe1" onclick="switchRealm('poe1')">⚔ Path of Exile 1</button>
-      <button class="realm-btn"        id="btnPoe2" onclick="switchRealm('poe2')">✦ Path of Exile 2</button>
+      <button class="realm-btn active" id="btnPoe1">⚔ Path of Exile 1</button>
+      <button class="realm-btn"        id="btnPoe2">✦ Path of Exile 2</button>
     </div>
     <div class="realm-label" id="realmLabel">Currently showing Path of Exile 1 content</div>
   </div>
@@ -40,7 +42,7 @@
 
 <div class="catalog-status" id="catalogStatus" role="status" aria-live="polite" hidden>
   <p id="catalogStatusText"></p>
-  <button class="catalog-retry" id="retryCatalogBtn" type="button" onclick="retryRealm()" hidden data-i18n="Try again">Try again</button>
+  <button class="catalog-retry" id="retryCatalogBtn" type="button" hidden data-i18n="Try again">Try again</button>
 </div>
 
 <!-- ── HERO ────────────────────────────────────────────────────────── -->
@@ -129,16 +131,16 @@
 <div class="filter-bar">
   <div class="search-wrap">
     <span class="search-icon">&#128269;</span>
-    <input type="search" id="searchInput" aria-label="Search videos" data-i18n-aria-label="Search videos" placeholder="Search builds, skills, videos…" data-i18n-placeholder="Search builds, skills, videos…" oninput="filterCards()" />
+    <input type="search" id="searchInput" aria-label="Search videos" data-i18n-aria-label="Search videos" placeholder="Search builds, skills, videos…" data-i18n-placeholder="Search builds, skills, videos…" />
   </div>
   <div class="filter-selects">
-    <select id="catFilter" aria-label="Video category" data-i18n-aria-label="Video category" onchange="filterCards()">
+    <select id="catFilter" aria-label="Video category" data-i18n-aria-label="Video category">
       <option value="" data-i18n="All Categories">All Categories</option>
       <option value="BUILD" data-i18n="Builds">Builds</option>
       <option value="CRAFTING" data-i18n="Crafting">Crafting</option>
       <option value="VIDEO" data-i18n="Videos">Videos</option>
     </select>
-    <select id="sortFilter" aria-label="Sort videos" data-i18n-aria-label="Sort videos" onchange="filterCards()">
+    <select id="sortFilter" aria-label="Sort videos" data-i18n-aria-label="Sort videos">
       <option value="latest" data-i18n="Latest">Latest</option>
       <option value="views" data-i18n="Most viewed">Most viewed</option>
       <option value="playlist" data-i18n="Playlist order">Playlist order</option>
@@ -176,6 +178,7 @@
 
 <script src="js/site.js"></script>
 <script src="js/catalog-utils.js"></script>
+<script src="js/url-policy.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

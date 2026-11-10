@@ -12,6 +12,8 @@ const IS_ARCHIVE = document.body.dataset.page === 'videos';
 const Catalog = window.MistCatalogUtils;
 const VIDEO_PREVIEW_LIMIT = 6;
 const CatalogI18n = window.MistI18n;
+const UrlPolicy = window.MistUrlPolicy;
+const LOCAL_VIDEO_THUMBNAIL = 'assets/images/video-placeholder.svg';
 
 CatalogI18n.addTranslations({
   'Catalog update time unavailable': 'Chưa có thời gian cập nhật danh mục',
@@ -289,10 +291,14 @@ function applyRealm(r) {
   document.getElementById('heroSub').textContent   = CatalogI18n.t(d.meta.sub);
 
   /* discord links */
-  document.getElementById('discordMain').onclick =
-    () => window.open(d.meta.mainDiscordUrl, '_blank');
-  document.getElementById('discordCowb').onclick =
-    () => window.open(d.meta.cowbDiscordUrl, '_blank');
+  for (const [id, candidate] of [['discordMain', d.meta.mainDiscordUrl], ['discordCowb', d.meta.cowbDiscordUrl]]) {
+    const destination = UrlPolicy.safeExternalUrl(candidate);
+    const badge = document.getElementById(id);
+    badge.setAttribute('aria-disabled', String(!destination));
+    badge.onclick = () => {
+      if (destination) window.open(destination, '_blank', 'noopener,noreferrer');
+    };
+  }
 
   /* stats */
   ['statBuilds','statCraft','statVideos'].forEach((id, i) => {
@@ -323,8 +329,8 @@ function applyRealm(r) {
     card.querySelector('.guide-card-title').textContent = CatalogI18n.t(section.title);
     const rowWrap = card.querySelector('.guide-rows-wrap');
     rowWrap.innerHTML = section.rows.filter(row => !getYtThumb(row.url) || row.privacyStatus === 'public').map(row => {
-      const url = typeof row.url === 'string' ? row.url.trim() : '';
-      const available = Boolean(url && url !== '#' && row.available !== false);
+      const url = UrlPolicy.safeExternalUrl(row.url);
+      const available = Boolean(url && row.available !== false);
       const label = `${row.ver ? `<span class="row-ver-badge">${escapeHtml(row.ver)}</span>` : ''}${escapeHtml(CatalogI18n.t(row.label))}`;
       return available
         ? `<a href="${escapeHtml(url)}" class="guide-row guide-row-link" target="_blank" rel="noopener noreferrer"><span class="guide-row-label">${label}</span></a>`
@@ -481,13 +487,15 @@ function renderCards() {
        1. c.image set manually in JSON
        2. Card with a real YouTube URL → auto-fetch YouTube thumbnail
        3. Fallback placeholder text                                         */
-    const thumbSrc = c.image || getYtThumb(c.url);
-    const thumb = thumbSrc
-      ? `<img src="${escapeHtml(thumbSrc)}" alt="${escapeHtml(c.title)}" loading="lazy" width="320" height="180" />`
-      : `<span class="card-thumb-placeholder">${escapeHtml(CatalogI18n.t('Thumbnail'))}</span>`;
+    const destination = UrlPolicy.safeExternalUrl(c.url);
+    const youtubeThumb = getYtThumb(c.url);
+    const thumbSrc = UrlPolicy.safeImageUrl(c.image) || youtubeThumb || LOCAL_VIDEO_THUMBNAIL;
+    const fallbackSrc = youtubeThumb && youtubeThumb !== thumbSrc ? youtubeThumb : LOCAL_VIDEO_THUMBNAIL;
+    const thumb = `<img src="${escapeHtml(thumbSrc)}" data-fallback-src="${escapeHtml(fallbackSrc)}" alt="${escapeHtml(c.title)}" loading="lazy" width="320" height="180" />`;
+    const cardTag = destination ? 'a' : 'div';
 
     return `
-      <a class="card${p2 ? ' poe2' : ''}" data-video-id="${escapeHtml(c.id)}" href="${escapeHtml(c.url)}"${c.url !== '#' ? ' target="_blank" rel="noopener noreferrer"' : ''}>
+      <${cardTag} class="card${p2 ? ' poe2' : ''}" data-video-id="${escapeHtml(c.id)}"${destination ? ` href="${escapeHtml(destination)}" target="_blank" rel="noopener noreferrer"` : ' aria-disabled="true"'}>
         <div class="card-thumb">
           ${thumb}
           ${c.duration ? `<span class="card-duration">${escapeHtml(c.duration)}</span>` : ''}
@@ -507,8 +515,32 @@ function renderCards() {
           ${c.desc ? `<div class="card-desc">${escapeHtml(CatalogI18n.t(c.desc))}</div>` : ''}
           <div class="card-tags">${c.tags.map(tag => `<span class="tag">${escapeHtml(CatalogI18n.t(tag))}</span>`).join('')}</div>
         </div>
-      </a>`;
+      </${cardTag}>`;
   }).join('');
 }
 
-document.addEventListener('DOMContentLoaded', init);
+function bindCatalogControls() {
+  document.getElementById('btnPoe1').addEventListener('click', () => window.switchRealm('poe1'));
+  document.getElementById('btnPoe2').addEventListener('click', () => window.switchRealm('poe2'));
+  document.getElementById('retryCatalogBtn').addEventListener('click', () => window.retryRealm());
+  document.getElementById('searchInput').addEventListener('input', () => window.filterCards());
+  for (const id of ['catFilter', 'sortFilter']) {
+    document.getElementById(id).addEventListener('change', () => window.filterCards());
+  }
+  document.getElementById('cardGrid').addEventListener('error', event => {
+    const image = event.target;
+    if (image?.tagName !== 'IMG') return;
+    const fallback = UrlPolicy.safeImageUrl(image.dataset.fallbackSrc);
+    if (fallback && image.getAttribute('src') !== fallback) {
+      image.dataset.fallbackSrc = fallback === LOCAL_VIDEO_THUMBNAIL ? '' : LOCAL_VIDEO_THUMBNAIL;
+      image.src = fallback;
+    } else {
+      image.remove();
+    }
+  }, true);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  bindCatalogControls();
+  init();
+});

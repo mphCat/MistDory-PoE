@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Barlow:wght@300;400;500;600&family=Oxanium:wght@600&display=swap');
+@import url('fonts.css');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -859,3 +859,7 @@ html[lang="vi"] .about-page h2 { font-family: 'Barlow', sans-serif; letter-spaci
 @media (prefers-reduced-motion: reduce) {
   .language-slider, .language-switch button { transition: none; }
 }
+
+/* Invalid catalog destinations remain readable without offering navigation. */
+.card[aria-disabled='true'] { cursor: default; }
+.card[aria-disabled='true']:hover { transform: none; }

@@ -10,7 +10,7 @@ flowchart TD
     Archive["Archive: videos.html"] --> Shared
     About["About: about.html"] --> Shared
     Fonts["Typography: font-preview.html"] --> Shared
-    Home --> Catalog["Catalog UI: main.js, catalog-utils.js"]
+    Home --> Catalog["Catalog UI: main.js, catalog-utils.js, url-policy.js"]
     Archive --> Catalog
     Catalog --> Data["Game catalogs: data/poe1.json, data/poe2.json"]
     Refresh["Public-only refresh: scripts/"] --> Data
@@ -38,17 +38,22 @@ The feature table below identifies specific functions, selectors and data keys. 
 | Catalog loading, validation, errors and retry | [main.js](js/main.js): `validateCatalog()`, `loadRealm()`, `init()`, `showCatalogState()`, `retryRealm()` | `LOAD_STATE`, `CATALOG_TIMEOUT_MS`; both main pages have `#catalogStatus`, `#catalogStatusText`, `#retryCatalogBtn`. Keep independent game loading, timeout, stale-content clearing and safe late-response handling. |
 | About text, avatar placeholder, sources and accounts | [about.html](about.html), [about.css](css/about.css) | Translation strings in [page-translations.js](js/page-translations.js); shared header/footer rules still use `style.css` and `site.js`. Personal avatar content remains pending. YouTube references written in About are currently outside the catalog refresh audit. |
 | Fixed resource footer and bottom clearance | `.resource-dock` markup in the three main HTML pages; [site.js](js/site.js): `updateDockHeight()` | [style.css](css/style.css): `.resource-dock`, `.resource-dock-inner`, `--dock-height`; `ResizeObserver` and font/resize listeners. Footer About links also carry game/language state. |
-| Fonts, colors, hover and layout | [style.css](css/style.css): font import, `:root`, heading selectors, `--accent`, `--accent-hover`, `--content-width` | Search every matching declaration, including later overrides, `.poe2` variants, media queries and Vietnamese heading rules. [about.css](css/about.css) and [font-preview.css](css/font-preview.css) add page-specific rules. |
+| Fonts, colors, hover and layout | [style.css](css/style.css): local font import, `:root`, heading selectors, `--accent`, `--accent-hover`, `--content-width` | Font faces in [fonts.css](css/fonts.css), licensed assets and hashes in [font sources](assets/fonts/SOURCES.md). Search later overrides, `.poe2` variants, media queries and Vietnamese heading rules. [about.css](css/about.css) and [font-preview.css](css/font-preview.css) add page-specific rules. |
 | Typography comparison page | [font-preview.html](font-preview.html), [font-preview.js](js/font-preview.js), [font-preview.css](css/font-preview.css) | `fontOptions`, `selectFont()`, `markFont()`, `refreshFontStatuses()`; [page-translations.js](js/page-translations.js) for copy. Preview selection affects the comparison page; Niagara samples depend on locally installed fonts. |
 | YouTube import, public-only eligibility and update timestamp | [refresh workflow](scripts/README.md), [refresh-videos.cjs](scripts/refresh-videos.cjs) | `loadPlaylist()`, `auxiliaryIds()`, `makeCatalog()`, `writeTransaction()`, `refresh()`; [catalog-lib.cjs](scripts/catalog-lib.cjs): `parseWatchPage()`, `assertPublicProof()`, `verifyCatalogs()`. UI timestamp rendering is `updateCatalogTime()` in `main.js`. |
+| Link/image safety and Discord isolation | [url-policy.js](js/url-policy.js): `safeExternalUrl()`, `safeImageUrl()` | [main.js](js/main.js): `applyRealm()`, `renderCards()`, Discord callbacks; [catalog-lib.cjs](scripts/catalog-lib.cjs): offline URL checks. Preserve placeholders and current valid HTTPS links. |
+| CSP, resource permissions and event binding | Early CSP/referrer meta tags in all four HTML pages; [main.js](js/main.js): `bindCatalogControls()` | Local scripts/fonts, YouTube thumbnail hosts and the fixed embed host are allowed. [security-browser-review.cjs](tests/security-browser-review.cjs) checks the production policy, unsafe URL rejection, fonts and fallback images. |
+| Thumbnail failures and local fallback | [main.js](js/main.js): `LOCAL_VIDEO_THUMBNAIL`, `renderCards()`, capturing image-error listener in `bindCatalogControls()` | [video-placeholder.svg](assets/images/video-placeholder.svg); chain is custom image to YouTube thumbnail to local SVG, with no retry loop. |
+| Development Live Server and reload | [preview-live.cjs](scripts/preview-live.cjs): `developmentHtml()`, `createPreviewMiddleware()`, `isAllowedUpgrade()`, `startPreview()` | [live-reload-client.js](scripts/live-reload-client.js) is injected only into local responses. [live-preview.test.cjs](tests/live-preview.test.cjs) covers CSP transformation and loopback/Host/Origin/path boundaries. |
 
 ## Runtime and shared dependencies
 
 - This is a static HTML/CSS/JavaScript website with JSON catalogs and no package/build step.
-- Home and All videos load `i18n.js` in the head, then `site.js`, `catalog-utils.js` and `main.js` at the end of the body. The archive is identified by `body[data-page="videos"]`.
+- Home and All videos load the production CSP before `i18n.js` in the head, then `site.js`, `catalog-utils.js`, `url-policy.js` and `main.js` at the end of the body. The archive is identified by `body[data-page="videos"]`.
 - About loads `i18n.js`, `page-translations.js` and `site.js`; its content is authored in HTML. The typography page adds `font-preview.js` and its own CSS.
 - Headers and resource footers are repeated HTML rather than generated shared templates. JavaScript creates the Builds dialog and EN/VN control. A shared-header change can therefore involve multiple HTML pages plus `site.js` and shared CSS.
 - `main.js` owns catalog/view state and rendering; `catalog-utils.js` owns search/sort/pagination helpers; `site.js` owns shared page behavior; `i18n.js` owns language state. Cross-cutting changes can require more than one entry.
+- `url-policy.js` is shared by browser rendering and Node catalog verification. `style.css` imports same-origin `fonts.css`; browsers request only the licensed font subsets actually used. GitHub Pages serves these static resources and does not run the preview/release scripts.
 - Inspect the current implementation when a pointer is stale. Update the affected map entry after moving or renaming an entry point; avoid broad refactors merely to make a small change fit this map.
 
 ## Data ownership
@@ -75,17 +80,22 @@ Choose checks according to the changed behavior. Commands below run from this ve
 | Refresh parsing, transactions or eligibility | `node scripts/self-test.cjs` and offline catalog validation; use the documented networked dry run when validating live refresh behavior. |
 | Broad English desktop UI regression | [qc-browser-review.cjs](tests/qc-browser-review.cjs), alongside language checks when bilingual behavior is affected. |
 | Actual featured-video playback | [featured-video-diagnostic.cjs](tests/featured-video-diagnostic.cjs); this requires a running preview, Chrome and outbound YouTube access. Interface checks alone do not establish media playback. |
+| URL validation, production CSP, font resources or fallback | `node --test tests/url-policy.test.cjs`, then [security-browser-review.cjs](tests/security-browser-review.cjs) against the plain helper. Set `MISTDORY_QA_NETWORK=1` for all catalog thumbnail downloads/decodes. |
+| Live Server adapter or reload client | `node --test tests/live-preview.test.cjs`; then [live-reload-browser-review.cjs](tests/live-reload-browser-review.cjs) against the interactive launcher, with `MISTDORY_QA_URL` set to its origin. Source HTML must retain the production policy. |
 
 ### Preview and local tool notes
 
-- Run `node tests/local-preview.cjs` and open `http://127.0.0.1:8003/`. `PORT` selects another available port. Home/archive JSON fetching requires HTTP; opening HTML with `file://` does not work.
-- Interactive Live Server is also supported. For automated disabled-storage checks, use [local-preview.cjs](tests/local-preview.cjs): Live Server injects code that accesses sessionStorage and can produce an unrelated exception.
+- Run `node scripts/preview-live.cjs` for interactive Live Server development at `http://127.0.0.1:8003/`. It finds the installed module/VS Code extension or accepts `MISTDORY_LIVE_SERVER_MODULE`; `PORT` selects another available port. Avoid the extension's ordinary inline injection, which is blocked by the production CSP.
+- For unchanged production-policy checks, use [local-preview.cjs](tests/local-preview.cjs) on a separate port. The adapter injects an external local client and adds only its local WebSocket to preview responses; source files remain unchanged. Home/archive JSON fetching requires HTTP, not `file://`.
 - Browser runners use `MISTDORY_QA_URL` to select the preview origin; for example, point it to port 8004 when interactive Live Server occupies 8003. They also support `MISTDORY_QA_CHROME`; the language and desktop QC runners support `MISTDORY_QA_TEMP` for artifacts.
 - On the currently inspected Windows machine, Node/npm are absent from PATH. The installed VS Code runtime is available at `%LOCALAPPDATA%\Programs\Microsoft VS Code\Code.exe` with `ELECTRON_RUN_AS_NODE=1`. Run it from the OS temporary directory with absolute script paths to avoid generated logs in the repository. Background helpers should use hidden windows; use waited processes with redirected logs when checking their exit status.
+- For a long-running VS Code-runtime preview, use a hidden `Start-Process` with stdout/stderr redirected to temporary log files and retain its PID. This keeps logging available after the launching command finishes; test processes should instead be waited on before reading their exit status.
 - Browser startup, network access or Git writes may require the execution environment's normal approval mechanism. Repository instructions do not bypass those permissions.
 
 ## Progress, history and maintenance
 
+- For a new-session briefing, start with [HANDOFF.md](HANDOFF.md), then verify Git state. For a known small feature edit, use its entry point directly.
 - Use [STATUS.md](STATUS.md) for current delivery, pending content and deferred features; use [CHANGELOG.md](CHANGELOG.md) for historical differences and [README.md](README.md) for full setup/publishing instructions. Consult them when the task needs that information.
+- For security hardening or release-security work, consult the relevant finding in [SECURITY_REVIEW.md](SECURITY_REVIEW.md). It separates tested application behavior from unverified hosting/account controls and links to the affected source files.
 - Keep this map focused on stable locations and dependencies. Do not duplicate video catalogs, test artifacts or a running task log here.
 - When creating a new active version, adapt its map and update the active-version path/link in the repository-root [AGENTS.md](../AGENTS.md). Earlier versions remain historical unless the user requests work on them.
