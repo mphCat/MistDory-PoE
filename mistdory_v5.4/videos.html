@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse MistDory's public Path of Exile and Path of Exile 2 videos by latest, most viewed or keyword, with ten videos per page." data-i18n-content="Browse MistDory's public Path of Exile and Path of Exile 2 videos by latest, most viewed or keyword, with ten videos per page." />
+  <script src="js/i18n.js"></script>
+  <title data-i18n="All Videos — MistDory">All Videos — MistDory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="videos">
+
+<nav class="nav" aria-label="Main navigation" data-i18n-aria-label="Main navigation">
+  <div class="nav-inner page-shell">
+    <a class="nav-logo" href="index.html">Mist<span id="navAccent">Dory</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="Home">Home</a></li>
+      <li><button class="builds-trigger" type="button" aria-haspopup="dialog" aria-controls="buildsDialog" aria-expanded="false" data-i18n="Builds">Builds</button></li>
+      <li><button class="nav-soon" type="button" aria-disabled="true" aria-label="Crafting — coming soon" data-i18n-aria-label="Crafting — coming soon"><span class="nav-label" data-i18n="Crafting">Crafting</span><span class="nav-soon-label" aria-hidden="true" data-i18n="Soon">Soon</span></button></li>
+      <li><a href="https://www.youtube.com/@mistdory" target="_blank" rel="noopener noreferrer" data-i18n="Videos">Videos</a></li>
+      <li><button class="nav-soon" type="button" aria-disabled="true" aria-label="FAQ — coming soon" data-i18n-aria-label="FAQ — coming soon"><span class="nav-label" data-i18n="FAQ">FAQ</span><span class="nav-soon-label" aria-hidden="true" data-i18n="Soon">Soon</span></button></li>
+    </ul>
+    <a class="nav-cta" href="https://streamlabs.com/mistdory/tip" target="_blank" rel="noopener noreferrer" data-i18n="Support Mist">Support Mist</a>
+  </div>
+</nav>
+
+<main class="page-shell archive-page" id="mainContent">
+  <a class="archive-back" data-home-link href="index.html" data-i18n="← Back to homepage">← Back to homepage</a>
+  <header class="archive-header">
+    <div>
+    <p class="section-kicker" data-i18n="Builds, guides &amp; gameplay">Builds, guides &amp; gameplay</p>
+    <h1 id="videosTitle" data-i18n="All videos from Mist">All videos from Mist</h1>
+    <p data-i18n="Find your next build, guide or gameplay video. Browse up to ten videos per page.">Find your next build, guide or gameplay video. Browse up to ten videos per page.</p>
+    </div>
+  </header>
+
+  <div class="realm-bar">
+    <div class="realm-wrap">
+      <div class="realm-toggle">
+        <div class="realm-slider" id="realmSlider"></div>
+        <button class="realm-btn active" id="btnPoe1" onclick="switchRealm('poe1')">⚔ Path of Exile 1</button>
+        <button class="realm-btn" id="btnPoe2" onclick="switchRealm('poe2')">✦ Path of Exile 2</button>
+      </div>
+      <div class="realm-label" id="realmLabel">Currently showing Path of Exile 1 content</div>
+    </div>
+  </div>
+
+  <div class="catalog-status" id="catalogStatus" role="status" aria-live="polite" hidden>
+    <p id="catalogStatusText"></p>
+    <button class="catalog-retry" id="retryCatalogBtn" type="button" onclick="retryRealm()" hidden data-i18n="Try again">Try again</button>
+  </div>
+
+  <section class="video-section" id="videos" aria-labelledby="videosTitle">
+    <div class="filter-bar">
+      <div class="search-wrap">
+        <span class="search-icon">&#128269;</span>
+        <input type="search" id="searchInput" aria-label="Search videos" data-i18n-aria-label="Search videos" placeholder="Search builds, skills, videos…" data-i18n-placeholder="Search builds, skills, videos…" oninput="filterCards()" />
+      </div>
+      <div class="filter-selects">
+        <select id="catFilter" aria-label="Video category" data-i18n-aria-label="Video category" onchange="filterCards()">
+          <option value="" data-i18n="All Categories">All Categories</option>
+          <option value="BUILD" data-i18n="Builds">Builds</option>
+          <option value="CRAFTING" data-i18n="Crafting">Crafting</option>
+          <option value="VIDEO" data-i18n="Videos">Videos</option>
+        </select>
+        <select id="sortFilter" aria-label="Sort videos" data-i18n-aria-label="Sort videos" onchange="filterCards()">
+          <option value="latest" data-i18n="Latest">Latest</option>
+          <option value="views" data-i18n="Most viewed">Most viewed</option>
+          <option value="playlist" data-i18n="Playlist order">Playlist order</option>
+          <option value="name" data-i18n="Name A–Z">Name A–Z</option>
+        </select>
+      </div>
+    </div>
+    <p class="video-count" id="videoCount" role="status" aria-live="polite" data-i18n="Loading videos…">Loading videos…</p>
+    <p class="catalog-updated" id="catalogUpdated"></p>
+
+    <div class="card-grid" id="cardGrid">
+      <!-- Populated by js/main.js -->
+    </div>
+    <p class="page-status" id="pageStatus" role="status" aria-live="polite"></p>
+    <nav class="pagination" id="videoPagination" aria-label="Video pages" data-i18n-aria-label="Video pages" hidden></nav>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-copy">
+      &copy; 2026 <span id="footerAccent">MistDory</span> &mdash; <span data-i18n="Path of Exile content hub">Path of Exile content hub</span>
+    </div>
+  </footer>
+</main>
+
+<footer class="resource-dock">
+  <nav class="resource-dock-inner" aria-label="Useful resources" data-i18n-aria-label="Useful resources">
+    <a href="https://github.com/SnosMe/awakened-poe-trade" target="_blank" rel="noopener noreferrer">Awakened Trade</a>
+    <a href="https://www.poewiki.net/wiki/Path_of_Exile_Wiki" target="_blank" rel="noopener noreferrer">PoE wiki</a>
+    <a href="https://www.craftofexile.com/" target="_blank" rel="noopener noreferrer">Craft of Exile</a>
+    <a href="https://poedb.tw/us/" target="_blank" rel="noopener noreferrer">PoEDB</a>
+    <a href="https://pathofbuilding.community/" target="_blank" rel="noopener noreferrer">Path of Building</a>
+    <a href="about.html" data-i18n="About">About</a>
+  </nav>
+</footer>
+
+<script src="js/site.js"></script>
+<script src="js/catalog-utils.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
