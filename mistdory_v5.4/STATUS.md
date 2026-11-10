@@ -34,6 +34,7 @@ The WIP panel, full-row resource links, darker button hover, independent catalog
 - Immediate language changes that retain the game, search, category, sort and archive page. Browser storage remembers the language; an explicit `lang=en` or `lang=vi` URL takes priority, and internal links retain it.
 - Original YouTube video titles, source catalogs, IDs, URLs and public-only content refresh behavior are preserved.
 - Technical documentation, project notes and commit messages remain English. Visitor-facing Vietnamese copy is the intended exception.
+- [Repository instructions](../AGENTS.md) and the [Project Map](PROJECT_MAP.md) provide scoped code navigation for v5.4. The README links to both; the map includes an architecture overview and feature-specific verification routes.
 
 Main implementation files: [i18n.js](js/i18n.js), [page-translations.js](js/page-translations.js), [site.js](js/site.js), [main.js](js/main.js) and [style.css](css/style.css).
 

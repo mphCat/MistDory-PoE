@@ -9,6 +9,12 @@ Format: `vX — date — summary`
 
 ## v5.4 — 2026-11-05
 
+### Project navigation — 2026-11-10
+
+- Add repository-root `AGENTS.md` instructions that identify v5.4 as the active website, scope code searches to the requested feature and keep navigation pointers current.
+- Add [PROJECT_MAP.md](PROJECT_MAP.md) with a Mermaid architecture overview, feature-to-file/symbol mappings, shared dependencies, data ownership and verification routes.
+- Link the map and working instructions from the v5.4 README so they can be browsed with the source on GitHub. This documentation update does not change website behavior or video data.
+
 ### Source release — 2026-11-10
 
 - Record the changes from committed v5.3 (`71f1efe`) in [STATUS.md](STATUS.md), separating new bilingual behavior from inherited features and pending content.

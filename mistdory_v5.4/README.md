@@ -4,6 +4,8 @@ A personal Path of Exile content hub featuring builds, crafting guides, and feat
 
 **Progress tracker:** [v5.4 implementation, verification and pending content](STATUS.md). This version starts from the local v5.3 site. [Changes from committed v5.3](STATUS.md#changes-from-committed-v53) compares it with `71f1efe`; [CHANGELOG.md](CHANGELOG.md) records the change history.
 
+**Project navigation:** [Project Map](PROJECT_MAP.md) provides the architecture overview, feature locations, dependencies and verification routes. Repository-wide working instructions are in [AGENTS.md](../AGENTS.md).
+
 ## Version 5.4
 
 This version lives in its own `mistdory_v5.4` directory. Run preview, content refresh and release commands from this directory to keep its files separate from earlier versions.
@@ -54,6 +56,7 @@ mistdory_v5.4/
 ├── tests/                ← Catalog helper tests and desktop browser review
 ├── .gitignore
 ├── README.md
+├── PROJECT_MAP.md        ← Architecture overview and feature navigation
 ├── STATUS.md             ← v5.4 implementation and verification status
 ├── index.html             ← Main page (six-video preview)
 ├── videos.html            ← Video archive (maximum ten per page)
