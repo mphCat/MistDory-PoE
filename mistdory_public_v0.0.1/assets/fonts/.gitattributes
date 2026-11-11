@@ -1,0 +1,3 @@
+# Preserve upstream binaries and exact license bytes across platforms.
+*.woff2 binary
+OFL-*.txt -text -whitespace

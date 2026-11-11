@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' https://img.youtube.com https://i.ytimg.com; frame-src https://www.youtube.com; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MistDory — Path of Exile builds, crafting guides and featured videos." data-i18n-content="MistDory — Path of Exile builds, crafting guides and featured videos." />
+  <script src="js/i18n.js"></script>
+  <title data-i18n="MistDory — Path of Exile Hub">MistDory — Path of Exile Hub</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── NAVIGATION ──────────────────────────────────────────────────── -->
+<nav class="nav" aria-label="Main navigation" data-i18n-aria-label="Main navigation">
+  <div class="nav-inner page-shell">
+  <a class="nav-logo" href="index.html">Mist<span id="navAccent">Dory</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active" aria-current="page" data-i18n="Home">Home</a></li>
+    <li><button class="builds-trigger" type="button" aria-haspopup="dialog" aria-controls="buildsDialog" aria-expanded="false" data-i18n="Builds">Builds</button></li>
+    <li><button class="nav-soon" type="button" aria-disabled="true" aria-label="Crafting — coming soon" data-i18n-aria-label="Crafting — coming soon"><span class="nav-label" data-i18n="Crafting">Crafting</span><span class="nav-soon-label" aria-hidden="true" data-i18n="Soon">Soon</span></button></li>
+    <li><a href="https://www.youtube.com/@mistdory" target="_blank" rel="noopener noreferrer" data-i18n="Videos">Videos</a></li>
+    <li><button class="nav-soon" type="button" aria-disabled="true" aria-label="FAQ — coming soon" data-i18n-aria-label="FAQ — coming soon"><span class="nav-label" data-i18n="FAQ">FAQ</span><span class="nav-soon-label" aria-hidden="true" data-i18n="Soon">Soon</span></button></li>
+  </ul>
+  <a class="nav-cta" href="https://streamlabs.com/mistdory/tip" target="_blank" rel="noopener noreferrer" data-i18n="Support Mist">Support Mist</a>
+  </div>
+</nav>
+
+<main class="page-shell" id="mainContent">
+<!-- ── REALM SWITCHER ──────────────────────────────────────────────── -->
+<div class="realm-bar">
+  <div class="realm-wrap">
+    <div class="realm-toggle">
+      <div class="realm-slider" id="realmSlider"></div>
+      <button class="realm-btn active" id="btnPoe1">⚔ Path of Exile 1</button>
+      <button class="realm-btn"        id="btnPoe2">✦ Path of Exile 2</button>
+    </div>
+    <div class="realm-label" id="realmLabel">Currently showing Path of Exile 1 content</div>
+  </div>
+</div>
+
+<div class="catalog-status" id="catalogStatus" role="status" aria-live="polite" hidden>
+  <p id="catalogStatusText"></p>
+  <button class="catalog-retry" id="retryCatalogBtn" type="button" hidden data-i18n="Try again">Try again</button>
+</div>
+
+<!-- ── HERO ────────────────────────────────────────────────────────── -->
+<section class="hero" id="heroSection">
+  <div class="hero-left">
+    <div class="hero-badges">
+      <span class="badge badge-ver" id="verBadge">PoE 1</span>
+      <span class="badge badge-poe" id="poeBadge">Path of Exile</span>
+      <div class="discord-group">
+        <div class="badge-discord-wrap">
+          <span class="badge badge-discord-main" id="discordMain">&#128172; Discord</span>
+          <span class="badge-discord-label" data-i18n="Main server">Main server</span>
+        </div>
+        <div class="badge-discord-wrap">
+          <span class="badge badge-discord-cowb" id="discordCowb">&#128172; CoWB Discord</span>
+          <span class="badge-discord-label">Cast on Ward Break</span>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="hero-title">Mist<span id="heroAccent">Dory</span></h1>
+    <div class="hero-tagline" data-i18n="Path of Exile Content Hub">Path of Exile Content Hub</div>
+    <p class="hero-sub" id="heroSub" data-i18n="Loading…">Loading…</p>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" id="statBuilds">—</span><span class="stat-label" data-i18n="Builds">Builds</span></div>
+      <div class="stat"><span class="stat-num" id="statCraft">—</span><span class="stat-label" data-i18n="Craft Guides">Craft Guides</span></div>
+      <div class="stat"><span class="stat-num" id="statVideos">—</span><span class="stat-label" data-i18n="Videos">Videos</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="yt-wrap" id="ytWrap">
+      <div class="yt-placeholder" id="ytPlaceholder">
+        <div class="yt-play-btn" id="ytPlayBtn"><div class="yt-arrow"></div></div>
+        <div class="yt-hint" id="ytHint" data-i18n="Featured YouTube Video">Featured YouTube Video</div>
+      </div>
+    </div>
+    <div class="featured-video-actions" id="featuredVideoActions" hidden>
+      <span data-i18n="Having trouble playing?">Having trouble playing?</span>
+      <a id="featuredVideoLink" target="_blank" rel="noopener noreferrer"><span data-i18n="Watch on YouTube">Watch on YouTube</span> <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- League start: update the season, destination and both content timestamps together. -->
+<a class="league-start-card" data-league-game="poe1" href="https://excalidraw.com/#json=KguHnBgjiRkQYiofgTvr4,axZBtE1ISM0Vskx5xzYngw" target="_blank" rel="noopener noreferrer">
+  <div class="league-start-copy">
+    <h2 class="league-start-title"><span data-i18n="MY LEAGUE START PLAN">MY LEAGUE START PLAN</span> <span class="league-start-season">· PoE 1 · 3.30</span></h2>
+    <p class="league-start-description" data-i18n="My league start roadmap.">My league start roadmap.</p>
+    <p class="league-start-updated">(<span data-i18n="Last updated:">Last updated:</span> <time datetime="2026-11-11T11:17:00+07:00">11/11/2026 · 11:17 GMT+7</time> / <time datetime="2026-11-11T04:17:00Z">11/11/2026 · 04:17 UTC</time>)</p>
+  </div>
+  <span class="league-start-visual" aria-hidden="true">
+    <svg class="league-roadmap-icon" viewBox="0 0 120 64" fill="none" aria-hidden="true" focusable="false">
+  <path d="M28 32h20m24-18H58a10 10 0 0 0-10 10v16a10 10 0 0 0 10 10h14" stroke="currentColor" stroke-width="2" />
+  <rect x="4" y="21" width="24" height="22" rx="5" stroke="currentColor" stroke-width="2" />
+  <rect x="72" y="4" width="36" height="20" rx="5" stroke="currentColor" stroke-width="2" />
+  <rect x="72" y="40" width="36" height="20" rx="5" stroke="currentColor" stroke-width="2" />
+  <circle cx="16" cy="32" r="3" fill="currentColor" />
+  <path d="M82 14h16M82 50h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+    <span class="league-start-arrow">↗</span>
+  </span>
+</a>
+<section class="league-start-card league-start-pending" data-league-game="poe2" aria-labelledby="poe2LeagueTitle">
+  <div class="league-start-copy">
+    <h2 class="league-start-title" id="poe2LeagueTitle"><span data-i18n="MY LEAGUE START PLAN">MY LEAGUE START PLAN</span> <span class="league-start-season">· PoE 2 · 1.0</span></h2>
+    <p class="league-start-description" data-i18n="My league start roadmap.">My league start roadmap.</p>
+    <p class="league-start-updated">(<span data-i18n="Last updated:">Last updated:</span> —)</p>
+  </div>
+  <div class="league-start-visual">
+    <svg class="league-roadmap-icon" viewBox="0 0 120 64" fill="none" aria-hidden="true" focusable="false">
+  <path d="M28 32h20m24-18H58a10 10 0 0 0-10 10v16a10 10 0 0 0 10 10h14" stroke="currentColor" stroke-width="2" />
+  <rect x="4" y="21" width="24" height="22" rx="5" stroke="currentColor" stroke-width="2" />
+  <rect x="72" y="4" width="36" height="20" rx="5" stroke="currentColor" stroke-width="2" />
+  <rect x="72" y="40" width="36" height="20" rx="5" stroke="currentColor" stroke-width="2" />
+  <circle cx="16" cy="32" r="3" fill="currentColor" />
+  <path d="M82 14h16M82 50h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
+    <span class="league-start-soon" data-i18n="Soon">Soon</span>
+  </div>
+</section>
+<!-- ── GUIDES & INFO ────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="section-title" id="guideTitle" data-i18n="Guides &amp; Info">Guides &amp; Info</div>
+  <div class="guides-grid">
+
+    <div class="guide-card" id="gc1">
+      <div class="guide-card-title" data-i18n="WIP Projects">WIP Projects</div>
+      <div class="guide-rows-wrap"></div>
+    </div>
+
+    <div class="guide-card" id="gc2">
+      <div class="guide-card-title" data-i18n="Written Guides">Written Guides</div>
+      <div class="guide-rows-wrap"></div>
+    </div>
+
+    <div class="guide-card" id="gc3">
+      <div class="guide-card-title" data-i18n="Leveling">Leveling</div>
+      <div class="guide-rows-wrap"></div>
+    </div>
+
+    <div class="guide-card" id="gc4">
+      <div class="guide-card-title" data-i18n="Miscellaneous">Miscellaneous</div>
+      <div class="guide-rows-wrap"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="video-section" id="videos" aria-labelledby="videosTitle">
+  <div class="videos-header">
+    <div>
+      <p class="section-kicker" data-i18n="Builds, guides &amp; gameplay">Builds, guides &amp; gameplay</p>
+      <h2 id="videosTitle" data-i18n="Videos from Mist">Videos from Mist</h2>
+    </div>
+    <a class="all-videos-btn" id="allVideosBtn" href="videos.html" data-i18n="All videos">All videos</a>
+  </div>
+
+<!-- ── FILTER BAR ───────────────────────────────────────────────────── -->
+<div class="filter-bar">
+  <div class="search-wrap">
+    <span class="search-icon">&#128269;</span>
+    <input type="search" id="searchInput" aria-label="Search videos" data-i18n-aria-label="Search videos" placeholder="Search builds, skills, videos…" data-i18n-placeholder="Search builds, skills, videos…" />
+  </div>
+  <div class="filter-selects">
+    <select id="catFilter" aria-label="Video category" data-i18n-aria-label="Video category">
+      <option value="" data-i18n="All Categories">All Categories</option>
+      <option value="BUILD" data-i18n="Builds">Builds</option>
+      <option value="CRAFTING" data-i18n="Crafting">Crafting</option>
+      <option value="VIDEO" data-i18n="Videos">Videos</option>
+    </select>
+    <select id="sortFilter" aria-label="Sort videos" data-i18n-aria-label="Sort videos">
+      <option value="latest" data-i18n="Latest">Latest</option>
+      <option value="views" data-i18n="Most viewed">Most viewed</option>
+      <option value="playlist" data-i18n="Playlist order">Playlist order</option>
+      <option value="name" data-i18n="Name A–Z">Name A–Z</option>
+    </select>
+  </div>
+</div>
+<p class="video-count" id="videoCount" role="status" aria-live="polite" data-i18n="Loading videos…">Loading videos…</p>
+<p class="catalog-updated" id="catalogUpdated"></p>
+
+<!-- ── CARD GRID ────────────────────────────────────────────────────── -->
+<div class="card-grid" id="cardGrid">
+  <!-- Populated by js/main.js -->
+</div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-copy">
+    &copy; 2026 <span id="footerAccent">MistDory</span> &mdash; <span data-i18n="Path of Exile content hub">Path of Exile content hub</span>
+  </div>
+</footer>
+</main>
+
+<footer class="resource-dock">
+  <nav class="resource-dock-inner" aria-label="Useful resources" data-i18n-aria-label="Useful resources">
+    <a href="https://github.com/SnosMe/awakened-poe-trade" target="_blank" rel="noopener noreferrer">Awakened Trade</a>
+    <a href="https://www.poewiki.net/wiki/Path_of_Exile_Wiki" target="_blank" rel="noopener noreferrer">PoE wiki</a>
+    <a href="https://www.craftofexile.com/" target="_blank" rel="noopener noreferrer">Craft of Exile</a>
+    <a href="https://poedb.tw/us/" target="_blank" rel="noopener noreferrer">PoEDB</a>
+    <a href="https://pathofbuilding.community/" target="_blank" rel="noopener noreferrer">Path of Building</a>
+    <a href="about.html" data-i18n="About">About</a>
+  </nav>
+</footer>
+
+<script src="js/site.js"></script>
+<script src="js/catalog-utils.js"></script>
+<script src="js/url-policy.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

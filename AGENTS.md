@@ -3,18 +3,18 @@
 - Communicate with the user in Vietnamese, including progress updates and final responses.
 - Use English for Git commit messages and GitHub-facing descriptions, documentation, and project notes.
 - Preserve original YouTube video titles and functional multilingual search data or test fixtures.
-- The v5.4 website supports English and Vietnamese user interfaces; keep technical documentation and Git messages in English. Localized interface text is an intended exception to the documentation convention.
+- The public v0.0.1 website (internal v5.5) supports English and Vietnamese user interfaces; keep technical documentation and Git messages in English. Localized interface text is an intended exception to the documentation convention.
 
 ## Active website
 
-- The active website is `mistdory_v5.4/`. Start implementation searches there unless the user names another version or requests a comparison.
+- The active website is `mistdory_public_v0.0.1/`. Start implementation searches there unless the user names another version or requests a comparison.
 - Earlier version folders, archives and legacy root website files are historical references. Do not scan them for routine changes to the active website.
 - Preserve existing work outside the requested scope. When a commit is requested, stage the intended paths explicitly.
 
 ## Targeted code navigation
 
-- When starting a new session or answering a project-status request, use [HANDOFF.md](mistdory_v5.4/HANDOFF.md) as the quick resume pack. Check current Git state before reporting delivery; the pack is a summary, not proof that a push or deployment succeeded. It need not be reread before every small edit.
-- If the relevant file or symbol is already known, go directly to it. Otherwise, consult only the matching feature entry in [the active project map](mistdory_v5.4/PROJECT_MAP.md).
+- When starting a new session or answering a project-status request, use [HANDOFF.md](mistdory_public_v0.0.1/HANDOFF.md) as the quick resume pack. Check current Git state before reporting delivery; the pack is a summary, not proof that a push or deployment succeeded. It need not be reread before every small edit.
+- If the relevant file or symbol is already known, go directly to it. Otherwise, consult only the matching feature entry in [the active project map](mistdory_public_v0.0.1/PROJECT_MAP.md).
 - Use scoped `rg` searches for the feature's function, selector, DOM ID or JSON key, then read the surrounding implementation. Avoid reading every source file before a small edit.
 - Expand to shared dependencies, callers, CSS overrides and affected pages when the change requires it. The map is a starting point, not a restriction against necessary investigation; verify its pointers against current code.
 - Search all relevant selector occurrences before changing shared CSS, including later overrides, media queries and language/game variants.
