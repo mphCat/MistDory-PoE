@@ -4,6 +4,8 @@
 ────────────────────────────────────────────────────────────────────────── */
 
 let DATA    = {};   /* filled after JSON fetch */
+const LOAD_STATE = Object.fromEntries(['poe1', 'poe2'].map(game => [game, { status: 'idle', error: null, promise: null }]));
+const CATALOG_TIMEOUT_MS = 15000;
 let realm   = 'poe1';
 let currentPage = 1;
 const IS_ARCHIVE = document.body.dataset.page === 'videos';
@@ -48,6 +50,7 @@ function updateCategoryOptions(cards) {
 }
 
 function updateCatalogTime(source = {}) {
+  source = source && typeof source === 'object' ? source : {};
   const target = document.getElementById('catalogUpdated');
   const value = source.refreshedAt || source.metricsCheckedAt || source.visibilityCheckedAt || source.importedAt;
   if (!value || !Number.isFinite(Date.parse(value))) {
@@ -81,26 +84,110 @@ function updateSortOptions(cards) {
   if (sort.selectedOptions[0].disabled) sort.value = 'playlist';
 }
 
-/* ── BOOT ──────────────────────────────────────────────────────────────── */
+/* Validate the fields used by the renderer before accepting a catalog. */
+function validateCatalog(data) {
+  const isText = value => typeof value === 'string';
+  const validMeta = data?.meta && ['ver', 'badge', 'sub', 'ytId', 'ytHint', 'mainDiscordUrl', 'cowbDiscordUrl'].every(key => isText(data.meta[key]))
+    && Array.isArray(data.meta.stats) && data.meta.stats.length === 3;
+  const validGuides = ['gc1', 'gc2', 'gc3', 'gc4'].every(key => {
+    const group = data?.guideRows?.[key];
+    return group && isText(group.title) && Array.isArray(group.rows)
+      && group.rows.every(row => row && isText(row.label) && isText(row.url));
+  });
+  const validCards = Array.isArray(data?.cards) && data.cards.every(card => card
+    && ['id', 'title', 'url', 'type', 'desc'].every(key => isText(card[key]))
+    && ['VIDEO', 'BUILD', 'CRAFTING'].includes(card.type)
+    && Array.isArray(card.tags) && card.tags.every(isText));
+  if (!validMeta || !validGuides || !validCards) throw new Error('Catalog has an unsupported structure');
+  return data;
+}
+
+function loadRealm(game, { force = false } = {}) {
+  const state = LOAD_STATE[game];
+  if (!state) return Promise.resolve();
+  if (state.promise) return state.promise;
+  if (state.status === 'ready' && !force) return Promise.resolve(DATA[game]);
+  state.status = 'loading';
+  state.error = null;
+  delete DATA[game];
+  if (game === realm) applyRealm(game);
+  state.promise = (async () => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), CATALOG_TIMEOUT_MS);
+    try {
+      const response = await fetch('data/' + game + '.json', { signal: controller.signal, cache: 'no-cache' });
+      if (!response.ok) throw new Error('Catalog HTTP ' + response.status);
+      const catalog = validateCatalog(await response.json());
+      DATA[game] = catalog;
+      state.status = 'ready';
+    } catch (error) {
+      delete DATA[game];
+      state.status = 'error';
+      state.error = error;
+      console.warn('Could not load ' + game + ' catalog:', error);
+    } finally {
+      clearTimeout(timeout);
+      state.promise = null;
+    }
+    // A background request must never replace a different game selected meanwhile.
+    if (game === realm) {
+      applyRealm(game);
+      writeViewUrl();
+    }
+    return DATA[game];
+  })();
+  return state.promise;
+}
+
+/* Each successful request renders immediately, independently of its sibling. */
 async function init() {
-  try {
-    const [r1, r2] = await Promise.all([
-      fetch('data/poe1.json').then(r => r.json()),
-      fetch('data/poe2.json').then(r => r.json())
-    ]);
-    DATA = { poe1: r1, poe2: r2 };
-    restoreViewState();
-    applyRealm(realm);
-    writeViewUrl();
-  } catch (err) {
-    console.error('Failed to load data:', err);
-    document.getElementById('videoCount').textContent = 'Unable to load videos. Please refresh the page.';
+  restoreViewState();
+  applyRealm(realm);
+  writeViewUrl();
+  await Promise.allSettled(['poe1', 'poe2'].map(game => loadRealm(game)));
+}
+
+window.retryRealm = function() { return loadRealm(realm, { force: true }); };
+
+function showCatalogState(ready) {
+  const state = LOAD_STATE[realm];
+  const isError = state.status === 'error';
+  const gameName = realm === 'poe2' ? 'Path of Exile 2' : 'Path of Exile 1';
+  document.documentElement.dataset.loadState = ready ? 'ready' : state.status;
+  const status = document.getElementById('catalogStatus');
+  status.hidden = ready;
+  document.getElementById('catalogStatusText').textContent = isError
+    ? gameName + ' content could not be loaded. Try again or switch to the other game.'
+    : 'Loading ' + gameName + ' content…';
+  document.getElementById('retryCatalogBtn').hidden = !isError;
+  document.getElementById('retryCatalogBtn').disabled = !isError;
+  ['searchInput', 'catFilter', 'sortFilter'].forEach(id => { document.getElementById(id).disabled = !ready; });
+  const allVideos = document.getElementById('allVideosBtn');
+  if (allVideos) allVideos.hidden = !ready;
+  const hero = document.getElementById('heroSection');
+  if (hero) hero.hidden = !ready;
+  const guides = document.getElementById('guideTitle')?.closest('.section');
+  if (guides) guides.hidden = !ready;
+  const divider = document.querySelector('.divider');
+  if (divider) divider.hidden = !ready;
+  if (ready) return;
+  document.getElementById('cardGrid').innerHTML = '';
+  document.getElementById('videoCount').textContent = isError ? 'Videos are temporarily unavailable for this game.' : 'Loading videos…';
+  document.getElementById('catalogUpdated').textContent = '';
+  const pagination = document.getElementById('videoPagination');
+  if (pagination) { pagination.hidden = true; pagination.innerHTML = ''; }
+  const pageStatus = document.getElementById('pageStatus');
+  if (pageStatus) pageStatus.textContent = '';
+  if (hero) {
+    setYoutube('', '', realm === 'poe2');
+    document.getElementById('heroSub').textContent = '';
+    ['gc1', 'gc2', 'gc3', 'gc4'].forEach(id => { document.getElementById(id).querySelector('.guide-rows-wrap').innerHTML = ''; });
   }
 }
 
 /* ── REALM SWITCH ──────────────────────────────────────────────────────── */
 window.switchRealm = function(r) {
-  if (!DATA[r]) return;
+  if (!LOAD_STATE[r]) return;
   realm = r;
   currentPage = 1;
   document.getElementById('searchInput').value = '';
@@ -114,6 +201,7 @@ function applyRealm(r) {
   const p2  = r === 'poe2';
   const d   = DATA[r];
   document.documentElement.style.setProperty('--accent', p2 ? 'var(--purple)' : 'var(--red)');
+  document.documentElement.style.setProperty('--accent-hover', p2 ? 'var(--purple-hover)' : 'var(--red-hover)');
   document.documentElement.style.setProperty('--accent-text', p2 ? '#c4b5fd' : '#fca5a5');
   document.documentElement.dataset.realm = r;
   window.MistSite.rememberRealm(r);
@@ -127,6 +215,11 @@ function applyRealm(r) {
   document.getElementById('realmSlider').className = 'realm-slider' + (p2 ? ' poe2' : '');
   document.getElementById('realmLabel').textContent =
     'Currently showing ' + (p2 ? 'Path of Exile 2' : 'Path of Exile 1') + ' content';
+  const footerAccent = document.getElementById('footerAccent');
+  if (footerAccent) footerAccent.style.color = p2 ? 'var(--purple)' : 'var(--red)';
+  const ready = LOAD_STATE[r].status === 'ready' && Boolean(d);
+  showCatalogState(ready);
+  if (!ready) return;
 
   if (document.getElementById('heroSection')) {
   /* hero */
@@ -166,18 +259,25 @@ function applyRealm(r) {
 
   /* guides grid */
   document.getElementById('guideTitle').className = 'section-title' + (p2 ? ' poe2' : '');
-  Object.keys(d.guideRows).forEach(gcId => {
+  ['gc1', 'gc2', 'gc3', 'gc4'].forEach(gcId => {
     const section  = d.guideRows[gcId];
     const card     = document.getElementById(gcId);
     card.className = 'guide-card' + (p2 ? ' poe2' : '') + (section.scrollable ? ' scrollable' : '');
     card.querySelector('.guide-card-title').textContent = section.title;
     const rowWrap = card.querySelector('.guide-rows-wrap');
     rowWrap.innerHTML = section.rows.filter(row => !getYtThumb(row.url) || row.privacyStatus === 'public').map(row => {
-      const available = typeof row.url === 'string' && row.url.trim() !== '' && row.url !== '#' && row.available !== false;
+      const url = typeof row.url === 'string' ? row.url.trim() : '';
+      const available = Boolean(url && url !== '#' && row.available !== false);
+      const label = `${row.ver ? `<span class="row-ver-badge">${escapeHtml(row.ver)}</span>` : ''}${escapeHtml(row.label)}`;
+      if (gcId !== 'gc1') {
+        return available
+          ? `<a href="${escapeHtml(url)}" class="guide-row guide-row-link" target="_blank" rel="noopener noreferrer"><span class="guide-row-label">${label}</span></a>`
+          : `<div class="guide-row guide-row-unavailable"><span class="guide-row-label">${label} <span class="guide-soon">(Soon)</span></span></div>`;
+      }
       const btnLabel = row.btnLabel === 'Watch' || getYtThumb(row.url) || row.type === 'VIDEO' || gcId === 'gc1' ? 'Watch' : 'Open';
       const buttonClass = 'guide-btn' + (p2 ? ' poe2' : '');
       const action = available
-        ? `<a href="${escapeHtml(row.url)}" class="${buttonClass}" target="_blank" rel="noopener noreferrer">${btnLabel}</a>`
+        ? `<a href="${escapeHtml(url)}" class="${buttonClass}" target="_blank" rel="noopener noreferrer">${btnLabel}</a>`
         : `<button type="button" class="${buttonClass} nav-soon" aria-disabled="true" aria-label="${escapeHtml(row.label)} — coming soon"><span class="nav-label">${btnLabel}</span><span class="nav-soon-label" aria-hidden="true">Soon</span></button>`;
       return `
       <div class="guide-row">
@@ -192,7 +292,6 @@ function applyRealm(r) {
   }
 
   /* footer accent */
-  const footerAccent = document.getElementById('footerAccent');
   if (footerAccent) footerAccent.style.color = p2 ? 'var(--purple)' : 'var(--red)';
 
   /* cards */
@@ -207,6 +306,14 @@ function setYoutube(ytId, ytHint, p2) {
   const wrap = document.getElementById('ytWrap');
   const ph   = document.getElementById('ytPlaceholder');
   const btn  = document.getElementById('ytPlayBtn');
+  const actions = document.getElementById('featuredVideoActions');
+  const watchLink = document.getElementById('featuredVideoLink');
+  const validId = typeof ytId === 'string' && /^[\w-]{11}$/.test(ytId);
+  if (actions) actions.hidden = !validId;
+  if (watchLink) {
+    if (validId) watchLink.href = 'https://www.youtube.com/watch?v=' + ytId;
+    else watchLink.removeAttribute('href');
+  }
 
   wrap.className     = 'yt-wrap' + (p2 ? ' poe2' : '');
   btn.className      = 'yt-play-btn' + (p2 ? ' poe2' : '');
@@ -214,17 +321,21 @@ function setYoutube(ytId, ytHint, p2) {
 
   let iframe = wrap.querySelector('iframe');
 
-  if (ytId) {
+  if (validId) {
     if (!iframe) {
       iframe = document.createElement('iframe');
       iframe.setAttribute('loading', 'lazy');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
       iframe.setAttribute('allowfullscreen', '');
       iframe.setAttribute('allow',
         'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
       wrap.appendChild(iframe);
     }
     iframe.title = ytHint || 'Featured video from MistDory';
-    iframe.src  = 'https://www.youtube.com/embed/' + ytId + '?rel=0';
+    const embedUrl = new URL('https://www.youtube.com/embed/' + ytId);
+    embedUrl.searchParams.set('rel', '0');
+    if (/^https?:$/.test(window.location.protocol)) embedUrl.searchParams.set('origin', window.location.origin);
+    iframe.src = embedUrl.href;
     ph.style.display = 'none';
   } else {
     if (iframe) iframe.remove();
@@ -243,6 +354,7 @@ function getYtThumb(url) {
 
 /* ── CARDS ─────────────────────────────────────────────────────────────── */
 window.filterCards = function() {
+  if (LOAD_STATE[realm].status !== 'ready') return;
   currentPage = 1;
   renderCards();
   writeViewUrl();
@@ -270,7 +382,6 @@ document.getElementById('videoPagination')?.addEventListener('click', event => {
 });
 
 window.addEventListener('popstate', () => {
-  if (!DATA.poe1 || !DATA.poe2) return;
   restoreViewState();
   applyRealm(realm);
 });

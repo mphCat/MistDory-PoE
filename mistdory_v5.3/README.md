@@ -2,6 +2,8 @@
 
 A personal Path of Exile content hub featuring builds, crafting guides, and featured videos — with a live PoE 1 / PoE 2 realm switcher.
 
+**Progress tracker:** [Completed, pending and unimplemented work in v5.3](STATUS.md), with a comparison against committed v5.2. [CHANGELOG.md](CHANGELOG.md) records the change history.
+
 ## Version 5.3
 
 This version lives in its own `mistdory_v5.3` directory. Run preview, content refresh and release commands from this directory to keep its files separate from earlier versions.
@@ -46,6 +48,7 @@ mistdory_v5.3/
 ├── tests/                ← Catalog helper tests and desktop browser review
 ├── .gitignore
 ├── README.md
+├── STATUS.md             ← v5.3 progress and comparison with v5.2
 ├── index.html             ← Main page (six-video preview)
 ├── videos.html            ← Video archive (maximum ten per page)
 └── about.html             ← Creator profile and sources

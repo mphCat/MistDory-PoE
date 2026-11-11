@@ -16,6 +16,7 @@ const BUILD_SHEETS = {
   poe1: 'https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit?gid=2005846808#gid=2005846808',
   poe2: 'https://docs.google.com/spreadsheets/d/1aGhWarz7gICqplYfhh7JxqnGgUu7kUDhYwDtnMv2AGk/edit?gid=1434431165#gid=1434431165'
 };
+const PLAYER_BLOCKS = ['*://www.youtube.com/embed/*', '*://www.youtube-nocookie.com/embed/*'];
 const results = [];
 const errors = [];
 const screenshots = [];
@@ -143,6 +144,78 @@ async function readyCatalog(realm) {
   }, realm), realm + ' rendered catalog');
 }
 
+async function setBlockedCatalogs(realms = []) {
+  await page.send('Network.setBlockedURLs', {
+    urls: [...PLAYER_BLOCKS, ...realms.map(realm => new URL('/data/' + realm + '.json', BASE).href + '*')]
+  });
+}
+
+async function readyRealm(realm) {
+  await waitFor(() => evaluate(expected => document.documentElement.dataset.realm === expected
+    && document.documentElement.dataset.loadState === 'ready'
+    && document.querySelectorAll('#cardGrid .card').length > 0, realm), realm + ' successful independent load');
+}
+
+async function failedRealm(realm, label) {
+  await waitFor(() => evaluate(expected => document.documentElement.dataset.realm === expected
+    && document.documentElement.dataset.loadState === 'error', realm), realm + ' recoverable load error');
+  const info = await evaluate(() => {
+    const visible = element => Boolean(element) && !element.hidden
+      && getComputedStyle(element).display !== 'none'
+      && getComputedStyle(element).visibility !== 'hidden' && element.getClientRects().length > 0;
+    const hero = document.querySelector('#heroSection');
+    const guides = document.querySelector('#guideTitle')?.closest('.section');
+    const pagination = document.querySelector('#videoPagination');
+    const allVideos = document.querySelector('#allVideosBtn');
+    const featuredActions = document.querySelector('#featuredVideoActions');
+    const featuredLink = document.querySelector('#featuredVideoLink');
+    return {
+      statusVisible: visible(document.querySelector('#catalogStatus')),
+      message: document.querySelector('#catalogStatusText')?.textContent.trim() || '',
+      retryVisible: visible(document.querySelector('#retryCatalogBtn')),
+      retryEnabled: !document.querySelector('#retryCatalogBtn')?.disabled,
+      cards: document.querySelectorAll('#cardGrid .card').length,
+      iframeCount: document.querySelectorAll('#ytWrap iframe').length,
+      heroHidden: !hero || (hero.hidden && getComputedStyle(hero).display === 'none'),
+      guidesHidden: !guides || (guides.hidden && getComputedStyle(guides).display === 'none'),
+      guidesCleared: [...document.querySelectorAll('.guide-rows-wrap')].every(rows => !rows.innerHTML.trim()),
+      filtersDisabled: ['searchInput', 'catFilter', 'sortFilter'].every(id => document.getElementById(id)?.disabled),
+      allVideosHidden: !allVideos || !visible(allVideos),
+      paginationHidden: !pagination || (pagination.hidden && getComputedStyle(pagination).display === 'none'),
+      pageStatusEmpty: !document.querySelector('#pageStatus')?.textContent.trim(),
+      featuredActionsPresent: Boolean(featuredActions),
+      featuredActionsHidden: !featuredActions || (featuredActions.hidden && getComputedStyle(featuredActions).display === 'none'),
+      featuredLinkRemoved: !featuredLink || !featuredLink.hasAttribute('href')
+    };
+  });
+  check(label + ' shows a visible load error and enabled retry', info.statusVisible && info.retryVisible
+    && info.retryEnabled && /could not|unable|failed|unavailable/i.test(info.message), JSON.stringify(info));
+  check(label + ' clears stale cards and embedded player', info.cards === 0 && info.iframeCount === 0);
+  check(label + ' hides hero and Guides using actual computed CSS', info.heroHidden && info.guidesHidden && info.guidesCleared);
+  check(label + ' disables filters and hides archive navigation', info.filtersDisabled && info.allVideosHidden
+    && info.paginationHidden && info.pageStatusEmpty);
+  if (info.featuredActionsPresent) {
+    check(label + ' hides the direct featured-video action and removes its destination', info.featuredActionsHidden && info.featuredLinkRemoved);
+  }
+}
+
+async function checkRecoveredRealm(realm, label, limit) {
+  await readyRealm(realm);
+  const current = await ids();
+  const expected = new Set(catalogs[realm].cards.map(card => card.id));
+  check(label + ' displays only the selected game with the correct page limit', current.length === Math.min(limit, expected.size)
+    && current.every(id => expected.has(id)));
+  check(label + ' dismisses the status and restores controls', await evaluate(() => {
+    const status = document.querySelector('#catalogStatus');
+    const hero = document.querySelector('#heroSection');
+    const guides = document.querySelector('#guideTitle')?.closest('.section');
+    return status?.hidden && getComputedStyle(status).display === 'none'
+      && ['searchInput', 'catFilter', 'sortFilter'].every(id => !document.getElementById(id).disabled)
+      && (!hero || (!hero.hidden && getComputedStyle(hero).display !== 'none'))
+      && (!guides || (!guides.hidden && getComputedStyle(guides).display !== 'none'));
+  }));
+}
+
 async function ids() {
   return evaluate(() => [...document.querySelectorAll('#cardGrid .card')].map(card => card.dataset.videoId));
 }
@@ -212,6 +285,36 @@ async function textContrast(name, selector, backgroundSelector, pseudo = null) {
   }
   const ratio = contrast(colors.foreground, colors.background);
   check(name, ratio >= 4.5, ratio.toFixed(2) + ':1; ' + JSON.stringify(colors));
+}
+
+async function checkDarkHover(name, selector, realm = null) {
+  const before = await evaluate(target => {
+    const element = document.querySelector(target);
+    if (!element) return null;
+    element.scrollIntoView({ block: 'center' });
+    const box = element.getBoundingClientRect();
+    const style = getComputedStyle(element);
+    return { x: box.left + box.width / 2, y: box.top + box.height / 2,
+      foreground: style.color, background: style.backgroundColor };
+  }, selector);
+  if (!before) { check(name, false, 'Missing hover target'); return; }
+  await page.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: before.x, y: before.y });
+  await sleep(350);
+  const after = await evaluate(target => {
+    const style = getComputedStyle(document.querySelector(target));
+    return { foreground: style.color, background: style.backgroundColor };
+  }, selector);
+  const ratio = contrast(after.foreground, after.background);
+  const original = contrast(before.foreground, before.background);
+  check(name + ' keeps readable text on a darker hover background', ratio >= 4.5 && ratio > original,
+    original.toFixed(2) + ':1 → ' + ratio.toFixed(2) + ':1; ' + JSON.stringify(after));
+  if (realm) {
+    const rgb = after.background.match(/[\d.]+/g).slice(0, 3).map(Number);
+    check(name + ' hover follows the selected game color', realm === 'poe2' ? rgb[2] > rgb[0] : rgb[0] > rgb[2], after.background);
+  }
+  await page.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 2, y: 200 });
+  await sleep(250);
+  await evaluate(() => scrollTo(0, 0));
 }
 
 async function checkTimestamp(realm) {
@@ -291,34 +394,61 @@ async function checkBuilds(route) {
 }
 
 async function checkUnavailableGuides(realm) {
-  const unavailable = await evaluate(() => [...document.querySelectorAll('.guide-btn[aria-disabled="true"]')]
+  const unavailable = await evaluate(() => [...document.querySelectorAll('#gc2 .guide-row-unavailable, #gc3 .guide-row-unavailable, #gc4 .guide-row-unavailable')]
     .map(element => ({
       tag: element.tagName, href: element.getAttribute('href'),
-      label: element.querySelector('.nav-label')?.textContent.trim(),
-      soon: element.querySelector('.nav-soon-label')?.textContent.trim()
+      label: element.querySelector('.guide-row-label')?.textContent.trim(),
+      soon: element.querySelector('.guide-soon')?.textContent.trim(),
+      hasAction: Boolean(element.querySelector('a, button')),
+      soonVisible: (() => { const note = element.querySelector('.guide-soon'); if (!note) return false; const style = getComputedStyle(note); return !note.hidden && style.display !== 'none' && style.visibility !== 'hidden' && Number(style.opacity) > 0.9; })()
     })));
-  check(realm + ' unavailable guides have Open/Watch and Soon states', unavailable.length > 0
-    && unavailable.every(item => item.tag === 'BUTTON' && item.href === null
-      && ['Open', 'Watch'].includes(item.label) && item.soon === 'Soon'), JSON.stringify(unavailable));
+  check(realm + ' unavailable resource rows show Soon immediately without an action', unavailable.length > 0
+    && unavailable.every(item => item.tag === 'DIV' && item.href === null && !item.hasAction
+      && Boolean(item.label) && item.soon === '(Soon)' && item.soonVisible), JSON.stringify(unavailable));
   if (!unavailable.length) return;
-  const point = await evaluate(() => {
-    const button = document.querySelector('.guide-btn[aria-disabled="true"]');
-    button.scrollIntoView({ block: 'center' });
-    const box = button.getBoundingClientRect();
-    return { x: box.left + box.width / 2, y: box.top + box.height / 2 };
-  });
-  await page.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: point.x, y: point.y });
-  await sleep(250);
-  check(realm + ' hovering unavailable guide reveals Soon', await evaluate(() => {
-    const button = document.querySelector('.guide-btn[aria-disabled="true"]');
-    return Number(getComputedStyle(button.querySelector('.nav-label')).opacity) < 0.1
-      && Number(getComputedStyle(button.querySelector('.nav-soon-label')).opacity) > 0.9;
-  }));
+  await evaluate(() => document.querySelector('.guide-row-unavailable').scrollIntoView({ block: 'center' }));
   const before = await evaluate(() => ({ href: location.href, y: scrollY }));
-  await click('.guide-btn[aria-disabled="true"]');
+  await click('.guide-row-unavailable');
   const after = await evaluate(() => ({ href: location.href, y: scrollY }));
-  check(realm + ' unavailable guide never navigates or jumps page', before.href === after.href && Math.abs(before.y - after.y) < 2);
-  await page.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 2, y: 200 });
+  check(realm + ' unavailable resource row never navigates or jumps page', before.href === after.href && Math.abs(before.y - after.y) < 2);
+  await evaluate(() => scrollTo(0, 0));
+}
+
+async function checkResourceRows(realm) {
+  const sections = await evaluate(() => ['gc2', 'gc3', 'gc4'].map(id => {
+    const section = document.getElementById(id);
+    const wrap = section.querySelector('.guide-rows-wrap');
+    return { id, buttons: section.querySelectorAll('.guide-btn, button').length,
+      links: [...section.querySelectorAll('a.guide-row-link')].map(anchor => ({
+        href: anchor.href, target: anchor.target, rel: anchor.rel,
+        label: anchor.querySelector('.guide-row-label')?.textContent.trim() || '',
+        width: anchor.getBoundingClientRect().width, availableWidth: wrap.clientWidth
+      })) };
+  }));
+  for (const section of sections) {
+    const expected = catalogs[realm].guideRows[section.id].rows.filter(row => row.url && row.url !== '#' && row.available !== false
+      && (!/(?:youtu\.be\/|youtube\.com\/)/.test(row.url) || row.privacyStatus === 'public'));
+    check(realm + ' ' + section.id + ' uses full-row links without separate action buttons', section.buttons === 0
+      && section.links.length === expected.length && section.links.every(link => link.label && !['Open', 'Watch'].includes(link.label)
+        && expected.some(row => new URL(row.url, BASE).href === link.href)
+        && link.target === '_blank' && link.rel.includes('noopener') && link.rel.includes('noreferrer')
+        && link.width >= section.links[0].availableWidth * 0.9), JSON.stringify(section));
+  }
+  const point = await evaluate(() => {
+    const row = document.querySelector('#gc2 a.guide-row-link');
+    if (!row) return null;
+    row.scrollIntoView({ block: 'center' });
+    const box = row.getBoundingClientRect();
+    const x = box.right - 3, y = box.top + box.height / 2;
+    return { x, y, clickableEdge: document.elementFromPoint(x, y)?.closest('a.guide-row-link') === row };
+  });
+  check(realm + ' resource link includes the row edge in its clickable area', point?.clickableEdge);
+  if (point) {
+    await page.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: point.x, y: point.y });
+    await sleep(300);
+    await textContrast(realm + ' resource row hover text contrast', '#gc2 a.guide-row-link .guide-row-label', 'a.guide-row-link');
+    await page.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 2, y: 200 });
+  }
   await evaluate(() => scrollTo(0, 0));
 }
 
@@ -328,13 +458,36 @@ async function checkHome(realm) {
   const current = await ids();
   check(realm + ' homepage shows at most six public videos', current.length === Math.min(6, catalogs[realm].cards.length)
     && current.every(id => catalogs[realm].cards.some(card => card.id === id)));
+  const featured = await evaluate(() => {
+    const frame = document.querySelector('#ytWrap iframe');
+    const actions = document.querySelector('#featuredVideoActions');
+    const link = document.querySelector('#featuredVideoLink');
+    const embed = frame ? new URL(frame.src) : null;
+    return {
+      embedVideoId: embed?.pathname.split('/').pop() || '',
+      embedOrigin: embed?.searchParams.get('origin') || '',
+      pageOrigin: location.origin,
+      referrerPolicy: frame?.getAttribute('referrerpolicy') || '',
+      actionsVisible: Boolean(actions) && !actions.hidden && getComputedStyle(actions).display !== 'none'
+        && actions.getClientRects().length > 0,
+      href: link?.href || '', target: link?.target || '', rel: link?.rel || ''
+    };
+  });
+  check(realm + ' featured iframe carries the actual page origin and cross-origin referrer policy',
+    featured.embedVideoId === catalogs[realm].meta.ytId && featured.embedOrigin === featured.pageOrigin
+      && featured.referrerPolicy === 'strict-origin-when-cross-origin', JSON.stringify(featured));
+  check(realm + ' exposes the correct featured Watch on YouTube alternative', featured.actionsVisible
+    && featured.href === 'https://www.youtube.com/watch?v=' + catalogs[realm].meta.ytId
+    && featured.target === '_blank' && featured.rel.includes('noopener') && featured.rel.includes('noreferrer'), JSON.stringify(featured));
   await checkCategories(realm);
   await checkTimestamp(realm);
   const docs = await evaluate(() => [...document.querySelectorAll('#gc2 .guide-rows-wrap a')].map(anchor => ({ href: anchor.href, label: anchor.textContent.trim() })));
-  check(realm + ' Document has available Open resources rather than Build Sheets',
-    docs.length > 0 && docs.every(anchor => anchor.label === 'Open'
+  check(realm + ' Document exposes resource names as links rather than action labels or Build Sheets',
+    docs.length > 0 && docs.every(anchor => anchor.label && !['Open', 'Watch'].includes(anchor.label)
       && !Object.values(BUILD_SHEETS).includes(anchor.href)), JSON.stringify(docs));
+  await checkResourceRows(realm);
   await checkUnavailableGuides(realm);
+  await checkDarkHover(realm + ' Support Mist', '.nav-cta', realm);
   await textContrast(realm + ' inactive game label contrast', '.realm-btn:not(.active)', '.realm-toggle');
   await textContrast(realm + ' Watch link contrast', '#gc1 a.guide-btn', '.guide-card');
   await textContrast(realm + ' search placeholder contrast', '#searchInput', '.search-wrap input', '::placeholder');
@@ -450,6 +603,67 @@ async function checkRememberedGame() {
   check('explicit game URL takes precedence over remembered game', await evaluate(() => document.documentElement.dataset.realm === 'poe1'));
 }
 
+async function checkIndependentCatalogFailures() {
+  try {
+    await setBlockedCatalogs(['poe2']);
+    await navigate('/index.html?game=poe1');
+    await checkRecoveredRealm('poe1', 'Home with PoE 2 request blocked', 6);
+    await click('#btnPoe2');
+    await failedRealm('poe2', 'Home selected PoE 2 failure');
+    await screenshot('desktop-catalog-load-error.png');
+    await click('#btnPoe1');
+    await checkRecoveredRealm('poe1', 'Home switch to the available game', 6);
+
+    await evaluate(() => history.back());
+    await failedRealm('poe2', 'Back restores the failed game');
+    await evaluate(() => history.forward());
+    await checkRecoveredRealm('poe1', 'Forward restores the available game', 6);
+    await evaluate(() => history.back());
+    await failedRealm('poe2', 'Back keeps retry available');
+    await setBlockedCatalogs();
+    await click('#retryCatalogBtn');
+    await checkRecoveredRealm('poe2', 'Home retry after restoring the request', 6);
+
+    await setBlockedCatalogs(['poe1', 'poe2']);
+    await navigate('/index.html?game=poe1');
+    await failedRealm('poe1', 'Home with both catalogs blocked');
+    await setBlockedCatalogs(['poe2']);
+    await click('#retryCatalogBtn');
+    await checkRecoveredRealm('poe1', 'Home selective recovery while the other game remains blocked', 6);
+    await click('#btnPoe2');
+    await failedRealm('poe2', 'The other blocked game still exposes a recoverable error');
+    await setBlockedCatalogs();
+    await click('#retryCatalogBtn');
+    await checkRecoveredRealm('poe2', 'Home recovers the second game without a full page reload', 6);
+
+    await setBlockedCatalogs(['poe2']);
+    await navigate('/videos.html?game=poe1&sort=playlist&page=2');
+    await checkRecoveredRealm('poe1', 'Archive with the other request blocked', 10);
+    check('Available archive retains pagination before switching to the failed game', await evaluate(() => {
+      const pager = document.querySelector('#videoPagination');
+      return !pager.hidden && getComputedStyle(pager).display !== 'none'
+        && pager.querySelector('[aria-current="page"]')?.textContent.trim() === '2';
+    }));
+    await click('#btnPoe2');
+    await failedRealm('poe2', 'Archive selected PoE 2 failure');
+    await click('#btnPoe1');
+    await checkRecoveredRealm('poe1', 'Archive switch back to the available game', 10);
+    await evaluate(() => history.back());
+    await failedRealm('poe2', 'Archive Back restores the failed game');
+    await setBlockedCatalogs();
+    await click('#retryCatalogBtn');
+    await checkRecoveredRealm('poe2', 'Archive retry recovers up to ten videos', 10);
+    check('Recovered archive restores pagination', await evaluate(() => {
+      const pager = document.querySelector('#videoPagination');
+      return !pager.hidden && getComputedStyle(pager).display !== 'none'
+        && Boolean(pager.querySelector('[aria-current="page"]'));
+    }));
+  } finally {
+    // Fault injection belongs only to this isolated test flow.
+    await setBlockedCatalogs();
+  }
+}
+
 async function main() {
   for (const realm of ['poe1', 'poe2']) {
     const response = await fetch(new URL('data/' + realm + '.json', BASE));
@@ -499,8 +713,9 @@ async function main() {
   await page.send('Page.enable');
   await page.send('Runtime.enable');
   await page.send('Network.enable');
+  await page.send('Network.setCacheDisabled', { cacheDisabled: true });
   // Only the first-party UI is under test; avoid third-party player readiness blocking navigation.
-  await page.send('Network.setBlockedURLs', { urls: ['*://www.youtube.com/embed/*', '*://www.youtube-nocookie.com/embed/*'] });
+  await setBlockedCatalogs();
   page.on('Runtime.exceptionThrown', params => errors.push(params.exceptionDetails.exception?.description || params.exceptionDetails.text));
   await page.send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false });
 
@@ -511,7 +726,9 @@ async function main() {
   }
   await checkBuilds('/index.html?game=poe1');
   await checkBuilds('/about.html?game=poe2');
+  await checkDarkHover('About Watch on YouTube', '.about-button-primary');
   await checkBuilds('/videos.html?game=poe2');
+  await checkIndependentCatalogFailures();
   await navigate('/index.html?game=poe1');
   await readyCatalog('poe1');
   await screenshot('desktop-home.png');

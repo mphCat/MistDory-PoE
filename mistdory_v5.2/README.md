@@ -7,11 +7,14 @@ A personal Path of Exile content hub featuring builds, crafting guides, and feat
 - A centered 1180px content frame keeps the hero, guides and video archive aligned, with responsive side gutters.
 - The homepage starts with six videos, sorted by **Latest**. **All videos** opens `videos.html`, with at most ten videos per page and shareable game/search/category/sort/page parameters. Search always checks the full catalog and tolerates spaces, punctuation, accents and keyword order (for example `Blood Mage` and `bloodmage`). Categories without public content are hidden automatically.
 - The selected game is remembered in browser localStorage; an explicit `?game=poe1` or `?game=poe2` URL takes priority. This needs no additional server or account. Switching games resets search/category and pagination.
-- **Builds** opens a shared PoE 1 / PoE 2 Build Sheet picker, with a separate PoE 2 Mobalytics link. **Document** now offers game-specific patch notes, news/official site and mechanics references. Guide actions use **Open** or **Watch**; unavailable actions show **Soon** on hover/focus and do not navigate.
+- Game catalogs load independently with HTTP/structure checks and a 15-second timeout. If one fails, the other remains usable; the selected unavailable game shows a Try again action and clears stale content. Recovery preserves normal URL, filtering and pagination behavior.
+- **Builds** opens a shared PoE 1 / PoE 2 Build Sheet picker, with a separate PoE 2 Mobalytics link. **Document** offers game-specific patch notes, news/official site and mechanics references. Available rows in Document, Leveling/Crafting Recipes and Miscellaneous are clickable across their full width; unavailable rows show **(Soon)** beside their label and do not navigate. The Videos panel retains Watch actions while its replacement content is being considered.
+- Buttons use darker red/purple hover and focus backgrounds for readable white text; whole-row links use a subtle dark tint and visible focus outline.
 - **Latest** uses real publication timestamps; **Most viewed** uses exact numeric YouTube view counts. Metrics are snapshots recorded on each card and in `source`, rather than live counters or playlist-rank estimates. Only verified public videos are shown.
 - A fixed resource dock links to Awakened Trade, PoE wiki, Craft of Exile, PoEDB, Path of Building and **About**. `js/site.js` measures its height so it never covers the bottom of a page. On small screens its links form two rows.
 - `about.html` introduces MistDory using first-party channel/video sources, linked beside the topics and in the Sources section. Edit its text directly to refine the introduction. Its additional styles are in `css/about.css`.
 - Large headings, branding and guide-panel titles use **Oxanium SemiBold (600)** from Google Fonts, with responsive sizes adjusted for its wider shapes. Cinzel remains the fallback if the web font cannot load. Body text, controls, video titles and guide row labels keep their existing fonts. The separate comparison page retains Niagara and the other candidates for reference.
+- Featured YouTube embeds send the site's actual origin and an explicit referrer policy. A Watch on YouTube link below the player offers direct access if the current browser/preview cannot play it. Browser codecs and preview restrictions remain outside the site's control.
 
 Open this version's folder in VS Code and use **Open with Live Server** on `index.html`. Both homepage and About must be served over HTTP. No package installation or build step is required.
 
@@ -49,7 +52,7 @@ mistdory_v5.2/
 
 ## How to Add Your Content
 
-All content lives in `data/poe1.json` and `data/poe2.json`. Open either file in any text editor and update the fields. No coding required.
+Curated guide labels and links live in `data/poe1.json` and `data/poe2.json`. Video cards are generated from the approved YouTube playlists by the refresh script; use that workflow instead of entering card objects by hand.
 
 ### YouTube playlist catalog
 
@@ -64,16 +67,19 @@ All retained videos belong to `@mistdory`. Public eligibility requires a signed-
 
 Each JSON file records its playlist/import time and latest visibility audit in `source`; individual video entries record `privacyStatus` and `privacyVerifiedAt`. Cards use YouTube video IDs and retain playlist order. The featured video is the first retained public video in that realm's playlist. The separate livestream playlist is outside this catalog.
 
-This is a static snapshot: new uploads, playlist changes, and later visibility changes do not update the JSON automatically. Run `scripts/prepare-release.ps1` before each release; review current counts and timestamps in each JSON file's `source`. The homepage shows verified video totals; unverified build/crafting totals are omitted. Most viewed and Latest sorting are available only when every card has the corresponding numeric view count or full publication date. Relative video ages are not converted into publication dates.
+Publishing a YouTube upload alone does not change this static website. To import new videos automatically:
+
+1. Add each upload to the correct **POE** or **PoE2** playlist linked above and make it public.
+2. From this version's directory, run `scripts/prepare-release.ps1`. It discovers new playlist entries, verifies public visibility, updates metadata and generates the cards without manual JSON entry.
+3. Review the changed files and preview, then publish the updated version through the normal release process.
+
+Browser refresh fetches the latest JSON already published by the site, not a fresh YouTube audit. Live synchronization would require a configured YouTube Data API integration or a separate scheduled publishing job; neither is enabled in this version. See [the refresh workflow](scripts/README.md).
+
+The homepage shows verified video totals; unverified build/crafting totals are omitted. Most viewed and Latest sorting are available only when every card has the corresponding numeric view count or full publication date. Relative video ages are not converted into publication dates.
 
 ### Add a YouTube video to the hero
 
-In `data/poe1.json`, find `"ytId": ""` and paste your YouTube video ID inside the quotes.
-
-Example — for `https://www.youtube.com/watch?v=dQw4w9WgXcQ`:
-```json
-"ytId": "dQw4w9WgXcQ"
-```
+After a successful refresh, choose an existing public card in the matching game's `cards` array and copy its string `id` into `meta.ytId`. The featured video must already be present in that public catalog. Refresh preserves a valid selection and falls back to the first retained public playlist entry when the selected video is removed.
 
 ### Add your Discord links
 
@@ -82,23 +88,9 @@ Find `"mainDiscordUrl"` and `"cowbDiscordUrl"` and replace the placeholder with 
 "mainDiscordUrl": "https://discord.gg/your-invite-code"
 ```
 
-### Add or edit a card
+### Customize an imported card
 
-Find the `"cards"` array and add or edit an entry:
-```json
-{
-  "id": 7,
-  "title": "Your Build Name",
-  "type": "BUILD",
-  "ver": "v3.25",
-  "desc": "Short description of the build.",
-  "tags": ["tag1", "tag2"],
-  "image": "images/thumbnails/your-image.jpg",
-  "url": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
-}
-```
-
-**Type options:** `"BUILD"` · `"CRAFTING"` · `"VIDEO"`
+For an existing verified card, you may edit its description, tags, version label, image and type (`BUILD`, `CRAFTING` or `VIDEO`). Refresh preserves these curated fields. Leave its video ID, URL, publication date, view count and verification metadata to the importer; generated IDs are YouTube ID strings, not numeric counters.
 
 ### Add a thumbnail image
 

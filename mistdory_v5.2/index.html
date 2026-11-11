@@ -37,6 +37,11 @@
   </div>
 </div>
 
+<div class="catalog-status" id="catalogStatus" role="status" aria-live="polite" hidden>
+  <p id="catalogStatusText"></p>
+  <button class="catalog-retry" id="retryCatalogBtn" type="button" onclick="retryRealm()" hidden>Try again</button>
+</div>
+
 <!-- ── HERO ────────────────────────────────────────────────────────── -->
 <section class="hero" id="heroSection">
   <div class="hero-left">
@@ -72,6 +77,10 @@
         <div class="yt-play-btn" id="ytPlayBtn"><div class="yt-arrow"></div></div>
         <div class="yt-hint" id="ytHint">Featured YouTube Video</div>
       </div>
+    </div>
+    <div class="featured-video-actions" id="featuredVideoActions" hidden>
+      <span>Having trouble playing?</span>
+      <a id="featuredVideoLink" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 </section>

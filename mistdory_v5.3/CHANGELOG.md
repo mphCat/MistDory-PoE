@@ -3,9 +3,14 @@
 All notable changes to this project are documented here.
 Format: `vX — date — summary`
 
+**Current status:** see [STATUS.md — v5.3 progress and comparison with v5.2](STATUS.md). Pending items in earlier version histories describe their status at that time, rather than outstanding work in v5.3.
+
 ---
 
 ## v5.3 — 2026-11-04
+
+- Reference points: v5.2 committed at `0ce9786`; v5.3 code committed/pushed at `71f1efe`.
+- The progress tracker dated 04/11/2026 distinguishes completed code, pending content/avatar and unimplemented features. No coding work is currently in progress.
 
 ### WIP Projects and version separation
 - Create a separate `mistdory_v5.3` directory from the latest working site so new work has its own files, preview and refresh scripts.
@@ -143,3 +148,9 @@ Format: `vX — date — summary`
 - Guides & Info 4-column grid
 - Card grid with search, category filter, sort dropdown
 - Minimal footer: © 2025 MistDory
+
+
+### Historical working-tree checkpoint — 2026-11-11
+
+- Commit the existing local implementation, preview and documentation changes before normalizing version directory names.
+- Offline checks passed for this checkpoint; full browser/playback suites were not rerun.

@@ -7,6 +7,21 @@ Format: `vX — date — summary`
 
 ## v5.2 — 2026-10-26
 
+### Guide rows and hover contrast — 2026-11-04
+- Make available rows in Document, Leveling/Crafting Recipes and Miscellaneous clickable across the full row, removing separate Open/Watch buttons from those panels.
+- Show (Soon) beside unavailable row labels at rest, with no link or action.
+- Darken red and purple button hover/focus backgrounds, including Support Mist and About's primary YouTube action.
+- Clarify that the existing release refresh automatically discovers new public playlist videos; browser refresh only reloads the published JSON snapshot.
+- Replace outdated manual numeric-card examples with the playlist import and verified featured-video selection instructions.
+
+### Loading reliability and featured playback — 2026-11-03
+- Load each game's catalog independently; a failed or slow response no longer blocks the available game.
+- Check HTTP status and catalog structure, apply a 15-second request timeout, and offer a per-game Try again action on Home and All videos.
+- Clear stale cards, player and guides for unavailable games; preserve game switching, filters, pagination and Back/Forward through recovery.
+- Add explicit embedded-player referrer policy, the actual site origin, and a direct Watch on YouTube link that follows the featured video and clears when unavailable.
+- Confirm both featured videos remain public, allow embedding and play with advancing media time in the installed Chrome test environment. The reported preview/browser-specific playback error was not reproduced there.
+- Keep the accepted About content; a personal avatar will be added when supplied.
+
 ### QC follow-up — 2026-10-28
 - Hide empty video categories automatically and improve contrast for small labels, inactive game controls, guide actions, placeholders and the CoWB badge.
 - Standardize guide actions as Open/Watch; unavailable actions change to Soon on hover/focus and cannot navigate.
@@ -118,3 +133,9 @@ Format: `vX — date — summary`
 - Guides & Info 4-column grid
 - Card grid with search, category filter, sort dropdown
 - Minimal footer: © 2025 MistDory
+
+
+### Historical working-tree checkpoint — 2026-11-11
+
+- Commit the existing local implementation, preview and documentation changes before normalizing version directory names.
+- Offline checks passed for this checkpoint; full browser/playback suites were not rerun.

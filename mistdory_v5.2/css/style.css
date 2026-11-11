@@ -6,8 +6,10 @@
   --red:          #dc2626;
   --red-bright:   #ef4444;
   --red-dark:     #991b1b;
+  --red-hover:    #b91c1c;
   --purple:       #7c3aed;
   --purple-bright:#9d5bf0;
+  --purple-hover: #5b21b6;
   --bg:           #0b0b0b;
   --bg-card:      #141414;
   --bg-nav:       #080808;
@@ -16,6 +18,7 @@
   --text-muted:   #888;
   --text-dim:     #555;
   --accent:       #dc2626;
+  --accent-hover: #b91c1c;
   --accent-text:  #fca5a5;
   --font-display: 'Oxanium', 'Cinzel', sans-serif;
 }
@@ -130,7 +133,8 @@ body {
   letter-spacing: 0.5px;
   transition: background 0.2s;
 }
-.nav-cta:hover { background: var(--red-bright); }
+.nav-cta:hover,
+.nav-cta:focus-visible { background: var(--accent-hover); }
 
 @media (max-width: 780px) {
   .nav { flex-wrap: wrap; gap: 12px; padding: 12px 20px; }
@@ -225,7 +229,7 @@ body {
 .badge-discord-main { background: #5865f2; color: #fff; cursor: pointer; transition: background 0.2s; }
 .badge-discord-main:hover  { background: #4752c4; }
 .badge-discord-cowb { background: #166534; color: #fff; cursor: pointer; transition: background 0.2s; }
-.badge-discord-cowb:hover  { background: #15803d; }
+.badge-discord-cowb:hover  { background: #14532d; }
 .badge-discord-label { font-size: 9px; color: #3a3a3a; letter-spacing: 0.3px; }
 
 /* ── HERO TITLE ── */
@@ -291,8 +295,9 @@ body {
   justify-content: center;
   transition: background 0.3s, transform 0.2s;
 }
-.yt-play-btn:hover { transform: scale(1.08); }
+.yt-play-btn:hover { background: var(--accent-hover); transform: scale(1.08); }
 .yt-play-btn.poe2 { background: var(--purple); }
+.yt-play-btn.poe2:hover { background: var(--purple-hover); }
 .yt-arrow {
   width: 0; height: 0;
   border-top: 13px solid transparent;
@@ -301,6 +306,11 @@ body {
   margin-left: 4px;
 }
 .yt-hint { font-size: 12px; color: #999; letter-spacing: 0.5px; }
+.featured-video-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 6px 12px; margin-top: 10px; color: #999; font-size: 12px; }
+.featured-video-actions[hidden] { display: none; }
+.featured-video-actions a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+.featured-video-actions a:hover { color: #fff; }
+.featured-video-actions a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 4px; }
 
 /* ── SECTION ── */
 .section { padding: 48px 40px; }
@@ -358,6 +368,23 @@ body {
 }
 .guide-row:last-child { border-bottom: none; }
 .guide-row-label { font-size: 13px; color: #999; flex: 1; }
+.guide-row-link {
+  padding: 9px 6px;
+  border-radius: 4px;
+  color: #aaa;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.guide-row-link .guide-row-label { color: #aaa; }
+.guide-row-link:hover,
+.guide-row-link:focus-visible { background: #211111; color: var(--accent-text); }
+.guide-row-link:hover .guide-row-label,
+.guide-row-link:focus-visible .guide-row-label { color: var(--accent-text); }
+.guide-card.poe2 .guide-row-link:hover,
+.guide-card.poe2 .guide-row-link:focus-visible { background: #1b142a; }
+.guide-row-link:focus-visible { outline: 2px solid var(--accent-text); outline-offset: -2px; }
+.guide-row-unavailable { padding: 9px 6px; cursor: default; }
+.guide-soon { display: inline-block; margin-left: 6px; color: var(--accent-text); font-size: 11px; white-space: nowrap; }
 .guide-btn {
   background: transparent;
   border: 1px solid var(--accent);
@@ -375,9 +402,12 @@ body {
   text-decoration: none;
   display: inline-block;
 }
-.guide-btn:hover { background: var(--accent); color: #fff; }
+.guide-btn:hover,
+.guide-btn:focus-visible { background: var(--accent-hover); color: #fff; }
+.guide-btn:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
 .guide-btn.poe2 { border-color: var(--purple); color: #c4b5fd; }
-.guide-btn.poe2:hover { background: var(--purple); color: #fff; }
+.guide-btn.poe2:hover,
+.guide-btn.poe2:focus-visible { background: var(--purple-hover); color: #fff; }
 .guide-btn.nav-soon { cursor: not-allowed; }
 .guide-btn.nav-soon:hover,
 .guide-btn.nav-soon:focus { background: #1a1212; border-color: #613030; color: var(--accent-text); }
@@ -618,7 +648,9 @@ body { padding-bottom: calc(var(--dock-height) + 24px); }
 .section-kicker { color: #888; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.8px; }
 .videos-header h2 { margin-top: 5px; color: #f5f5f5; font-family: var(--font-display); font-size: clamp(21px, 2.5vw, 27px); font-weight: 600; line-height: 1.25; letter-spacing: -0.015em; }
 .all-videos-btn { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; min-height: 42px; padding: 9px 18px; border: 1px solid var(--accent); border-radius: 5px; background: transparent; color: #eee; font: 600 12px 'Barlow', sans-serif; text-decoration: none; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
-.all-videos-btn:hover:not(:disabled) { background: var(--accent); }
+.all-videos-btn:hover:not(:disabled),
+.all-videos-btn:focus-visible:not(:disabled) { background: var(--accent-hover); color: #fff; }
+.all-videos-btn[hidden], .divider[hidden] { display: none; }
 .all-videos-btn:disabled { border-color: #333; color: #666; cursor: default; }
 .all-videos-btn:focus-visible, .resource-dock a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .filter-bar { flex-wrap: wrap; padding: 22px 0 10px; }
@@ -643,6 +675,14 @@ body { padding-bottom: calc(var(--dock-height) + 24px); }
 .resource-dock a:hover, .resource-dock a[aria-current='page'] { color: var(--accent-text); }
 .resource-dock a:last-child { border-left: 1px solid #333; border-radius: 0; padding-left: 24px; color: #eee; }
 .resource-dock a:last-child:hover, .resource-dock a:last-child[aria-current='page'] { color: var(--accent-text); }
+
+/* Keep loading and retry feedback visible without retaining another game's content. */
+.catalog-status { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin: 24px 0 0; padding: 16px 18px; border: 1px solid var(--accent); border-radius: 8px; background: var(--bg-card); color: #ddd; font-size: 14px; line-height: 1.6; }
+.catalog-status p { margin: 0; flex: 1 1 240px; }
+.catalog-retry { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; min-height: 38px; padding: 8px 15px; border: 1px solid var(--accent); border-radius: 5px; background: #1b1b1b; color: var(--accent-text); font: 600 12px 'Barlow', sans-serif; cursor: pointer; }
+.catalog-retry:hover { background: #242424; }
+.catalog-retry:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 4px; }
+.hero[hidden], .section[hidden], .catalog-status[hidden], #retryCatalogBtn[hidden] { display: none; }
 
 /* Build-sheet picker shares the site's game colors and display typography. */
 .builds-dialog {

@@ -2,6 +2,10 @@
 
 The website remains a static site. Refreshing the JSON files runs on the maintainer's computer before publishing; visitors do not need a server or YouTube API key.
 
+For each new upload, add it to the appropriate POE or PoE2 playlist and make it public, then run the launcher below. New eligible cards are discovered and generated automatically; individual video entries do not need to be typed into JSON.
+
+A visitor refreshing the page only downloads the latest published JSON snapshot. It does not run this Node workflow or independently audit YouTube. A scheduled publishing job or a configured YouTube Data API client would be a separate integration, and is not enabled here.
+
 From `mistdory_v5.2` in PowerShell:
 
 ```powershell

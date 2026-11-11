@@ -19,10 +19,10 @@ function updateSelectedStatus() {
   const name = option.label || option.family;
   preview.dataset.fontState = state;
   document.getElementById('selectedLoadStatus').textContent = state === 'ready'
-    ? 'Đã tải đúng font ' + name + (option.local ? ' từ thiết bị.' : '.') + ' Chỉ áp dụng cho mẫu này.'
+    ? 'Loaded ' + name + (option.local ? ' from your device.' : '.') + ' Applies only to this preview.'
     : state === 'error'
-      ? (option.local ? 'Không tìm thấy ' + name + ' trên thiết bị này. Hai mẫu Niagara cần font đã được cài.' : 'Không tải được font. Hãy kiểm tra kết nối Google Fonts rồi tải lại trang.')
-      : 'Đang tải đúng font cho mẫu…';
+      ? (option.local ? 'Could not find ' + name + ' on this device. Both Niagara samples require installed fonts.' : 'Could not load the font. Check your connection to Google Fonts and reload the page.')
+      : 'Loading the selected font for the preview…';
 }
 
 function selectFont(key) {
@@ -43,8 +43,8 @@ function markFont(key, state) {
   const card = key === 'cinzel' ? document.querySelector('.current-font') : document.querySelector('[data-font="' + key + '"]');
   card.dataset.fontState = state;
   document.querySelector('[data-font-status="' + key + '"]').textContent = state === 'ready'
-    ? (fontOptions[key].local ? 'Font có trên thiết bị · ' : 'Font đã tải · ') + fontOptions[key].weight
-    : (fontOptions[key].local ? 'Không tìm thấy font trên thiết bị này' : 'Chưa tải được font · Kiểm tra kết nối');
+    ? (fontOptions[key].local ? 'Font found on device · ' : 'Font loaded · ') + fontOptions[key].weight
+    : (fontOptions[key].local ? 'Font not found on this device' : 'Font could not load · Check your connection');
   if (selectedFont === key) updateSelectedStatus();
 }
 
