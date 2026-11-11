@@ -17,17 +17,17 @@ Some project and guide entries are marked **Soon** until their content is availa
 
 ## Current version
 
-**[public v0.0.1 (internal v5.5)](../mistdory_public_v0.0.1/)** is the active website. This is the internal v5.5 successor to the pre-public v5.4 checkpoint. GitHub Pages configuration and production verification remain pending.
+**[v0.1.5](../mistdory_v0.1.5/)** is the active website. This public release candidate succeeds the v0.1.4 checkpoint. See [version naming history](../VERSION_HISTORY.md) for the previous folder names. GitHub Pages configuration and production verification remain pending.
 
-Earlier version directories and legacy files at the repository root are retained as historical references. Start new website work in `mistdory_public_v0.0.1/`.
+Earlier version directories and legacy files at the repository root are retained as historical references. Start new website work in `mistdory_v0.1.5/`.
 
 ## Project information
 
-- [Project briefing](../mistdory_public_v0.0.1/HANDOFF.md) — completed work, delivery status and next steps.
-- [Current status](../mistdory_public_v0.0.1/STATUS.md) — verification and remaining content.
-- [Version history](../mistdory_public_v0.0.1/CHANGELOG.md) — changes across releases.
-- [Development guide](../mistdory_public_v0.0.1/README.md) — local preview and content maintenance.
-- [Project map](../mistdory_public_v0.0.1/PROJECT_MAP.md) — architecture and feature locations.
+- [Project briefing](../mistdory_v0.1.5/HANDOFF.md) — completed work, delivery status and next steps.
+- [Current status](../mistdory_v0.1.5/STATUS.md) — verification and remaining content.
+- [Version history](../mistdory_v0.1.5/CHANGELOG.md) — changes across releases.
+- [Development guide](../mistdory_v0.1.5/README.md) — local preview and content maintenance.
+- [Project map](../mistdory_v0.1.5/PROJECT_MAP.md) — architecture and feature locations.
 
 ## About this repository
 
@@ -35,7 +35,7 @@ This repository contains a static website built with HTML, CSS and JavaScript, w
 
 For developers, the active source is organized as follows:
 
-| Location inside `mistdory_public_v0.0.1/` | Responsibility |
+| Location inside `mistdory_v0.1.5/` | Responsibility |
 | --- | --- |
 | `index.html`, `videos.html`, `about.html` | Home, video archive and creator introduction |
 | `js/` | Catalog rendering, navigation, language state and URL validation |
@@ -44,6 +44,6 @@ For developers, the active source is organized as follows:
 | `scripts/` | Local preview and public-only YouTube catalog refresh workflow |
 | `tests/` | Offline tests and browser verification runners |
 
-Serve the active directory over HTTP for local preview; opening HTML directly with `file://` prevents catalog loading. Follow the [development guide](../mistdory_public_v0.0.1/README.md) for supported commands and the [project map](../mistdory_public_v0.0.1/PROJECT_MAP.md) before editing a feature.
+Serve the active directory over HTTP for local preview; opening HTML directly with `file://` prevents catalog loading. Follow the [development guide](../mistdory_v0.1.5/README.md) for supported commands and the [project map](../mistdory_v0.1.5/PROJECT_MAP.md) before editing a feature.
 
 The website has no login, visitor write API or automatic per-visit YouTube synchronization. Video data is a published snapshot, refreshed through the maintenance workflow. GitHub Pages is the intended production host; deployment status is tracked separately from source commits.

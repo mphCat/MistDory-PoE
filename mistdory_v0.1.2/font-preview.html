@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Heading font preview — MistDory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&amp;family=Oxanium:wght@600&amp;family=Pirata+One&amp;family=Uncial+Antiqua&amp;display=swap" />
+  <link rel="stylesheet" href="css/font-preview.css" />
+</head>
+<body class="font-preview-page">
+  <header class="lab-header">
+    <a class="lab-back" href="index.html">← Back to homepage v0.1.2</a>
+    <span class="lab-tag">Typography / Preview only</span>
+  </header>
+
+  <main class="font-lab">
+    <section class="lab-intro" aria-labelledby="labTitle">
+      <p class="lab-eyebrow">Four design directions + two thumbnail-inspired candidates</p>
+      <h1 id="labTitle">Choose a font for large headings.</h1>
+      <p>Preview “MistDory”, “Guides &amp; Info” and “Videos from Mist”. Body text and buttons keep the current Barlow font. Selections on this page only change the adjacent preview.</p>
+      <p class="thumbnail-finding">The supplied “EXILE BY…” sample looks closest to the <strong>Niagara</strong> family. Options <a href="#thumbnailOptions">05–06</a> include plain text and simulated outline/glow effects for comparison; these are visual candidates, pending confirmation from the original design file.</p>
+    </section>
+
+    <div class="lab-layout">
+      <fieldset class="font-choices">
+        <legend>Choose an option to preview in the layout</legend>
+        <div class="option-grid">
+          <article class="font-option" data-font="pirata" data-font-state="loading" style="--option-font: 'Pirata One'; --option-weight: 400;">
+            <div class="option-header">
+              <label for="fontPirata"><input id="fontPirata" type="radio" name="headingFont" value="pirata" /><span><small>01 / Gothic</small><strong>Pirata One</strong></span></label>
+              <a href="https://fonts.google.com/specimen/Pirata+One" target="_blank" rel="noopener noreferrer" aria-label="View Pirata One on Google Fonts">↗</a>
+            </div>
+            <div class="option-specimen" aria-hidden="true"><div class="option-brand">Mist<span>Dory</span></div><div class="option-guide">Guides &amp; Info</div></div>
+            <p class="option-description">Gothic, compact and distinctive. Suits the dark atmosphere of PoE and short headings.</p>
+            <span class="font-status" data-font-status="pirata" role="status">Loading font…</span>
+          </article>
+
+          <article class="font-option" data-font="cormorant" data-font-state="loading" style="--option-font: 'Cormorant Garamond'; --option-weight: 600;">
+            <div class="option-header">
+              <label for="fontCormorant"><input id="fontCormorant" type="radio" name="headingFont" value="cormorant" /><span><small>02 / Elegant</small><strong>Cormorant Garamond</strong></span></label>
+              <a href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener noreferrer" aria-label="View Cormorant Garamond on Google Fonts">↗</a>
+            </div>
+            <div class="option-specimen" aria-hidden="true"><div class="option-brand">Mist<span>Dory</span></div><div class="option-guide">Guides &amp; Info</div></div>
+            <p class="option-description">Soft, expressive letterforms with contrasting stroke widths. Balances character and readability in longer headings.</p>
+            <span class="font-status" data-font-status="cormorant" role="status">Loading font…</span>
+          </article>
+
+          <article class="font-option" data-font="uncial" data-font-state="loading" style="--option-font: 'Uncial Antiqua'; --option-weight: 400;">
+            <div class="option-header">
+              <label for="fontUncial"><input id="fontUncial" type="radio" name="headingFont" value="uncial" /><span><small>03 / Fantasy</small><strong>Uncial Antiqua</strong></span></label>
+              <a href="https://fonts.google.com/specimen/Uncial+Antiqua" target="_blank" rel="noopener noreferrer" aria-label="View Uncial Antiqua on Google Fonts">↗</a>
+            </div>
+            <div class="option-specimen" aria-hidden="true"><div class="option-brand">Mist<span>Dory</span></div><div class="option-guide">Guides &amp; Info</div></div>
+            <p class="option-description">Evokes old manuscripts and fantasy worlds. Stands out in brand names; give the letters plenty of breathing room.</p>
+            <span class="font-status" data-font-status="uncial" role="status">Loading font…</span>
+          </article>
+
+          <article class="font-option" data-font="oxanium" data-font-state="loading" style="--option-font: 'Oxanium'; --option-weight: 600;">
+            <div class="option-header">
+              <label for="fontOxanium"><input id="fontOxanium" type="radio" name="headingFont" value="oxanium" checked /><span><small>04 / Modern</small><strong>Oxanium</strong></span></label>
+              <a href="https://fonts.google.com/specimen/Oxanium" target="_blank" rel="noopener noreferrer" aria-label="View Oxanium on Google Fonts">↗</a>
+            </div>
+            <div class="option-specimen" aria-hidden="true"><div class="option-brand">Mist<span>Dory</span></div><div class="option-guide">Guides &amp; Info</div></div>
+            <p class="option-description">Angular, compact and readable, suited to modern gaming interfaces. Less medieval in style than the first three options.</p>
+            <span class="font-status" data-font-status="oxanium" role="status">Loading font…</span>
+          </article>
+
+          <article class="font-option font-option--thumbnail" id="thumbnailOptions" data-font="utmniagara" data-font-state="loading" style="--option-font: 'Preview UTM Niagara'; --option-weight: 400;">
+            <div class="option-header">
+              <label for="fontUtmNiagara"><input id="fontUtmNiagara" type="radio" name="headingFont" value="utmniagara" /><span><small>05 / Thumbnail match</small><strong>UTM Niagara</strong></span></label>
+              <a href="https://learn.microsoft.com/en-us/typography/font-list/niagara" target="_blank" rel="noopener noreferrer" aria-label="Compare the Niagara family on Microsoft Typography">↗</a>
+            </div>
+            <div class="option-specimen" aria-hidden="true"><div class="option-brand">Mist<span>Dory</span></div><div class="option-guide">Guides &amp; Info</div></div>
+            <div class="thumbnail-comparison"><span>Plain text</span><div class="thumbnail-wordmark">EXILE BY MIST</div><span>Simulated outline / glow</span><div class="thumbnail-wordmark thumbnail-wordmark--glow">EXILE BY MIST</div></div>
+            <p class="option-description">A close match to the supplied sample: tall and very narrow, with small serifs. This preview uses UTM Niagara installed on your device.</p>
+            <span class="font-status" data-font-status="utmniagara" role="status">Checking for the font on your device…</span>
+          </article>
+
+          <article class="font-option font-option--thumbnail" data-font="niagara" data-font-state="loading" style="--option-font: 'Preview Niagara Solid'; --option-weight: 400;">
+            <div class="option-header">
+              <label for="fontNiagara"><input id="fontNiagara" type="radio" name="headingFont" value="niagara" /><span><small>06 / Niagara comparison</small><strong>Niagara Solid</strong></span></label>
+              <a href="https://learn.microsoft.com/en-us/typography/font-list/niagara" target="_blank" rel="noopener noreferrer" aria-label="View Niagara Solid on Microsoft Typography">↗</a>
+            </div>
+            <div class="option-specimen" aria-hidden="true"><div class="option-brand">Mist<span>Dory</span></div><div class="option-guide">Guides &amp; Info</div></div>
+            <div class="thumbnail-comparison"><span>Plain text</span><div class="thumbnail-wordmark">EXILE BY MIST</div><span>Simulated outline / glow</span><div class="thumbnail-wordmark thumbnail-wordmark--glow">EXILE BY MIST</div></div>
+            <p class="option-description">Very similar letterforms to UTM Niagara, shown with the same sample for comparison. The narrow letters need a larger size for web headings.</p>
+            <span class="font-status" data-font-status="niagara" role="status">Checking for the font on your device…</span>
+          </article>
+        </div>
+      </fieldset>
+
+      <aside class="preview-column" aria-labelledby="selectedFontName">
+        <div class="preview-toolbar">
+          <div><span class="lab-eyebrow">Now previewing</span><h2 id="selectedFontName">Oxanium</h2></div>
+          <div class="theme-switch" role="group" aria-label="Theme color"><button type="button" data-theme="poe1" aria-pressed="true">PoE 1</button><button type="button" data-theme="poe2" aria-pressed="false">PoE 2</button></div>
+        </div>
+
+        <section class="preview-stage" id="selectedPreview" data-font-state="loading" aria-label="Heading preview in the website layout">
+          <div class="preview-hero">
+            <span class="preview-game">Path of Exile content hub</span>
+            <h3 class="changing-brand changing-heading">Mist<span>Dory</span></h3>
+            <p>Builds, crafting guides and gameplay from Mist. This body text keeps the current font.</p>
+            <div class="sample-controls" aria-label="Button appearance preview"><span>All videos</span><span>Support Mist</span></div>
+          </div>
+          <div class="preview-section"><h3 class="changing-section changing-heading">Guides &amp; Info</h3><div class="preview-rule"></div><p>Video guides · Document · Leveling · Miscellaneous</p></div>
+          <div class="preview-videos"><span class="lab-eyebrow">Builds, guides &amp; gameplay</span><h3 class="changing-videos changing-heading">Videos from Mist</h3><p>Showing 6 of 34 videos</p></div>
+          <p class="selected-load-status" id="selectedLoadStatus" role="status" aria-live="polite">Loading the selected font for the preview…</p>
+        </section>
+
+        <section class="current-font" data-font-state="loading" aria-labelledby="currentFontTitle">
+          <div class="current-label"><h2 id="currentFontTitle">Comparison: previous Cinzel font</h2><span class="font-status" data-font-status="cinzel">Loading…</span></div>
+          <div class="current-specimen"><div class="current-brand">Mist<span>Dory</span></div><div class="current-guide">Guides &amp; Info</div></div>
+        </section>
+        <p class="lab-note">Oxanium is currently used for the logo and large headings on Home and About. Choosing another font here only changes the preview. Both Niagara samples require fonts installed on your device; these fonts are not bundled with the website.</p>
+      </aside>
+    </div>
+    <noscript><p class="lab-note">Enable JavaScript to switch fonts in the large preview. Individual samples use their intended fonts once those fonts load successfully or are installed on your device.</p></noscript>
+  </main>
+  <script src="js/font-preview.js"></script>
+</body>
+</html>
