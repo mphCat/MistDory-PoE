@@ -196,3 +196,9 @@ Format: `vX — date — summary`
 - Guides & Info 4-column grid
 - Card grid with search, category filter, sort dropdown
 - Minimal footer: © 2025 MistDory
+
+### League Start checkpoint — 2026-11-11
+
+- Add the Home PoE 1 3.30 Excalidraw roadmap card, bilingual description, decorative diagram, external arrow and fixed GMT+7/UTC content timestamps.
+- Add the matching non-interactive PoE 2 1.0 Soon card with an unknown last-update time. Cards follow the selected game and use compact mobile artwork.
+- Preserve catalog snapshots. This checkpoint is source-only; no Pages deployment was performed.

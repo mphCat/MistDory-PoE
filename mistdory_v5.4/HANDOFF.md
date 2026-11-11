@@ -98,3 +98,9 @@ Do not rerun every suite for a prose-only edit. Choose checks using the map. The
 After checking Git, give a short Vietnamese briefing: the active version and actual delivery state; what is complete; which content/hosting work remains; and one or two relevant next steps. If the user names a feature, go directly to that route instead of repeating a full project review. Never describe Soon placeholders as active projects or a source push as a deployment.
 
 Refresh this pack at the next version wrap-up or after a material delivery/scope change. If a new active version is explicitly created, update this pack's successor and the links in root `AGENTS.md`; preserve this version's history.
+
+### League Start checkpoint — 2026-11-11
+
+- Add the Home PoE 1 3.30 Excalidraw roadmap card, bilingual description, decorative diagram, external arrow and fixed GMT+7/UTC content timestamps.
+- Add the matching non-interactive PoE 2 1.0 Soon card with an unknown last-update time. Cards follow the selected game and use compact mobile artwork.
+- Preserve catalog snapshots. This checkpoint is source-only; no Pages deployment was performed.

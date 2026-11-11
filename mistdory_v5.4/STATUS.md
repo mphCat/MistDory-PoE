@@ -83,3 +83,9 @@ The checks below were rerun after hardening on **2026-11-10**, using the plain h
 - Previously deferred Discord keyboard behavior and other deferred features remain deferred.
 - Preview Home and All videos over HTTP with the CSP-compatible Live Server launcher or plain helper. Opening `index.html` directly with `file://` prevents browser JSON fetching; repeatedly reloading that file does not resolve the loading error.
 - Before publishing, run the [catalog refresh and release verification](scripts/README.md), review the result and confirm hosting serves `mistdory_v5.4`. A commit or push alone does not deploy this website.
+
+### League Start checkpoint — 2026-11-11
+
+- Add the Home PoE 1 3.30 Excalidraw roadmap card, bilingual description, decorative diagram, external arrow and fixed GMT+7/UTC content timestamps.
+- Add the matching non-interactive PoE 2 1.0 Soon card with an unknown last-update time. Cards follow the selected game and use compact mobile artwork.
+- Preserve catalog snapshots. This checkpoint is source-only; no Pages deployment was performed.
