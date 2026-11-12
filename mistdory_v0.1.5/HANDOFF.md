@@ -96,3 +96,10 @@ Updated **2026-11-12**. Active source: `mistdory_v0.1.5/`.
 - Live POST verification: first request returned 1; immediate repeat remained 1. A request after more than 10 seconds was checked before publishing. Test requests are real views and are retained in the total.
 - The earlier pending-activation notes are historical. Cloudflare cron setup is not yet verified; add hourly `0 * * * *` under Trigger Events to expire old IP hash records without resetting the total.
 - Website-side verification and Pages deployment are reported separately from the backend check.
+### Counter verified on production — 2026-11-12
+
+- Pages deployment succeeded for source `0790993`: https://github.com/mphCat/MistDory-PoE/actions/runs/43150362626.
+- Live Worker test returned totals 1, 1, then 2 after an 11-second idle gap; the total was not reset after testing.
+- 6/6 real Chrome production checks passed: Home displays a numeric count, language switching does not send another count, Videos and About show the shared total, mobile footer is visible, and three real cross-origin requests completed without first-party JavaScript errors. Home displayed 3 during the browser check.
+- Both implementation and activation commits are pushed. The counter is now active at https://mphcat.github.io/MistDory-PoE/.
+- Remaining account-side task: configure/confirm the Worker hourly Cron Trigger `0 * * * *` so expired hash records are pruned. Counting works without it, but stale hashes otherwise accumulate. The total is never pruned.

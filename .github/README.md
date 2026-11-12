@@ -46,4 +46,4 @@ For developers, the active source is organized as follows:
 
 Serve the active directory over HTTP for local preview; opening HTML directly with `file://` prevents catalog loading. Follow the [development guide](../mistdory_v0.1.5/README.md) for supported commands and the [project map](../mistdory_v0.1.5/PROJECT_MAP.md) before editing a feature.
 
-The website has no login, visitor write API or automatic per-visit YouTube synchronization. Video data is a published snapshot, refreshed through the maintenance workflow. GitHub Pages hosts the public website. Deployment status and verification limits are recorded in the active handoff.
+The website has no login, visitor content/catalog write API or automatic per-visit YouTube synchronization. An optional Cloudflare Worker/D1 service records the cumulative view total with a same-IP cooldown. Video data is a published snapshot, refreshed through the maintenance workflow. GitHub Pages hosts the public website. Deployment status and verification limits are recorded in the active handoff.
