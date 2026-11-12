@@ -217,4 +217,4 @@ For GitHub Pages, configure the publishing branch/folder or build artifact to co
 
 ## Optional cumulative views
 
-The footer counter is prepared but requires a separately deployed Cloudflare Worker and D1 database; see [the service setup guide](../services/view-counter/README.md). GitHub Pages only hosts the static frontend. The endpoint must remain empty until the backend is ready. No counter credential belongs in frontend JavaScript.
+The footer counter uses a separately deployed Cloudflare Worker and D1 database; see [the service setup guide](../services/view-counter/README.md). GitHub Pages only hosts the static frontend. The production endpoint is configured in js/view-counter-config.js; local preview still sends no counts. No counter credential belongs in frontend JavaScript.

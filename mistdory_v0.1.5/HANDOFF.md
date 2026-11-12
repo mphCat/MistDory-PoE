@@ -88,3 +88,11 @@ Updated **2026-11-12**. Active source: `mistdory_v0.1.5/`.
 - 88/88 Chrome checks passed, including footer label/value, copyright alignment, no horizontal overflow and no dock overlap at 1440px and 390px on Home, Videos and About.
 - Screenshots were inspected in the local preview. Cloudflare endpoint remains unconfigured; these are not live backend checks.
 - Preview: http://127.0.0.1:8006/. The production website remains on the previous committed/pushed release until counter activation is completed.
+
+## Counter activation — 2026-11-12
+
+- User deployed and configured the Worker at https://mistdory-view-counter.caculated-bitsh.workers.dev with D1 binding and server-side secret. The secret was not shared or stored in the repository.
+- Production frontend now points to that endpoint; only its exact HTTPS origin is added to connect-src on Home, Videos and About. Scripts/fonts policy is unchanged.
+- Live POST verification: first request returned 1; immediate repeat remained 1. A request after more than 10 seconds was checked before publishing. Test requests are real views and are retained in the total.
+- The earlier pending-activation notes are historical. Cloudflare cron setup is not yet verified; add hourly `0 * * * *` under Trigger Events to expire old IP hash records without resetting the total.
+- Website-side verification and Pages deployment are reported separately from the backend check.

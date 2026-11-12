@@ -234,3 +234,11 @@ Format: `vX — date — summary`
 - Add responsive bilingual footer totals and a fail-neutral, production-only client.
 - Prepare a separate Cloudflare Worker/D1 counter with a sliding same-IP 10-second cooldown, durable shared total, keyed IP hashes and expiry cleanup.
 - Add 8 offline SQL/Worker/client tests. Backend deployment and endpoint activation remain pending user Cloudflare setup; no invented counter is shown.
+
+## Counter activation — 2026-11-12
+
+- User deployed and configured the Worker at https://mistdory-view-counter.caculated-bitsh.workers.dev with D1 binding and server-side secret. The secret was not shared or stored in the repository.
+- Production frontend now points to that endpoint; only its exact HTTPS origin is added to connect-src on Home, Videos and About. Scripts/fonts policy is unchanged.
+- Live POST verification: first request returned 1; immediate repeat remained 1. A request after more than 10 seconds was checked before publishing. Test requests are real views and are retained in the total.
+- The earlier pending-activation notes are historical. Cloudflare cron setup is not yet verified; add hourly `0 * * * *` under Trigger Events to expire old IP hash records without resetting the total.
+- Website-side verification and Pages deployment are reported separately from the backend check.
