@@ -11,7 +11,7 @@ This is the v0.1.5 public source candidate, copied from the committed v0.1.4 Lea
 - All v0.1.4 hub features, EN/VN interfaces, catalogs, URL validation, production CSP, self-hosted fonts and local preview support are retained.
 - PoE 1 3.30 League Start opens Excalidraw; PoE 2 1.0 is Soon without a link. Both include a localized roadmap description and decorative diagram.
 - PoE 1's fixed content timestamp is shown in GMT+7 and UTC. PoE 2 shows Last updated: — until content exists.
-- Video data is unchanged: 34 + 56 videos from the 2026-10-28 snapshot. Release refresh remains outstanding.
+- Current video data: 36 PoE 1 + 56 PoE 2 videos, refreshed 2026-11-12 at 08:42:43 GMT+7 / 01:42:43 UTC. Historical checks below retain their original snapshot counts.
 
 ## Verification
 
@@ -57,3 +57,11 @@ See [HANDOFF.md](HANDOFF.md) for publication steps. Avatar, actual WIP projects,
 - Artifact contents were checked locally: maintenance scripts/tests, technical documentation and historical versions are not packaged. The public HANDOFF path returned 404; additional excluded-path HTTP probes encountered transient GitHub 503 responses, so those responses are not evidence of a 404.
 - Full browser/YouTube playback regression on the production host was not run in this deployment session. Account 2FA/recovery/access settings remain unverified.
 - Future updates to the active version on main deploy automatically. Refresh the old catalog snapshot and fill Soon content as subsequent maintenance.
+## YouTube catalog refresh — 2026-11-12, 08:42:43 GMT+7 / 01:42:43 UTC
+
+- Completed the official-playlist refresh and verified 100 distinct signed-out watch pages. Retained only explicit public, playable, first-party videos.
+- PoE 1 increased from 34 to **36** videos; PoE 2 remains **56**. No previously retained video was removed.
+- Added `THMUtEBnGM0` (PoE - 3.30 | Patch Note Review And My League Start Plan) and `N5GXihQ39qE` (PoE 1 | WARNING! Slow Run Practice | 26mins/acts you can be better).
+- Updated titles, exact metrics, publication metadata and public-state proofs. Curated guide labels/destinations, descriptions/tags and featured choices remain unchanged; guide-video verification times were renewed.
+- Release verification with a 24-hour maximum age and the refresh self-test passed. 61/61 offline tests passed after fixing the fallback test helper to accept its fixture's expected featured ID rather than the stored catalog's configured hero.
+- The website remains snapshot-based; visitor reloads fetch published JSON and do not run a YouTube audit. This entry records a refresh, not continuous YouTube synchronization.

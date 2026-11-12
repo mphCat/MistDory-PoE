@@ -366,7 +366,7 @@ async function until(predicate, label) {
   }
   assert.fail('Did not reach ' + label);
 }
-async function ready(app, game) {
+async function ready(app, game, expectedFeaturedId = realCatalogs[game].meta.ytId) {
   await until(() => app.selectedGame() === game && app.state() === 'ready', game + ' ready');
   assert.ok(app.ids().length > 0, 'ready realm has cards');
   const own = new Set(realCatalogs[game].cards.map(card => card.id));
@@ -374,7 +374,7 @@ async function ready(app, game) {
   assert.equal(app.node('catalogStatus').hidden, true, 'successful state dismisses status banner');
   assert.equal(app.node('searchInput').disabled, false);
   if (app.node('heroSection')) {
-    const expected = realCatalogs[game].meta.ytId;
+    const expected = expectedFeaturedId;
     const frame = app.node('ytWrap').querySelector('iframe');
     assert.ok(frame, 'ready realm has a featured iframe');
     assert.equal(frame.getAttribute('referrerpolicy'), 'strict-origin-when-cross-origin');
@@ -550,7 +550,7 @@ for (const game of ['poe1', 'poe2']) {
     t.after(app.dispose);
     app.setResponse(game, () => Promise.resolve({ ok: true, status: 200, async json() { return data; } }));
     app.boot();
-    await ready(app, game);
+    await ready(app, game, expectedId);
     const frame = app.node('ytWrap').querySelector('iframe');
     assert.ok(frame, 'a verified catalog video remains available');
     assert.equal(new URL(frame.src).pathname, '/embed/' + expectedId);

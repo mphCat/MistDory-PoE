@@ -219,3 +219,12 @@ Format: `vX — date — summary`
 
 - Add offline verification, a runtime-only artifact packager and main-branch GitHub Pages deployment with manual dispatch.
 - Preserve the existing catalog snapshot and production HTML/CSP. Deployment success is tracked separately from source delivery.
+
+## YouTube catalog refresh — 2026-11-12, 08:42:43 GMT+7 / 01:42:43 UTC
+
+- Completed the official-playlist refresh and verified 100 distinct signed-out watch pages. Retained only explicit public, playable, first-party videos.
+- PoE 1 increased from 34 to **36** videos; PoE 2 remains **56**. No previously retained video was removed.
+- Added `THMUtEBnGM0` (PoE - 3.30 | Patch Note Review And My League Start Plan) and `N5GXihQ39qE` (PoE 1 | WARNING! Slow Run Practice | 26mins/acts you can be better).
+- Updated titles, exact metrics, publication metadata and public-state proofs. Curated guide labels/destinations, descriptions/tags and featured choices remain unchanged; guide-video verification times were renewed.
+- Release verification with a 24-hour maximum age and the refresh self-test passed. 61/61 offline tests passed after fixing the fallback test helper to accept its fixture's expected featured ID rather than the stored catalog's configured hero.
+- The website remains snapshot-based; visitor reloads fetch published JSON and do not run a YouTube audit. This entry records a refresh, not continuous YouTube synchronization.
