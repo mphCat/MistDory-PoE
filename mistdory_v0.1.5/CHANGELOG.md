@@ -214,3 +214,8 @@ Format: `vX — date — summary`
 - Add the Home PoE 1 3.30 Excalidraw roadmap card, bilingual description, decorative diagram, external arrow and fixed GMT+7/UTC content timestamps.
 - Add the matching non-interactive PoE 2 1.0 Soon card with an unknown last-update time. Cards follow the selected game and use compact mobile artwork.
 - Preserve catalog snapshots. This checkpoint is source-only; no Pages deployment was performed.
+
+### GitHub Pages publishing workflow — 2026-11-12
+
+- Add offline verification, a runtime-only artifact packager and main-branch GitHub Pages deployment with manual dispatch.
+- Preserve the existing catalog snapshot and production HTML/CSP. Deployment success is tracked separately from source delivery.

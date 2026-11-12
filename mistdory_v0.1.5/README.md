@@ -205,3 +205,12 @@ For GitHub Pages, configure the publishing branch/folder or build artifact to co
 | Colors | `css/style.css` — edit the `:root` variables at the top |
 | Fonts | `css/fonts.css` and `assets/fonts/` — preserve licenses and update the source/hash manifest when replacing official files |
 | URL safety and resource policy | `js/url-policy.js`, the CSP meta tag in all four HTML pages, and the security review |
+
+## GitHub Pages deployment — 2026-11-12
+
+- Workflow: [pages.yml](../.github/workflows/pages.yml). It verifies offline tests and stored catalogs, then packages only the active runtime using [prepare-pages.cjs](scripts/prepare-pages.cjs).
+- Configure repository Settings > Pages > Source as **GitHub Actions**. Pushes to `main` affecting the active version/workflow trigger deployment; manual workflow dispatch is available on `main`.
+- Artifact root contains the four HTML pages, `css/`, `js/`, `data/`, `assets/` and `.nojekyll`. Historical versions, maintenance scripts, tests and technical documents are excluded; font licenses remain in assets.
+- Expected project URL: `https://mphcat.github.io/MistDory-PoE/`. Report actual publication only after the Actions deployment and public endpoint are verified.
+- Catalog checks validate the stored snapshot, not current YouTube visibility. The 2026-10-28 34/56-video snapshot is intentionally retained for this deployment; a new refresh remains maintenance work.
+- For a future version folder, update the workflow source/path filter together with repository navigation.

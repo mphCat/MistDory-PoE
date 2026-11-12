@@ -1,0 +1,52 @@
+name: Deploy MistDory to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mistdory_v0.1.5/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  verify-and-package:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Run offline tests
+        working-directory: mistdory_v0.1.5
+        run: node --test tests/*.test.cjs
+      - name: Verify stored catalogs
+        run: node mistdory_v0.1.5/scripts/verify-catalog.cjs
+      - name: Package the active website
+        run: node mistdory_v0.1.5/scripts/prepare-pages.cjs "$RUNNER_TEMP/mistdory-pages"
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/mistdory-pages
+
+  deploy:
+    needs: verify-and-package
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4

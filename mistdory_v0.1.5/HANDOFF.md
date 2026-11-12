@@ -1,6 +1,6 @@
 # MistDory v0.1.5 — resume pack
 
-Updated **2026-11-11**. Active source: `mistdory_v0.1.5/`.
+Updated **2026-11-12**. Active source: `mistdory_v0.1.5/`.
 
 ## Version transition
 
@@ -25,7 +25,7 @@ Updated **2026-11-11**. Active source: `mistdory_v0.1.5/`.
 ## Next work
 
 1. Review the public candidate, refresh and verify the YouTube catalogs before publishing.
-2. Configure GitHub Pages to publish only this active website's runtime assets; no workflow exists yet.
+2. Deploy through `.github/workflows/pages.yml`; verify the actual Actions run and production URL before reporting publication.
 3. Commit/push the publishing setup when authorized, then verify the deployed HTTPS URL, navigation, assets and playback.
 4. Content backlog: avatar, real WIP links, Soon guides/Crafting/FAQ and the PoE 2 roadmap. Broader mobile/accessibility/performance work remains deferred.
 ## Fresh source-transition verification — 2026-11-11
@@ -40,3 +40,18 @@ Updated **2026-11-11**. Active source: `mistdory_v0.1.5/`.
 - After renaming, offline suites passed: v0.1.2 34/34, v0.1.3 36/36, v0.1.4 61/61 and v0.1.5 61/61 (192 total).
 - Relative Markdown file destinations resolve across the five version folders and active repository navigation. Font-preview Home links and translation keys use the matching version.
 - Full browser suites and production checks were not rerun for this directory/documentation migration. Existing preview processes may retain old paths and must be restarted before further review.
+## GitHub Pages deployment — 2026-11-12
+
+- Workflow: [pages.yml](../.github/workflows/pages.yml). It verifies offline tests and stored catalogs, then packages only the active runtime using [prepare-pages.cjs](scripts/prepare-pages.cjs).
+- Configure repository Settings > Pages > Source as **GitHub Actions**. Pushes to `main` affecting the active version/workflow trigger deployment; manual workflow dispatch is available on `main`.
+- Artifact root contains the four HTML pages, `css/`, `js/`, `data/`, `assets/` and `.nojekyll`. Historical versions, maintenance scripts, tests and technical documents are excluded; font licenses remain in assets.
+- Expected project URL: `https://mphcat.github.io/MistDory-PoE/`. Report actual publication only after the Actions deployment and public endpoint are verified.
+- Catalog checks validate the stored snapshot, not current YouTube visibility. The 2026-10-28 34/56-video snapshot is intentionally retained for this deployment; a new refresh remains maintenance work.
+- For a future version folder, update the workflow source/path filter together with repository navigation.
+
+### Deployment preparation verification — 2026-11-12
+
+- GitHub API confirms the repository is public, with default branch main.
+- 61/61 offline tests passed; offline catalog verification returned valid=true.
+- The Pages packager produced the runtime-only artifact and confirmed production Home HTML was byte-for-byte unchanged. HTML local dependency and production-policy checks passed.
+- Workflow delivery and actual production publication are separate; check the Actions run before reporting success.
