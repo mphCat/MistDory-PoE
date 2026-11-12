@@ -73,3 +73,18 @@ Updated **2026-11-12**. Active source: `mistdory_v0.1.5/`.
 - Updated titles, exact metrics, publication metadata and public-state proofs. Curated guide labels/destinations, descriptions/tags and featured choices remain unchanged; guide-video verification times were renewed.
 - Release verification with a 24-hour maximum age and the refresh self-test passed. 61/61 offline tests passed after fixing the fallback test helper to accept its fixture's expected featured ID rather than the stored catalog's configured hero.
 - The website remains snapshot-based; visitor reloads fetch published JSON and do not run a YouTube audit. This entry records a refresh, not continuous YouTube synchronization.
+## Cumulative view counter — implementation prepared, activation pending (2026-11-12)
+
+- Added a bilingual Page views / Lượt xem total beside the copyright on Home, Videos and About, with responsive wrapping.
+- Optional backend source is in [services/view-counter](../services/view-counter/README.md), using Cloudflare Workers + D1. The main website stays on GitHub Pages.
+- Same public IP only counts again after a gap of more than 10 seconds since its preceding request. Every reload renews this sliding window. SQL triggers and transactional batches keep concurrent updates consistent; the cumulative total is never automatically reset.
+- The backend stores HMAC-SHA256 IP hashes, not raw IPs; hourly cleanup expires hashes after 24 hours without touching the total. Household/VPN users can share the cooldown. This is not unique-person analytics or complete bot protection.
+- 69/69 offline tests passed, including 8 new client/Worker/actual-SQL tests. Tests do not establish Cloudflare deployment correctness.
+- **Not activated:** `js/view-counter-config.js` has an empty endpoint; local/production displays a dash and sends no count. No Cloudflare account connection, database, secret or deployed URL has been configured by this session.
+- Next: user creates/binds D1 and deploys the Worker using the service guide; configure the public endpoint and exact CSP origin, then verify live persistence/cooldown before publishing frontend activation. Never put Cloudflare credentials or the hash secret into the repo/chat.
+
+### Counter browser verification — 2026-11-12
+
+- 88/88 Chrome checks passed, including footer label/value, copyright alignment, no horizontal overflow and no dock overlap at 1440px and 390px on Home, Videos and About.
+- Screenshots were inspected in the local preview. Cloudflare endpoint remains unconfigured; these are not live backend checks.
+- Preview: http://127.0.0.1:8006/. The production website remains on the previous committed/pushed release until counter activation is completed.

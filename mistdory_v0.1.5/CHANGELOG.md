@@ -228,3 +228,9 @@ Format: `vX — date — summary`
 - Updated titles, exact metrics, publication metadata and public-state proofs. Curated guide labels/destinations, descriptions/tags and featured choices remain unchanged; guide-video verification times were renewed.
 - Release verification with a 24-hour maximum age and the refresh self-test passed. 61/61 offline tests passed after fixing the fallback test helper to accept its fixture's expected featured ID rather than the stored catalog's configured hero.
 - The website remains snapshot-based; visitor reloads fetch published JSON and do not run a YouTube audit. This entry records a refresh, not continuous YouTube synchronization.
+
+### Cumulative page views — source preparation, 2026-11-12
+
+- Add responsive bilingual footer totals and a fail-neutral, production-only client.
+- Prepare a separate Cloudflare Worker/D1 counter with a sliding same-IP 10-second cooldown, durable shared total, keyed IP hashes and expiry cleanup.
+- Add 8 offline SQL/Worker/client tests. Backend deployment and endpoint activation remain pending user Cloudflare setup; no invented counter is shown.

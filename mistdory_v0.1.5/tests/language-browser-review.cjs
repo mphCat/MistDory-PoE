@@ -568,6 +568,31 @@ async function checkMobile() {
   await page.send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false });
 }
 
+async function checkViewCounterFooter() {
+  for (const width of [1440, 390]) {
+    await page.send('Emulation.setDeviceMetricsOverride', { width, height: width === 390 ? 844 : 1000, deviceScaleFactor: 1, mobile: width === 390 });
+    for (const route of ['index.html', 'videos.html', 'about.html']) {
+      await navigate('/' + route + '?lang=vi');
+      await evaluate(() => document.querySelector('.footer').scrollIntoView({ block: 'center' }));
+      await sleep(150);
+      const footer = await evaluate(() => {
+        const copy = document.querySelector('.footer-copy').getBoundingClientRect();
+        const views = document.querySelector('.footer-views').getBoundingClientRect();
+        const dock = document.querySelector('.resource-dock').getBoundingClientRect();
+        return {
+          label: document.querySelector('.footer-views [data-i18n]').textContent,
+          value: document.getElementById('totalPageViews').textContent,
+          noOverflow: document.documentElement.scrollWidth <= innerWidth,
+          aboveDock: views.bottom <= dock.top + 1,
+          aligned: innerWidth > 600 ? Math.abs(copy.top - views.top) < 5 : views.top >= copy.bottom - 1
+        };
+      });
+      check(width + 'px counter footer ' + route + ': localized neutral value and usable layout',
+        footer.label === 'Lượt xem' && footer.value === '—' && footer.noOverflow && footer.aboveDock && footer.aligned, JSON.stringify(footer));
+      if (route === 'index.html') await screenshot(width + 'px-counter-footer.png');
+    }
+  }
+}
 async function main() {
   for (const game of ['poe1', 'poe2']) {
     const response = await fetch(new URL('data/' + game + '.json', BASE));
@@ -638,6 +663,7 @@ async function main() {
   await checkFontLab();
   await checkImmediateFontCompletion();
   await checkMobile();
+  await checkViewCounterFooter();
   check('no uncaught first-party JavaScript errors', errors.length === 0, errors.join(' | '));
 }
 

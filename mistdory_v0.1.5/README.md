@@ -214,3 +214,7 @@ For GitHub Pages, configure the publishing branch/folder or build artifact to co
 - Expected project URL: `https://mphcat.github.io/MistDory-PoE/`. Report actual publication only after the Actions deployment and public endpoint are verified.
 - Catalog checks validate the stored snapshot, not current YouTube visibility. The 2026-10-28 34/56-video snapshot is intentionally retained for this deployment; a new refresh remains maintenance work.
 - For a future version folder, update the workflow source/path filter together with repository navigation.
+
+## Optional cumulative views
+
+The footer counter is prepared but requires a separately deployed Cloudflare Worker and D1 database; see [the service setup guide](../services/view-counter/README.md). GitHub Pages only hosts the static frontend. The endpoint must remain empty until the backend is ready. No counter credential belongs in frontend JavaScript.

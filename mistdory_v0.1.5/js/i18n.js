@@ -4,6 +4,7 @@
   const STORAGE_KEY = 'mistdory.language';
   const supported = ['en', 'vi'];
   const translations = {
+  'Page views': 'Lượt xem',
   'MY LEAGUE START PLAN': 'KẾ HOẠCH LEAGUE START',
   'My league start roadmap.': 'Lộ trình khởi đầu mùa của tôi.',
   'Last updated:': 'Cập nhật lần cuối:',

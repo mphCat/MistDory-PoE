@@ -903,3 +903,11 @@ html[data-realm="poe2"] .league-start-card[data-league-game="poe2"] { display: f
   .league-start-arrow { transition: none; }
   a.league-start-card:hover .league-start-arrow { transform: none; }
 }
+/* Persistent view total alongside the copyright. */
+.footer { justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; }
+.footer-views { display: inline-flex; align-items: center; gap: 8px; color: #999; font-size: 12px; }
+.footer-views-icon { width: 17px; height: 17px; }
+.footer-views-total { color: var(--text); font-variant-numeric: tabular-nums; font-weight: 600; }
+@media (max-width: 600px) {
+  .footer { align-items: flex-start; flex-direction: column; }
+}

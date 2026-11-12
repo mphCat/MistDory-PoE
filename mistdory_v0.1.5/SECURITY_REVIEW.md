@@ -63,3 +63,8 @@ The initial review found no critical/high-severity visitor-controlled exploit an
 5. WIP/Soon content and avatar remain pending in [STATUS.md](STATUS.md). Dedicated mobile/touch, complete accessibility/performance audits and every browser/production-host combination remain outside this change.
 
 The maintainer-side refresh keeps HTTPS-host/redirect/size/time limits, explicit public-only proof and transactional catalog safeguards. It parses metadata rather than executing watch scripts, and visitors do not run it. No account, branch-protection, DNS or infrastructure settings were changed.
+
+
+## Optional counter boundary — 2026-11-12
+
+A separate Worker/D1 counter is now prepared in source but is not activated. It introduces a public POST endpoint with exact-origin CORS, prepared SQL, atomic cooldown/count updates, HMAC IP pseudonyms and expiring cooldown rows. This endpoint is not authentication-protected; CORS does not prevent direct client abuse. It intentionally returns only the total and generic errors. The static website has no login, visitor content upload or catalog write API. Counter quotas, Cloudflare account configuration and live deployment require verification. Activation requires adding only the deployed counter's exact origin to connect-src; script/font CSP stays unchanged.

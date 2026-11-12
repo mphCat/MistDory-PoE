@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'mistdory_v0.1.5/**'
+      - 'services/view-counter/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
