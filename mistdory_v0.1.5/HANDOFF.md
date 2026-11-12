@@ -1,110 +1,69 @@
 # MistDory v0.1.5 — resume pack
 
-Updated **2026-11-12**. Active source: `mistdory_v0.1.5/`.
+Updated **2026-11-12**, at session wrap-up. Active source: **`mistdory_v0.1.5/`**.
 
-## Version transition
+## Start here next session
 
-- **v0.1.5** is the current public release candidate in `mistdory_v0.1.5/`.
-- The former v5.1–v5.4 folders are now v0.1.1–v0.1.4. The former public v0.0.1 candidate (internal v5.5) is now v0.1.5; there is one active version series.
-- See [VERSION_HISTORY.md](../VERSION_HISTORY.md) for the exact old/new mapping. Historical commits retain their original paths; no Git history, tag or GitHub Release was rewritten.
-- GitHub Pages deployment and initial HTTPS/resource checks succeeded on 2026-11-12; see the verified deployment section below. Account protection and full production-browser checks remain pending.
-## Current behavior
+- Live website: **https://mphcat.github.io/MistDory-PoE/**, hosted on GitHub Pages. The repository is public.
+- v0.1.5 is published. League Start cards, refreshed YouTube catalogs, cumulative views, footer spacing and the footer release label are implemented and pushed.
+- Latest verified application deployment: `93834f1` (footer version). Earlier checkpoints: `0790993` counter activation, `bfe9b50` footer inset, `47bb285` CSS cache refresh, `c36aaf7` catalog refresh. Determine the actual newest commit and remote sync from Git; the final handoff commit naturally follows these application commits.
+- Follow root [AGENTS.md](../AGENTS.md): speak Vietnamese; technical notes/Git messages are English. Use [PROJECT_MAP.md](PROJECT_MAP.md) to locate the requested feature.
+- Earlier version folders are historical. [VERSION_HISTORY.md](../VERSION_HISTORY.md) maps old names to v0.1.1–v0.1.5. No Git history, tags or GitHub Releases were rewritten.
 
-- Inherits the v0.1.4 bilingual static PoE 1/PoE 2 hub, public video catalogs, URL policy, CSP, local fonts and Live Server adapter.
-- Home League Start cards: PoE 1 3.30 opens the provided Excalidraw roadmap in a new tab; PoE 2 1.0 remains Soon, with no destination and unknown update time.
-- Both cards have a localized roadmap description and diagram. PoE 1 records the content update in GMT+7 and UTC; page reload does not change it.
-- Current catalog snapshot: 36 PoE 1 + 56 PoE 2 videos, refreshed 2026-11-12 at 08:42:43 GMT+7 / 01:42:43 UTC. Older verification entries below describe their historical snapshot.
+Read-only delivery checks from the repository root:
 
-## Resume and verify
+```text
+git status --short --branch
+git log -5 --oneline
+git rev-list --left-right --count HEAD...origin/main
+```
 
-- Follow [AGENTS.md](../AGENTS.md), [PROJECT_MAP.md](PROJECT_MAP.md), [STATUS.md](STATUS.md) and [README.md](README.md).
-- Preview with `node scripts/preview-live.cjs` from this directory. Port 8003 may still serve the historical directory; use `PORT=8006` for an independent preview and confirm its source before reviewing.
-- v0.1.4 browser suites were recorded on 2026-11-10 before the roadmap changes. They are inherited evidence, not fresh public-version browser results.
-- Check Git status/history and remote synchronization before reporting delivery. Preserve unrelated root/v0.1.2/v0.1.3 edits.
+The tracking ref can be stale; fetch when fresh remote verification is needed. Known root deletions and untracked legacy folders/archives/debug.log are unrelated local work. Do not restore, remove, stage or commit them implicitly. Historical v5.2/v5.3 edits were already checkpointed as `094384b` before migration.
 
-## Next work
+## Current website
 
-1. Review the public candidate, refresh and verify the YouTube catalogs before publishing.
-2. Keep deploying through `.github/workflows/pages.yml`; verify the Actions run and live URL after each release.
-3. Complete a production-browser pass for navigation, language/game state and YouTube playback.
-4. Content backlog: avatar, real WIP links, Soon guides/Crafting/FAQ and the PoE 2 roadmap. Broader mobile/accessibility/performance work remains deferred.
-## Fresh source-transition verification — 2026-11-11
+- Static bilingual EN/VN PoE 1/PoE 2 hub, six Home videos, ten per archive page, search/filter/sort, Builds dialog, curated resources and About. Original YouTube titles are preserved.
+- Home League Start: PoE 1 **3.30** opens the supplied Excalidraw roadmap; PoE 2 **1.0** is non-interactive Soon. Both have a localized roadmap description and diagram. PoE 1 has fixed GMT+7/UTC content-update times; PoE 2 has Last updated: —.
+- Current catalogs: **36 PoE 1 + 56 PoE 2** public videos, refreshed **2026-11-12 08:42:43 GMT+7 / 01:42:43 UTC**. Newest PoE 1 video: `THMUtEBnGM0`, “PoE - 3.30 | Patch Note Review And My League Start Plan”. Also added `N5GXihQ39qE`, the slow-run practice video. Existing featured selections and curated guide destinations were preserved.
+- Copyright and Page views / Lượt xem share a row on desktop, with 32px horizontal inset; small screens use 18px and stacked content. A subtle **v0.1.5** line follows. `prepare-pages.cjs` derives the deployed version from the active directory; keep preview markup in sync when creating a new version.
+- Shared CSS currently uses `?v=20261112-footer-version`. Pages can cache resources for ten minutes; update the asset revision for a stylesheet release that must bypass older browser caches. Ctrl+F5 is useful while checking an existing session.
 
-- 61/61 offline tests passed using VS Code's Node runtime with `--test --test-isolation=none` (the sandbox blocked the normal child-process runner).
-- Offline `scripts/verify-catalog.cjs` returned `valid: true` for 34/56 public videos. This did not refresh YouTube visibility.
-- SHA-256 checks matched Home HTML, shared CSS, translations and both catalogs against the committed v0.1.4 checkpoint.
-- Full browser suites were not rerun during the version-only transition. Production publication remains pending.
-## Unified-directory migration verification — 2026-11-11
+## View counter service
 
-- Historical pending work was saved in commit `094384b` before renaming directories.
-- After renaming, offline suites passed: v0.1.2 34/34, v0.1.3 36/36, v0.1.4 61/61 and v0.1.5 61/61 (192 total).
-- Relative Markdown file destinations resolve across the five version folders and active repository navigation. Font-preview Home links and translation keys use the matching version.
-- Full browser suites and production checks were not rerun for this directory/documentation migration. Existing preview processes may retain old paths and must be restarted before further review.
-## GitHub Pages deployment — 2026-11-12
+- Backend: **https://mistdory-view-counter.caculated-bitsh.workers.dev**, separate Cloudflare Worker + D1. Source/setup: [services/view-counter](../services/view-counter/README.md). Main website remains on GitHub Pages.
+- Client: [view-counter.js](js/view-counter.js), [view-counter-config.js](js/view-counter-config.js). Production origin/path only; local previews send no counts and show —. Errors show — rather than a fabricated zero. Language switching reformats without another request.
+- One cumulative total across Home/Videos/About. Same public IP counts again only after **more than 10 seconds since its preceding request**; each request renews the sliding cooldown. Concurrent updates are protected by transactional D1 batches and SQL triggers.
+- Cloudflare stores keyed IP hashes in D1, not raw IPs. No cookies or fingerprints are used. Shared NAT/VPN IPs share a cooldown; this is approximate page-view activity, not unique-person analytics or complete bot protection.
+- User configured binding `DB`, `SITE_ORIGIN` and a server-side `IP_HASH_SECRET` of at least 32 characters. Never request, log or commit that secret. No service credentials are in the frontend.
+- **Still confirm/configure:** hourly Worker Cron Trigger **`0 * * * *`** under Settings > Trigger Events. It prunes hash records older than 24 hours; it never resets the cumulative total. User has not confirmed this step. Counting works without it, but expired hashes otherwise accumulate.
+- Live verification returned 1, then 1 on immediate reload, then 2 after 11 seconds. Chrome then displayed 3 on the live site. Test views were intentionally retained; never reset the total without an explicit request.
 
-- Workflow: [pages.yml](../.github/workflows/pages.yml). It verifies offline tests and stored catalogs, then packages only the active runtime using [prepare-pages.cjs](scripts/prepare-pages.cjs).
-- Configure repository Settings > Pages > Source as **GitHub Actions**. Pushes to `main` affecting the active version/workflow trigger deployment; manual workflow dispatch is available on `main`.
-- Artifact root contains the four HTML pages, `css/`, `js/`, `data/`, `assets/` and `.nojekyll`. Historical versions, maintenance scripts, tests and technical documents are excluded; font licenses remain in assets.
-- Expected project URL: `https://mphcat.github.io/MistDory-PoE/`. Report actual publication only after the Actions deployment and public endpoint are verified.
-- Catalog checks validate the stored snapshot, not current YouTube visibility. The 2026-10-28 34/56-video snapshot is intentionally retained for this deployment; a new refresh remains maintenance work.
-- For a future version folder, update the workflow source/path filter together with repository navigation.
+## Publishing and preview
 
-### Deployment preparation verification — 2026-11-12
+- [pages.yml](../.github/workflows/pages.yml): push to `main` affecting the active version, counter service or workflow runs offline tests, validates stored catalogs, packages runtime files and deploys Pages. Manual dispatch is available on main.
+- [prepare-pages.cjs](scripts/prepare-pages.cjs): output contains four HTML pages, CSS/JS/data/assets and .nojekyll. Historical versions, scripts/tests and project documentation are excluded; font licenses remain included.
+- For a future active version, update workflow paths/source, root AGENTS, repository overview and feature map. Keep counter endpoint/database stable so the total survives website releases.
+- Interactive preview: `node scripts/preview-live.cjs`. The local counter-preview process was started at **http://127.0.0.1:8006/** using `tests/local-preview.cjs`; it may not survive a new session. Old port 8003 can point to a historical/renamed folder. Confirm the server root.
+- On this machine Node/npm are absent from PATH. Use the installed VS Code `Code.exe` runtime with `ELECTRON_RUN_AS_NODE=1`, absolute script paths, temporary logs and hidden processes. Follow README/scripts instructions; never rely on a GUI executable returning synchronously without waiting/piping its output.
 
-- GitHub API confirms the repository is public, with default branch main.
-- 61/61 offline tests passed; offline catalog verification returned valid=true.
-- The Pages packager produced the runtime-only artifact and confirmed production Home HTML was byte-for-byte unchanged. HTML local dependency and production-policy checks passed.
-- Workflow delivery and actual production publication are separate; check the Actions run before reporting success.
+## Verification recorded this session
 
-## Verified public deployment — 2026-11-12
+| Check | Result and limits |
+| --- | --- |
+| Full online YouTube refresh | 100 candidate watch pages audited; release verification and refresh self-test passed; 36/56 retained videos |
+| Offline suites | **69/69** after adding eight SQL/Worker/client checks; actual SQLite schema exercised |
+| Local Chrome bilingual/layout review | **88/88**, including footer alignment, translations, no overflow/dock overlap on three pages at 1440px and 390px |
+| Live counter Chrome checks | **6/6**: real cross-origin totals on three pages, translation without recount, mobile visibility, no first-party JS errors |
+| Live footer inset Chrome checks | **6/6**: measured 32px desktop and 18px mobile; no overflow |
+| Footer version packaging/public HTML | Packager passed; v0.1.5 found on live Home, Videos and About; deployment for `93834f1` succeeded |
 
-- Website: **https://mphcat.github.io/MistDory-PoE/**.
-- First deployment succeeded: [Actions run 43131703288](https://github.com/mphCat/MistDory-PoE/actions/runs/43131703288), source commit `30d7f63`.
-- HTTPS requests returned 200 for Home, Videos, About, font preview, shared CSS/JavaScript, both JSON catalogs, the local thumbnail fallback and a self-hosted WOFF2 font.
-- Deployed Home contains both League Start cards and production CSP, with no development reload client. Catalog counts remain 34/56.
-- Artifact contents were checked locally: maintenance scripts/tests, technical documentation and historical versions are not packaged. The public HANDOFF path returned 404; additional excluded-path HTTP probes encountered transient GitHub 503 responses, so those responses are not evidence of a 404.
-- Full browser/YouTube playback regression on the production host was not run in this deployment session. Account 2FA/recovery/access settings remain unverified.
-- Future updates to the active version on main deploy automatically. Refresh the old catalog snapshot and fill Soon content as subsequent maintenance.
-## YouTube catalog refresh — 2026-11-12, 08:42:43 GMT+7 / 01:42:43 UTC
+Older v0.1.4 security/resource, playback, desktop QC and reload results are historical evidence in [STATUS.md](STATUS.md) and [SECURITY_REVIEW.md](SECURITY_REVIEW.md). A complete production playback/accessibility/performance audit was not rerun here. Do not equate HTTP success with verified YouTube playback.
 
-- Completed the official-playlist refresh and verified 100 distinct signed-out watch pages. Retained only explicit public, playable, first-party videos.
-- PoE 1 increased from 34 to **36** videos; PoE 2 remains **56**. No previously retained video was removed.
-- Added `THMUtEBnGM0` (PoE - 3.30 | Patch Note Review And My League Start Plan) and `N5GXihQ39qE` (PoE 1 | WARNING! Slow Run Practice | 26mins/acts you can be better).
-- Updated titles, exact metrics, publication metadata and public-state proofs. Curated guide labels/destinations, descriptions/tags and featured choices remain unchanged; guide-video verification times were renewed.
-- Release verification with a 24-hour maximum age and the refresh self-test passed. 61/61 offline tests passed after fixing the fallback test helper to accept its fixture's expected featured ID rather than the stored catalog's configured hero.
-- The website remains snapshot-based; visitor reloads fetch published JSON and do not run a YouTube audit. This entry records a refresh, not continuous YouTube synchronization.
-## Cumulative view counter — implementation prepared, activation pending (2026-11-12)
+## Remaining work
 
-- Added a bilingual Page views / Lượt xem total beside the copyright on Home, Videos and About, with responsive wrapping.
-- Optional backend source is in [services/view-counter](../services/view-counter/README.md), using Cloudflare Workers + D1. The main website stays on GitHub Pages.
-- Same public IP only counts again after a gap of more than 10 seconds since its preceding request. Every reload renews this sliding window. SQL triggers and transactional batches keep concurrent updates consistent; the cumulative total is never automatically reset.
-- The backend stores HMAC-SHA256 IP hashes, not raw IPs; hourly cleanup expires hashes after 24 hours without touching the total. Household/VPN users can share the cooldown. This is not unique-person analytics or complete bot protection.
-- 69/69 offline tests passed, including 8 new client/Worker/actual-SQL tests. Tests do not establish Cloudflare deployment correctness.
-- **Not activated:** `js/view-counter-config.js` has an empty endpoint; local/production displays a dash and sends no count. No Cloudflare account connection, database, secret or deployed URL has been configured by this session.
-- Next: user creates/binds D1 and deploys the Worker using the service guide; configure the public endpoint and exact CSP origin, then verify live persistence/cooldown before publishing frontend activation. Never put Cloudflare credentials or the hash secret into the repo/chat.
+1. Confirm the Cloudflare hourly cleanup trigger.
+2. Fill content when supplied: avatar, actual WIP projects, Soon guides/Crafting/FAQ, PoE 2 roadmap.
+3. Broader production-browser/YouTube playback, mobile/touch, accessibility/performance and advanced SEO work remain deferred. Account 2FA/recovery/access and backup practices have not been audited.
+4. YouTube updates remain manual: add uploads to the correct official playlist, run [prepare-release.ps1](scripts/prepare-release.ps1), review, verify and publish. F5 reloads published JSON; it does not discover uploads. Continuous/scheduled YouTube synchronization is not implemented.
 
-### Counter browser verification — 2026-11-12
-
-- 88/88 Chrome checks passed, including footer label/value, copyright alignment, no horizontal overflow and no dock overlap at 1440px and 390px on Home, Videos and About.
-- Screenshots were inspected in the local preview. Cloudflare endpoint remains unconfigured; these are not live backend checks.
-- Preview: http://127.0.0.1:8006/. The production website remains on the previous committed/pushed release until counter activation is completed.
-
-## Counter activation — 2026-11-12
-
-- User deployed and configured the Worker at https://mistdory-view-counter.caculated-bitsh.workers.dev with D1 binding and server-side secret. The secret was not shared or stored in the repository.
-- Production frontend now points to that endpoint; only its exact HTTPS origin is added to connect-src on Home, Videos and About. Scripts/fonts policy is unchanged.
-- Live POST verification: first request returned 1; immediate repeat remained 1. A request after more than 10 seconds was checked before publishing. Test requests are real views and are retained in the total.
-- The earlier pending-activation notes are historical. Cloudflare cron setup is not yet verified; add hourly `0 * * * *` under Trigger Events to expire old IP hash records without resetting the total.
-- Website-side verification and Pages deployment are reported separately from the backend check.
-### Counter verified on production — 2026-11-12
-
-- Pages deployment succeeded for source `0790993`: https://github.com/mphCat/MistDory-PoE/actions/runs/43150362626.
-- Live Worker test returned totals 1, 1, then 2 after an 11-second idle gap; the total was not reset after testing.
-- 6/6 real Chrome production checks passed: Home displays a numeric count, language switching does not send another count, Videos and About show the shared total, mobile footer is visible, and three real cross-origin requests completed without first-party JavaScript errors. Home displayed 3 during the browser check.
-- Both implementation and activation commits are pushed. The counter is now active at https://mphcat.github.io/MistDory-PoE/.
-- Remaining account-side task: configure/confirm the Worker hourly Cron Trigger `0 * * * *` so expired hash records are pruned. Counting works without it, but stale hashes otherwise accumulate. The total is never pruned.
-
-### Footer release version — 2026-11-12
-
-- Display v0.1.5 as a subtle line below the footer row on Home, Videos and About; align right on desktop and left on mobile.
-- During packaging, derive the label from the active mistdory_vX.Y.Z directory committed in Git. This is a release number, not a claim that a Git tag or GitHub Release exists. Refresh the shared CSS asset URL to avoid stale styling.
+Use [STATUS.md](STATUS.md) for detailed chronology and deferred work, [CHANGELOG.md](CHANGELOG.md) for release history, and [PROJECT_MAP.md](PROJECT_MAP.md) for feature entry points. Refresh this pack after the next material change to delivery or scope.

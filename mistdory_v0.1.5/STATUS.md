@@ -1,6 +1,6 @@
-# MistDory v0.1.5 — release preparation
+# MistDory v0.1.5 — published status
 
-Updated **2026-11-11**. Unified release series: **v0.1.5**. Active directory: `mistdory_v0.1.5/`.
+Updated **2026-11-12**. Unified release series: **v0.1.5**. Active directory: `mistdory_v0.1.5/`.
 
 ## Delivery
 
@@ -95,3 +95,7 @@ See [HANDOFF.md](HANDOFF.md) for publication steps. Avatar, actual WIP projects,
 - 6/6 real Chrome production checks passed: Home displays a numeric count, language switching does not send another count, Videos and About show the shared total, mobile footer is visible, and three real cross-origin requests completed without first-party JavaScript errors. Home displayed 3 during the browser check.
 - Both implementation and activation commits are pushed. The counter is now active at https://mphcat.github.io/MistDory-PoE/.
 - Remaining account-side task: configure/confirm the Worker hourly Cron Trigger `0 * * * *` so expired hash records are pruned. Counting works without it, but stale hashes otherwise accumulate. The total is never pruned.
+
+## Session wrap-up — 2026-11-12
+
+The application changes through 93834f1 were committed, pushed and deployed. Footer spacing is 32px desktop/18px mobile; version v0.1.5 is derived from the source folder during packaging. The counter is active and catalogs contain 36/56 videos. [HANDOFF.md](HANDOFF.md) is the current concise resume pack; earlier preparation/pending entries in this file are historical. Cloudflare hourly hash cleanup remains unconfirmed. Unrelated legacy root changes remain unstaged.
