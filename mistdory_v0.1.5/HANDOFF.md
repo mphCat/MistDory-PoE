@@ -103,3 +103,8 @@ Updated **2026-11-12**. Active source: `mistdory_v0.1.5/`.
 - 6/6 real Chrome production checks passed: Home displays a numeric count, language switching does not send another count, Videos and About show the shared total, mobile footer is visible, and three real cross-origin requests completed without first-party JavaScript errors. Home displayed 3 during the browser check.
 - Both implementation and activation commits are pushed. The counter is now active at https://mphcat.github.io/MistDory-PoE/.
 - Remaining account-side task: configure/confirm the Worker hourly Cron Trigger `0 * * * *` so expired hash records are pruned. Counting works without it, but stale hashes otherwise accumulate. The total is never pruned.
+
+### Footer release version — 2026-11-12
+
+- Display v0.1.5 as a subtle line below the footer row on Home, Videos and About; align right on desktop and left on mobile.
+- During packaging, derive the label from the active mistdory_vX.Y.Z directory committed in Git. This is a release number, not a claim that a Git tag or GitHub Release exists. Refresh the shared CSS asset URL to avoid stale styling.

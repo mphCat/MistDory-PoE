@@ -242,3 +242,8 @@ Format: `vX — date — summary`
 - Live POST verification: first request returned 1; immediate repeat remained 1. A request after more than 10 seconds was checked before publishing. Test requests are real views and are retained in the total.
 - The earlier pending-activation notes are historical. Cloudflare cron setup is not yet verified; add hourly `0 * * * *` under Trigger Events to expire old IP hash records without resetting the total.
 - Website-side verification and Pages deployment are reported separately from the backend check.
+
+### Footer release version — 2026-11-12
+
+- Display v0.1.5 as a subtle line below the footer row on Home, Videos and About; align right on desktop and left on mobile.
+- During packaging, derive the label from the active mistdory_vX.Y.Z directory committed in Git. This is a release number, not a claim that a Git tag or GitHub Release exists. Refresh the shared CSS asset URL to avoid stale styling.

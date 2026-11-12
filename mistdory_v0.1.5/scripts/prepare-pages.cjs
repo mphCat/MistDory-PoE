@@ -4,6 +4,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const source = path.resolve(__dirname, '..');
+const version = /^mistdory_v(\d+\.\d+\.\d+)$/.exec(path.basename(source))?.[1];
+if (!version) throw new Error('Active source folder must identify its release version');
 const pages = ['index.html', 'videos.html', 'about.html', 'font-preview.html'];
 const runtime = [...pages, 'css', 'js', 'data', 'assets'];
 const destination = process.argv[2];
@@ -21,7 +23,9 @@ fs.mkdirSync(output);
 for (const entry of runtime) fs.cpSync(path.join(source, entry), path.join(output, entry), { recursive: true });
 fs.writeFileSync(path.join(output, '.nojekyll'), '');
 for (const page of pages) {
-  const html = fs.readFileSync(path.join(output, page), 'utf8');
+  const originalHtml = fs.readFileSync(path.join(output, page), 'utf8');
+  const html = originalHtml.replace(/(<span data-site-version>)[^<]*(<\/span>)/g, '$1v' + version + '$2');
+  if (html !== originalHtml) fs.writeFileSync(path.join(output, page), html);
   if (!html.includes('Content-Security-Policy') || html.includes('__mistdory_live_reload__')) {
     throw new Error('Expected unchanged production policy and no development reload client: ' + page);
   }

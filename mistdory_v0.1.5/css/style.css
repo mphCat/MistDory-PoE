@@ -911,3 +911,5 @@ html[data-realm="poe2"] .league-start-card[data-league-game="poe2"] { display: f
 @media (max-width: 600px) {
   .footer { align-items: flex-start; flex-direction: column; }
 }
+.footer-version { flex-basis: 100%; margin-top: -6px; text-align: right; color: #888; font-size: 11px; letter-spacing: 0.5px; }
+@media (max-width: 600px) { .footer-version { text-align: left; } }
