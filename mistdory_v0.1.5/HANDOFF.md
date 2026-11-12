@@ -7,7 +7,7 @@ Updated **2026-11-12**. Active source: `mistdory_v0.1.5/`.
 - **v0.1.5** is the current public release candidate in `mistdory_v0.1.5/`.
 - The former v5.1–v5.4 folders are now v0.1.1–v0.1.4. The former public v0.0.1 candidate (internal v5.5) is now v0.1.5; there is one active version series.
 - See [VERSION_HISTORY.md](../VERSION_HISTORY.md) for the exact old/new mapping. Historical commits retain their original paths; no Git history, tag or GitHub Release was rewritten.
-- Source preparation does not mean deployment. GitHub Pages configuration, production HTTPS checks and account verification remain pending.
+- GitHub Pages deployment and initial HTTPS/resource checks succeeded on 2026-11-12; see the verified deployment section below. Account protection and full production-browser checks remain pending.
 ## Current behavior
 
 - Inherits the v0.1.4 bilingual static PoE 1/PoE 2 hub, public video catalogs, URL policy, CSP, local fonts and Live Server adapter.
@@ -25,8 +25,8 @@ Updated **2026-11-12**. Active source: `mistdory_v0.1.5/`.
 ## Next work
 
 1. Review the public candidate, refresh and verify the YouTube catalogs before publishing.
-2. Deploy through `.github/workflows/pages.yml`; verify the actual Actions run and production URL before reporting publication.
-3. Commit/push the publishing setup when authorized, then verify the deployed HTTPS URL, navigation, assets and playback.
+2. Keep deploying through `.github/workflows/pages.yml`; verify the Actions run and live URL after each release.
+3. Complete a production-browser pass for navigation, language/game state and YouTube playback.
 4. Content backlog: avatar, real WIP links, Soon guides/Crafting/FAQ and the PoE 2 roadmap. Broader mobile/accessibility/performance work remains deferred.
 ## Fresh source-transition verification — 2026-11-11
 
@@ -55,3 +55,13 @@ Updated **2026-11-12**. Active source: `mistdory_v0.1.5/`.
 - 61/61 offline tests passed; offline catalog verification returned valid=true.
 - The Pages packager produced the runtime-only artifact and confirmed production Home HTML was byte-for-byte unchanged. HTML local dependency and production-policy checks passed.
 - Workflow delivery and actual production publication are separate; check the Actions run before reporting success.
+
+## Verified public deployment — 2026-11-12
+
+- Website: **https://mphcat.github.io/MistDory-PoE/**.
+- First deployment succeeded: [Actions run 43131703288](https://github.com/mphCat/MistDory-PoE/actions/runs/43131703288), source commit `30d7f63`.
+- HTTPS requests returned 200 for Home, Videos, About, font preview, shared CSS/JavaScript, both JSON catalogs, the local thumbnail fallback and a self-hosted WOFF2 font.
+- Deployed Home contains both League Start cards and production CSP, with no development reload client. Catalog counts remain 34/56.
+- Artifact contents were checked locally: maintenance scripts/tests, technical documentation and historical versions are not packaged. The public HANDOFF path returned 404; additional excluded-path HTTP probes encountered transient GitHub 503 responses, so those responses are not evidence of a 404.
+- Full browser/YouTube playback regression on the production host was not run in this deployment session. Account 2FA/recovery/access settings remain unverified.
+- Future updates to the active version on main deploy automatically. Refresh the old catalog snapshot and fill Soon content as subsequent maintenance.

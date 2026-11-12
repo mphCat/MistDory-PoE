@@ -4,7 +4,7 @@ Updated **2026-11-11**. Unified release series: **v0.1.5**. Active directory: `m
 
 ## Delivery
 
-This is the v0.1.5 public source candidate, copied from the committed v0.1.4 League Start checkpoint. It has not been deployed. GitHub Pages remains the intended host; configuration, actual HTTPS URL, account/access review and production checks remain pending.
+This is the v0.1.5 public source candidate, copied from the committed v0.1.4 League Start checkpoint. It is deployed at https://mphcat.github.io/MistDory-PoE/ (verified 2026-11-12). GitHub Pages is the verified host. Initial HTTP/resource checks passed; account/access review and full production-browser checks remain pending.
 
 ## Scope
 
@@ -47,3 +47,13 @@ See [HANDOFF.md](HANDOFF.md) for publication steps. Avatar, actual WIP projects,
 - 61/61 offline tests passed; offline catalog verification returned valid=true.
 - The Pages packager produced the runtime-only artifact and confirmed production Home HTML was byte-for-byte unchanged. HTML local dependency and production-policy checks passed.
 - Workflow delivery and actual production publication are separate; check the Actions run before reporting success.
+
+## Verified public deployment — 2026-11-12
+
+- Website: **https://mphcat.github.io/MistDory-PoE/**.
+- First deployment succeeded: [Actions run 43131703288](https://github.com/mphCat/MistDory-PoE/actions/runs/43131703288), source commit `30d7f63`.
+- HTTPS requests returned 200 for Home, Videos, About, font preview, shared CSS/JavaScript, both JSON catalogs, the local thumbnail fallback and a self-hosted WOFF2 font.
+- Deployed Home contains both League Start cards and production CSP, with no development reload client. Catalog counts remain 34/56.
+- Artifact contents were checked locally: maintenance scripts/tests, technical documentation and historical versions are not packaged. The public HANDOFF path returned 404; additional excluded-path HTTP probes encountered transient GitHub 503 responses, so those responses are not evidence of a 404.
+- Full browser/YouTube playback regression on the production host was not run in this deployment session. Account 2FA/recovery/access settings remain unverified.
+- Future updates to the active version on main deploy automatically. Refresh the old catalog snapshot and fill Soon content as subsequent maintenance.

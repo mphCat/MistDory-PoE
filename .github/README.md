@@ -17,7 +17,7 @@ Some project and guide entries are marked **Soon** until their content is availa
 
 ## Current version
 
-**[v0.1.5](../mistdory_v0.1.5/)** is the active website. This public release candidate succeeds the v0.1.4 checkpoint. See [version naming history](../VERSION_HISTORY.md) for the previous folder names. GitHub Pages configuration and production verification remain pending.
+**[v0.1.5](../mistdory_v0.1.5/)** is the active website. This public release candidate succeeds the v0.1.4 checkpoint. See [version naming history](../VERSION_HISTORY.md) for the previous folder names. Published at [mphcat.github.io/MistDory-PoE](https://mphcat.github.io/MistDory-PoE/); initial HTTPS/resource verification passed on 2026-11-12.
 
 Earlier version directories and legacy files at the repository root are retained as historical references. Start new website work in `mistdory_v0.1.5/`.
 
@@ -46,4 +46,4 @@ For developers, the active source is organized as follows:
 
 Serve the active directory over HTTP for local preview; opening HTML directly with `file://` prevents catalog loading. Follow the [development guide](../mistdory_v0.1.5/README.md) for supported commands and the [project map](../mistdory_v0.1.5/PROJECT_MAP.md) before editing a feature.
 
-The website has no login, visitor write API or automatic per-visit YouTube synchronization. Video data is a published snapshot, refreshed through the maintenance workflow. GitHub Pages is the intended production host; deployment status is tracked separately from source commits.
+The website has no login, visitor write API or automatic per-visit YouTube synchronization. Video data is a published snapshot, refreshed through the maintenance workflow. GitHub Pages hosts the public website. Deployment status and verification limits are recorded in the active handoff.
