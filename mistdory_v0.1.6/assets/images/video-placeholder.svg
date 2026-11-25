@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180">
+  <rect width="320" height="180" fill="#141414"/>
+  <rect x="1" y="1" width="318" height="178" rx="6" fill="none" stroke="#333"/>
+  <circle cx="160" cy="75" r="27" fill="#242424"/>
+  <path d="M153 61 174 75 153 89Z" fill="#ddd"/>
+  <text x="160" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#b8b8b8">MistDory</text>
+</svg>

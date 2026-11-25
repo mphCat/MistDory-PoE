@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'mistdory_v0.1.5/**'
+      - 'mistdory_v0.1.6/**'
       - 'services/view-counter/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -26,12 +26,12 @@ jobs:
         with:
           node-version: '24'
       - name: Run offline tests
-        working-directory: mistdory_v0.1.5
+        working-directory: mistdory_v0.1.6
         run: node --test tests/*.test.cjs
       - name: Verify stored catalogs
-        run: node mistdory_v0.1.5/scripts/verify-catalog.cjs
+        run: node mistdory_v0.1.6/scripts/verify-catalog.cjs
       - name: Package the active website
-        run: node mistdory_v0.1.5/scripts/prepare-pages.cjs "$RUNNER_TEMP/mistdory-pages"
+        run: node mistdory_v0.1.6/scripts/prepare-pages.cjs "$RUNNER_TEMP/mistdory-pages"
       - uses: actions/upload-pages-artifact@v4
         with:
           path: ${{ runner.temp }}/mistdory-pages

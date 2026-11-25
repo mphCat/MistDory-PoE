@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "game": "poe1",
+  "source": {
+    "url": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit",
+    "inspectedAt": "2026-11-25",
+    "note": "Public workbook snapshot; source observations, not independently verified current game mechanics."
+  },
+  "patches": [
+    {
+      "patch": "3.27",
+      "gid": "2005846808",
+      "url": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=2005846808"
+    },
+    {
+      "patch": "3.28",
+      "gid": "761425056",
+      "url": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=761425056"
+    },
+    {
+      "patch": "3.29",
+      "gid": "823558617",
+      "url": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617"
+    },
+    {
+      "patch": "3.30",
+      "gid": "17157168",
+      "url": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168"
+    },
+    {
+      "patch": "gauntlet",
+      "gid": "1559105190",
+      "url": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=1559105190"
+    },
+    {
+      "patch": "death-aura",
+      "gid": "1765227866",
+      "url": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=1765227866"
+    }
+  ],
+  "atlas": [
+    {
+      "id": "ultimatum-ore",
+      "patch": "3.30",
+      "title": "ATLAS ULTIMATUM 8+2 + MERC + ORE",
+      "url": "https://hypostasis.faith/atlas/data.html#t=QBPqiPfnOUtZXvqz56_nuSXt6S3dbf6Tjs79tPRw",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A44:V44",
+      "status": "source-notes"
+    },
+    {
+      "id": "ultimatum-thread",
+      "patch": "3.30",
+      "title": "ATLAS ULTIMATUM 8 + MERC + THREAD (TESTING DONT FOLLOW YET)",
+      "url": "https://hypostasis.faith/atlas/data.html#t=bsMBive3p6z-UvNu1le-rPnp-e5Xt6S00t-nN79s6Mlg",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A78:V78",
+      "status": "testing"
+    },
+    {
+      "id": "atlas-329-6",
+      "patch": "3.29",
+      "title": "Breach/Betrayal",
+      "url": "https://poeplanner.com/a/6gd5",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617&range=A6:V6",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-329-7",
+      "patch": "3.29",
+      "title": "Breach/Betrayal (variant 2)",
+      "url": "https://poeplanner.com/a/6gdR",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617&range=A7:V7",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-329-8",
+      "patch": "3.29",
+      "title": "Hive Spec (If Breach Parts permit)",
+      "url": "https://poeplanner.com/a/6gd4",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617&range=A8:V8",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-329-9",
+      "patch": "3.29",
+      "title": "Niko",
+      "url": "https://poeplanner.com/a/6gd3",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617&range=A9:V9",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-329-10",
+      "patch": "3.29",
+      "title": "Refiner's Bargain + Lost Ship",
+      "url": "https://poeplanner.com/a/6gdl",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617&range=A10:V10",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-329-11",
+      "patch": "3.29",
+      "title": "Shaper/Elder/Map sustain/Mercs",
+      "url": "https://poeplanner.com/a/6gdr",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617&range=A11:V11",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-329-12",
+      "patch": "3.29",
+      "title": "Kingsmarch Ore Chance",
+      "url": "https://poeplanner.com/a/6gdT",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617&range=A12:V12",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-329-13",
+      "patch": "3.29",
+      "title": "Memory Tear, Eater Pack Size, Ancient Wombgifts",
+      "url": "https://poeplanner.com/a/6gdW",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617&range=A13:V13",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-327-25",
+      "patch": "3.27",
+      "title": "Early Legion",
+      "url": "https://poeplanner.com/atlas-tree/BQAYAAB5AIfU29ZfPg-BRi9l8gK2JJe-LgBIHtflMWzzhykIQ7AQEYTB7oQqZID-xSFgMPrEsL1XeGaDjoC5lIOMQbVmpdpenc5ayf1Muo3qfOOT8tPp_Pp9HoyRrzqL4X2RCnvcaWC_3v6mNFQfB_RZtNcrT12e2GdgKhJ7YIednZLQvC370MYwZAz07A8CxcMetdgpjYomfitZhmvgglGI6H9vAPmzx74O4RAZCq6q4g5N3E4botBNkcsXxSEX3TUwL6gXUMQfGIvBrwtxwXQ4xnELY9EDMIgHM8bB-9Vp5Z_65dlcqUO1Y6BxZh9-6xzdK7fpZybmFAAfiwgAAAAAAAADAwAAAAAAAAAAAA==",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=2005846808&range=A25:V25",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-327-26",
+      "patch": "3.27",
+      "title": "Setup Legion",
+      "url": "https://poeplanner.com/atlas-tree/BQAYAACDAIfU29ZfPg-BRi9l8gK267skl74uAEge17L65TFs84cpCEOGtLAQEYQIesHuhCpkgP7FPFkhYDD6xLC9V3hmg46AuZSDjEG1ZqXaXp3OWsn9TLqN6nzjk_LT6fz6fR6Mka865PeL4X2RCnvcaWC_3v6qCqY0VB8H9Fm01ytPXZ7YZ2AqEntgh53Uj52S0Lwt-9DGDPTsDwLFwx612IKnKY2KJn4rWYZr4IJRiOh_bwD5z0ezx74O4RAZCq6q4g5N3E4botBNkcsXxSEX3TUwL6gXUMQfGIvBr-XsC3E6dsF0OMZxC2PRAzCIBzPGwfvVafrl2VypQ7VjoHFmH37rHN0rt-lnJuYUAB-LCAAAAAAAAAMDAAAAAAAAAAAA",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=2005846808&range=A26:V26",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-327-27",
+      "patch": "3.27",
+      "title": "Blight map farm",
+      "url": "https://poeplanner.com/a/fa7",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=2005846808&range=A27:V27",
+      "status": "archived"
+    },
+    {
+      "id": "atlas-327-28",
+      "patch": "3.27",
+      "title": "Contract/Heist rogue",
+      "url": "https://poeplanner.com/a/tNT",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=2005846808&range=A28:V28",
+      "status": "archived"
+    }
+  ],
+  "builds": [
+    {
+      "id": "build-330-8",
+      "group": "Ravage Bomb",
+      "patch": "3.30",
+      "title": "Ravage Bomb",
+      "ascendancy": "Chieftain",
+      "pob": "https://pobb.in/Mysp1u5S_9kJ",
+      "note": "Fulcrum is the Main weapon set",
+      "video": {
+        "title": "PoE - 3.30 | RavageBomb Day 1 Update",
+        "url": "https://youtu.be/6zlGfkztrZQ",
+        "patch": "3.30"
+      },
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A8:V8"
+    },
+    {
+      "id": "build-330-9",
+      "group": "Ravage Bomb",
+      "patch": "3.30",
+      "title": "Ravage Bomb Day 2",
+      "ascendancy": "Chieftain",
+      "pob": "https://pobb.in/MIVuvrf2G8nc",
+      "note": "Fulcrum is the Main weapon set",
+      "video": {
+        "title": "PoE - 3.30 | RavageBomb Day 1 Update - YouTube",
+        "url": "https://youtu.be/6zlGfkztrZQ",
+        "patch": "3.30"
+      },
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A9:V9"
+    },
+    {
+      "id": "build-330-10",
+      "group": "Ravage Bomb",
+      "patch": "3.30",
+      "title": "Ravage Bomb Latest",
+      "ascendancy": "Chieftain",
+      "pob": "https://pobb.in/oGzXvuUWDwXk",
+      "note": "Fulcrum is the Main weapon set",
+      "video": {
+        "title": "PoE - 3.30 | RavageBomb Day 1 Update - YouTube",
+        "url": "https://youtu.be/6zlGfkztrZQ",
+        "patch": "3.30"
+      },
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A10:V10"
+    },
+    {
+      "id": "build-330-11",
+      "group": "Fire CWS Gladiator",
+      "patch": "3.30",
+      "title": "Fire CWS 99% Block",
+      "ascendancy": "Gladiator",
+      "pob": "https://pobb.in/pFRwMTqydMEc",
+      "note": "80div - 13 Wave Viable",
+      "video": {
+        "title": "PoE - 3.29 | CWS Gladiator 2.0 | Poison the Ultimatum",
+        "url": "https://youtu.be/bSMMEhPMAy8",
+        "patch": "3.29"
+      },
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A11:V11"
+    },
+    {
+      "id": "build-330-12",
+      "group": "Fire CWS Gladiator",
+      "patch": "3.30",
+      "title": "Fire CWS 99% Update NO MB",
+      "ascendancy": "Gladiator",
+      "pob": "https://pobb.in/L7UsXmbi7AVb",
+      "note": "110div - 13 Wave Viable",
+      "video": {
+        "title": "PoE - 3.29 | CWS Gladiator 2.0 | Poison the Ultimatum",
+        "url": "https://youtu.be/bSMMEhPMAy8",
+        "patch": "3.29"
+      },
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A12:V12"
+    },
+    {
+      "id": "build-330-13",
+      "group": "Fire CWS Gladiator",
+      "patch": "3.30",
+      "title": "Fire CWS 99% Update MB",
+      "ascendancy": "Gladiator",
+      "pob": "https://pobb.in/wNkIRSIJzu3V",
+      "note": "360div - 13 Wave Viable",
+      "video": {
+        "title": "PoE - 3.29 | CWS Gladiator 2.0 | Poison the Ultimatum",
+        "url": "https://youtu.be/bSMMEhPMAy8",
+        "patch": "3.29"
+      },
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A13:V13"
+    },
+    {
+      "id": "build-330-14",
+      "group": "Fire CWS Gladiator",
+      "patch": "3.30",
+      "title": "Fire CWS Latest Update",
+      "ascendancy": "Gladiator",
+      "pob": "https://pobb.in/rFgIXpWQFqhU",
+      "note": "",
+      "video": {
+        "title": "PoE - 3.29 | CWS Gladiator 2.0 | Poison the Ultimatum",
+        "url": "https://youtu.be/bSMMEhPMAy8",
+        "patch": "3.29"
+      },
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A14:V14"
+    },
+    {
+      "id": "build-330-15",
+      "group": "Fire CWS Chieftain",
+      "patch": "3.30",
+      "title": "Fire CWS 90%",
+      "ascendancy": "Chieftain",
+      "pob": "https://pobb.in/s8eA2nk9KaG9",
+      "note": "430+div 10 Wave + Choose mod",
+      "video": {
+        "title": "PoE - 3.29 | CWS Ultimatum and Profit | No MB no Nebulis no Problem - YouTube",
+        "url": "https://youtu.be/dRJxyXETD2I?si=IwDMhcMP7UZ5mDpV",
+        "patch": "3.29"
+      },
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A15:V15"
+    }
+  ],
+  "regex": [
+    {
+      "id": "regex-330-7",
+      "patch": "3.30",
+      "title": "Uber Blight maps",
+      "value": "\"!id e|ss are|t reg|taunte\"",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A7:V7"
+    },
+    {
+      "id": "regex-330-48",
+      "patch": "3.30",
+      "title": "Inscribed Ultimatum",
+      "value": "\"Turing OR|f MiR|unate|divine|table F|Khan|tral VI Vi|VEN YE|odn|Nspire|Use of MI|HE PATIE|Nurse|Last Stand|He RabB|The Pact|Wealth and Po|FriE|cturing O|CRated V|hean T|he May|inous T|rish P|he Enl|RalA|Ural INS|hE SeP|Aegis A|L's PelT\"",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A48:V48"
+    },
+    {
+      "id": "regex-330-51",
+      "patch": "3.30",
+      "title": "Rare maps",
+      "value": "\"!te o|id e|m energy shield$|s of co|ur$|^buffs|ter e|m resistances$|e charge on hit$|ore mo|t reg|re he\"",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A51:V51"
+    },
+    {
+      "id": "regex-329-11",
+      "patch": "3.29",
+      "title": "Slam leveling",
+      "value": "\"-\\w-.-|(-\\w){4}|-\\w-|Runn|sand$|ida|stbl|blood rag|c cr|rue|bat s|al's c|^ral|rnal c|nduri|tlem|toe|hsh|ulv|fortify s|^bru|iron r|rustic s|jade a|corroded t|rusted sw|Pine bu|Goathide bu|splintered tow\"",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=823558617&range=A11:V11"
+    },
+    {
+      "id": "regex-327-21",
+      "patch": "3.27",
+      "title": "KB leveling 1",
+      "value": "(\\w\\W){5}|-\\w-.-|b-b-|-b-b|b-.-b|g-g-b|g-b-g|b-g-g|.-.-b|.-b-.|b-.-.|g-r|r-g|b-g|g-b|Runn|rint",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=2005846808&range=A21:V21"
+    },
+    {
+      "id": "regex-327-22",
+      "patch": "3.27",
+      "title": "KB leveling 2",
+      "value": "b-b-b|g-g-r|g-r-g|r-g-g|g-r|r-g|Runn|rint",
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=2005846808&range=A22:V22"
+    }
+  ],
+  "crafting": [
+    {
+      "id": "ravage-bomb-gear",
+      "title": "Ravage Bomb",
+      "status": "awaiting-video",
+      "videoUrl": null
+    },
+    {
+      "id": "fire-cws-gear",
+      "title": "Fire CWS",
+      "status": "awaiting-video",
+      "videoUrl": null
+    }
+  ],
+  "farms": [
+    {
+      "id": "blight-opal",
+      "title": "Uber Blight — OPAL STRAT",
+      "patch": "3.30",
+      "lines": [
+        {
+          "label": "TTTBBBOOO",
+          "value": "9d/h"
+        },
+        {
+          "label": "Cost",
+          "value": "35 map (700c)"
+        },
+        {
+          "label": "OIl",
+          "value": "19c/map"
+        },
+        {
+          "label": "Map craft",
+          "value": "2.5c/map"
+        },
+        {
+          "label": "Cost",
+          "value": "~10div"
+        },
+        {
+          "label": "Profit",
+          "value": "28div (excluded cost)"
+        }
+      ],
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A10:V10",
+      "jackpot": null
+    },
+    {
+      "id": "blight-crimson",
+      "title": "Uber Blight — CRIMSON STRAT",
+      "patch": "3.30",
+      "lines": [
+        {
+          "label": "TTTBBBCCC",
+          "value": "5.3d/h"
+        },
+        {
+          "label": "Cost",
+          "value": "60 map (1200c)"
+        },
+        {
+          "label": "OIl",
+          "value": "8c/map"
+        },
+        {
+          "label": "Map craft",
+          "value": "2.5c/map"
+        },
+        {
+          "label": "Cost",
+          "value": "~11div"
+        },
+        {
+          "label": "Profit",
+          "value": "35div (excluded cost)"
+        }
+      ],
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A17:V17",
+      "jackpot": null
+    },
+    {
+      "id": "ultimatum-t16",
+      "title": "Ultimatum — T16 RARE 6+2",
+      "patch": "3.30",
+      "lines": [
+        {
+          "label": "T16 RARE 6+2",
+          "value": "20 map -> 51div"
+        },
+        {
+          "label": "Cost",
+          "value": "20 map 20c"
+        },
+        {
+          "label": "Div",
+          "value": "51"
+        },
+        {
+          "label": "Big",
+          "value": "x2 Mir"
+        },
+        {
+          "label": "Cost",
+          "value": "20c"
+        },
+        {
+          "label": "6d/h + boss",
+          "value": ""
+        }
+      ],
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A10:V10",
+      "jackpot": "x2 Mir"
+    },
+    {
+      "id": "ultimatum-t165",
+      "title": "Ultimatum — T16.5 RARE 6+2",
+      "patch": "3.30",
+      "lines": [
+        {
+          "label": "T16.5 RARE 6+2",
+          "value": "20 map -> 64div"
+        },
+        {
+          "label": "Cost",
+          "value": "20 map 400c"
+        },
+        {
+          "label": "Div",
+          "value": "54"
+        },
+        {
+          "label": "Big",
+          "value": "No Big"
+        },
+        {
+          "label": "Cost",
+          "value": "400c"
+        },
+        {
+          "label": "9d/h + boss",
+          "value": ""
+        }
+      ],
+      "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A17:V17",
+      "jackpot": null
+    }
+  ],
+  "ultimatum": {
+    "mapUrl": "https://www.pathofexile.com/trade/search/Covens/H4sIAAAAAAAACpVU227bMAz9Fz4bBUXd_StDYCix3AnwDbJcpMj874OSoHOLqfP8Ylg855A8In2DJbm0LlDfYJpTmEaoYfGXNbpz72Gr7vEF6h83SO-zhxrGKUEFXeiTj49AaKEGf537cAnpJRMawQxDTRYVbNVfEZyIUJFmJQAZo7VCZngJwawwVpHQWEyiyRIxY0RRg5iWhlvBoII2LLntFuoUV1_S5FoJYzTqYlapNREZqQ5rKqWlFpzsUQZjAq02jORRhmDIhUBh8XAOzrnA_7CGWYZMavbNrXOJBrlU_KgmcVKERPYwI0-WMISiOBYkJCoysjw4DElxi4rLogbjhlBmd4qVM0Iy0ijYThnzXCA3tv9eIBJcSWlR6KNta2tJM0W7eubFr-308ng14zqcfWymrnFdF67NMLULVPDm-tXn_R_CCLXcttM-Yef6xe-KL2x_GD65py2R4ULwX7tqihgqYUgqzgxHpLLODnNEhx_AiCJGWSU0Gq3zjZ52PtxgcHOz-_wSScHHD4-Z2qr76bkPrz9Ttnn39707Dk_EevbxO9S2VfebKaS-uORfp_j-iTq4OctHF0P6HIkuPjWHsFwKmt0U-ubNxeAerB1_nMZ75ZcpxnUuNhZaP6bQhS_xPNvPjqJrSy3NMVz-jOu49n126go1x-pDKx9v-fkN5CAUjOAGAAA",
+    "source": "https://docs.google.com/spreadsheets/d/1nMhuegfqKisuEikG2I4FI14MhHIpsAQUVjU3y09OTCQ/edit#gid=17157168&range=A44:V44",
+    "flow": [
+      {
+        "en": "Enter a map and find Ultimatum.",
+        "vi": "Vào map và tìm Ultimatum."
+      },
+      {
+        "en": "The source flowchart selects Catalyst / Inscribed rewards; other rewards are crossed out.",
+        "vi": "Sơ đồ nguồn chọn phần thưởng Catalyst / Inscribed; các phần thưởng khác được gạch bỏ."
+      },
+      {
+        "en": "Find a Boss Card (new league mechanic); the source selects Currency / Rarity (lv2–3).",
+        "vi": "Tìm Boss Card (cơ chế league trong tài liệu); nguồn chọn Currency / Rarity (lv2–3)."
+      }
+    ]
+  }
+}

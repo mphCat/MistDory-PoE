@@ -1,6 +1,6 @@
 # Version naming history
 
-Normalized on **2026-11-11**. The active public release candidate is **v0.1.5** in `mistdory_v0.1.5/`.
+Normalized on **2026-11-11**. The active source is **v0.1.6** in `mistdory_v0.1.6/` (2026-11-25).
 
 | Original directory | Unified directory/version |
 | --- | --- |
@@ -11,8 +11,11 @@ Normalized on **2026-11-11**. The active public release candidate is **v0.1.5** 
 | `mistdory_public_v0.0.1/` (internal v5.5) | `mistdory_v0.1.5/` — v0.1.5 |
 
 - Existing local v5.2/v5.3 changes were committed separately before the directory migration.
-- v0.1.1–v0.1.4 are historical snapshots; future website work starts in v0.1.5.
+- v0.1.1–v0.1.4 are historical snapshots; future website work starts in v0.1.6.
 - Earlier legacy folders and unrelated root working-tree changes are outside this migration.
 - Documentation uses the unified names for navigation. Earlier Git commits and their messages still use the original names and paths; history was not rewritten. No tags or GitHub Releases were renamed or created.
 - GitHub shows the new directory structure after this migration is pushed. Public hosting is a separate step; the rename does not deploy GitHub Pages.
 - The temporary `public` prefix and separate v0.0.1 numbering are superseded by this unified series. Future releases increase from v0.1.5.
+## v0.1.6 - 2026-11-25
+
+Copied the recovered v0.1.5 working source into a new active folder, preserving the prior source and unrelated legacy work. Includes refreshed catalogs, separate Shorts filtering, reviewed Guides/Crafting and persistent team records. GitHub Pages now targets v0.1.6. See the active HANDOFF.md and agent-team/HANDOFF.md for release evidence and next ownership.

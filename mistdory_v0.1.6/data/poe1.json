@@ -1,0 +1,1441 @@
+{
+  "meta": {
+    "ver": "PoE 1",
+    "badge": "Path of Exile",
+    "sub": "Public videos from Mist's POE playlist. Browse the collection below.",
+    "stats": [
+      null,
+      null,
+      "42"
+    ],
+    "ytId": "bSMMEhPMAy8",
+    "ytHint": "Featured video — PoE - 3.29 | CWS Gladiator 2.0 | Poison the Ultimatum",
+    "mainDiscordUrl": "https://discord.gg/v9C6rXHfet",
+    "cowbDiscordUrl": "https://discord.gg/mpU5FG6MKm"
+  },
+  "guideRows": {
+    "gc1": {
+      "title": "WIP Projects",
+      "kind": "projects",
+      "scrollable": true,
+      "rows": [
+        {
+          "label": "Build experiments",
+          "url": "#"
+        },
+        {
+          "label": "Mechanic tests",
+          "url": "#"
+        },
+        {
+          "label": "Upcoming guides",
+          "url": "#"
+        }
+      ]
+    },
+    "gc2": {
+      "title": "Document",
+      "scrollable": true,
+      "rows": [
+        {
+          "label": "PoE 1 Patch Notes",
+          "ver": null,
+          "btnLabel": "Open",
+          "url": "https://www.pathofexile.com/forum/view-forum/patch-notes"
+        },
+        {
+          "label": "Official News",
+          "ver": null,
+          "btnLabel": "Open",
+          "url": "https://www.pathofexile.com/forum/view-forum/news"
+        },
+        {
+          "label": "Mechanics Reference",
+          "ver": null,
+          "btnLabel": "Open",
+          "url": "https://www.poewiki.net/wiki/Path_of_Exile_Wiki"
+        }
+      ]
+    },
+    "gc3": {
+      "title": "Leveling",
+      "scrollable": true,
+      "rows": [
+        {
+          "label": "Loot Filter",
+          "ver": null,
+          "btnLabel": "Open",
+          "url": "https://www.pathofexile.com/account/view-profile/nockabatashu-5463/item-filters"
+        },
+        {
+          "label": "Alternative Leveling",
+          "ver": null,
+          "btnLabel": "Watch",
+          "url": "https://youtu.be/nRzOzTolWBA",
+          "privacyStatus": "public",
+          "privacyVerifiedAt": "2026-11-23T02:55:05.347Z",
+          "publicVerification": {
+            "isUnlisted": false,
+            "isPrivate": false,
+            "playabilityStatus": "OK",
+            "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+            "videoId": "nRzOzTolWBA"
+          }
+        },
+        {
+          "label": "Act Tips",
+          "ver": null,
+          "url": "#"
+        },
+        {
+          "label": "Leveling Common Mistake",
+          "ver": null,
+          "url": "#"
+        }
+      ]
+    },
+    "gc4": {
+      "title": "Miscellaneous",
+      "scrollable": true,
+      "rows": [
+        {
+          "label": "Atlas Passives Guide",
+          "ver": null,
+          "url": "#"
+        },
+        {
+          "label": "Moment — Short #1",
+          "ver": null,
+          "url": "https://www.youtube.com/shorts/Y33s-eQPEqA",
+          "privacyStatus": "public",
+          "privacyVerifiedAt": "2026-11-23T02:55:10.889Z",
+          "publicVerification": {
+            "isUnlisted": false,
+            "isPrivate": false,
+            "playabilityStatus": "OK",
+            "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+            "videoId": "Y33s-eQPEqA"
+          }
+        },
+        {
+          "label": "Moment — Short #2",
+          "ver": null,
+          "url": "https://youtube.com/shorts/ssSe8vF_ItM",
+          "privacyStatus": "public",
+          "privacyVerifiedAt": "2026-11-23T02:55:11.480Z",
+          "publicVerification": {
+            "isUnlisted": false,
+            "isPrivate": false,
+            "playabilityStatus": "OK",
+            "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+            "videoId": "ssSe8vF_ItM"
+          }
+        },
+        {
+          "label": "Moment — Short #3",
+          "ver": null,
+          "url": "https://youtube.com/shorts/-v_F9MXIYBU",
+          "privacyStatus": "public",
+          "privacyVerifiedAt": "2026-11-23T02:55:11.099Z",
+          "publicVerification": {
+            "isUnlisted": false,
+            "isPrivate": false,
+            "playabilityStatus": "OK",
+            "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+            "videoId": "-v_F9MXIYBU"
+          }
+        },
+        {
+          "label": "Moment — Short #4",
+          "ver": null,
+          "url": "https://youtube.com/shorts/BLJqEbCnkfY",
+          "privacyStatus": "public",
+          "privacyVerifiedAt": "2026-11-23T02:55:12.560Z",
+          "publicVerification": {
+            "isUnlisted": false,
+            "isPrivate": false,
+            "playabilityStatus": "OK",
+            "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+            "videoId": "BLJqEbCnkfY"
+          }
+        },
+        {
+          "label": "Moment — Short #5",
+          "ver": null,
+          "url": "https://youtube.com/shorts/m6d_J8MqCJY",
+          "privacyStatus": "public",
+          "privacyVerifiedAt": "2026-11-23T02:55:12.338Z",
+          "publicVerification": {
+            "isUnlisted": false,
+            "isPrivate": false,
+            "playabilityStatus": "OK",
+            "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+            "videoId": "m6d_J8MqCJY"
+          }
+        },
+        {
+          "label": "Moment — Short #6",
+          "ver": null,
+          "url": "https://youtube.com/shorts/fOvdaJq2twM",
+          "privacyStatus": "public",
+          "privacyVerifiedAt": "2026-11-23T02:55:12.401Z",
+          "publicVerification": {
+            "isUnlisted": false,
+            "isPrivate": false,
+            "playabilityStatus": "OK",
+            "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+            "videoId": "fOvdaJq2twM"
+          }
+        }
+      ]
+    }
+  },
+  "cards": [
+    {
+      "type": "VIDEO",
+      "ver": "3.30",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.30"
+      ],
+      "image": "",
+      "id": "PmpImj1uLqU",
+      "playlistPosition": 1,
+      "title": "PoE - 3.30 | I have x2 Mirror Rare from Ultimatum in 3.30",
+      "url": "https://www.youtube.com/watch?v=PmpImj1uLqU",
+      "duration": "0:39",
+      "viewCount": 273,
+      "viewCountText": "273",
+      "publishedAt": "2026-11-22T03:01:31.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:54:57.993Z",
+      "metricsCheckedAt": "2026-11-23T02:54:57.993Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "PmpImj1uLqU"
+      },
+      "isShort": true
+    },
+    {
+      "type": "VIDEO",
+      "ver": "3.30",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.30"
+      ],
+      "image": "",
+      "id": "Kz1xk_tOggI",
+      "playlistPosition": 2,
+      "title": "PoE - 3.30 | How I got a MageBlood from 3.30 new League Mechanic",
+      "url": "https://www.youtube.com/watch?v=Kz1xk_tOggI",
+      "duration": "0:19",
+      "viewCount": 709,
+      "viewCountText": "709",
+      "publishedAt": "2026-11-22T02:43:33.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:54:58.389Z",
+      "metricsCheckedAt": "2026-11-23T02:54:58.389Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "Kz1xk_tOggI"
+      },
+      "isShort": true
+    },
+    {
+      "type": "VIDEO",
+      "ver": "3.30",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.30"
+      ],
+      "image": "",
+      "id": "lFhmnMkOK2A",
+      "playlistPosition": 3,
+      "title": "How I got a MageBlood from 3.30 new League Mechanic",
+      "url": "https://www.youtube.com/watch?v=lFhmnMkOK2A",
+      "duration": "0:40",
+      "viewCount": 408,
+      "viewCountText": "408",
+      "publishedAt": "2026-11-21T11:48:08.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:54:58.392Z",
+      "metricsCheckedAt": "2026-11-23T02:54:58.392Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "lFhmnMkOK2A"
+      },
+      "isShort": false
+    },
+    {
+      "type": "VIDEO",
+      "ver": "3.30",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.30"
+      ],
+      "image": "",
+      "id": "XvZbK0RTxEk",
+      "playlistPosition": 4,
+      "title": "PoE - 3.30 | I got an amulet in day 2 | Covens of Umbra Ravage Blight #pathofexile #blight #bigdrop",
+      "url": "https://www.youtube.com/watch?v=XvZbK0RTxEk",
+      "duration": "0:17",
+      "viewCount": 90,
+      "viewCountText": "90",
+      "publishedAt": "2026-11-20T08:53:51.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:54:58.562Z",
+      "metricsCheckedAt": "2026-11-23T02:54:58.562Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "XvZbK0RTxEk"
+      },
+      "isShort": true
+    },
+    {
+      "type": "VIDEO",
+      "ver": "3.30",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.30"
+      ],
+      "image": "",
+      "id": "6zlGfkztrZQ",
+      "playlistPosition": 5,
+      "title": "PoE - 3.30 | RavageBomb Day 1 Update",
+      "url": "https://www.youtube.com/watch?v=6zlGfkztrZQ",
+      "duration": "12:00",
+      "viewCount": 447,
+      "viewCountText": "447",
+      "publishedAt": "2026-11-15T03:12:04.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:54:59.235Z",
+      "metricsCheckedAt": "2026-11-23T02:54:59.235Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "6zlGfkztrZQ"
+      },
+      "isShort": false
+    },
+    {
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "id": "9ov_76jzq68",
+      "playlistPosition": 6,
+      "title": "PoE - The MistDory Content Hub has been released | All In One",
+      "url": "https://www.youtube.com/watch?v=9ov_76jzq68",
+      "duration": "8:17",
+      "viewCount": 165,
+      "viewCountText": "165",
+      "publishedAt": "2026-11-13T08:42:53.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:54:59.231Z",
+      "metricsCheckedAt": "2026-11-23T02:54:59.231Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "9ov_76jzq68"
+      },
+      "isShort": false
+    },
+    {
+      "type": "VIDEO",
+      "ver": "3.30",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.30"
+      ],
+      "image": "",
+      "id": "THMUtEBnGM0",
+      "playlistPosition": 7,
+      "title": "PoE - 3.30 | Patch Note Review And My League Start Plan",
+      "url": "https://www.youtube.com/watch?v=THMUtEBnGM0",
+      "duration": "18:02",
+      "viewCount": 981,
+      "viewCountText": "981",
+      "publishedAt": "2026-11-12T01:00:26.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:54:59.397Z",
+      "metricsCheckedAt": "2026-11-23T02:54:59.397Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "THMUtEBnGM0"
+      },
+      "isShort": false
+    },
+    {
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "id": "N5GXihQ39qE",
+      "playlistPosition": 8,
+      "title": "PoE 1 | WARNING! Slow Run Practice | 26mins/acts you can be better",
+      "url": "https://www.youtube.com/watch?v=N5GXihQ39qE",
+      "duration": "2:15:30",
+      "viewCount": 471,
+      "viewCountText": "471",
+      "publishedAt": "2026-11-01T04:31:58.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:00.224Z",
+      "metricsCheckedAt": "2026-11-23T02:55:00.224Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "N5GXihQ39qE"
+      },
+      "isShort": false
+    },
+    {
+      "id": "bSMMEhPMAy8",
+      "playlistPosition": 9,
+      "title": "PoE - 3.29 | CWS Gladiator 2.0 | Poison the Ultimatum",
+      "type": "VIDEO",
+      "ver": "3.29",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.29"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=bSMMEhPMAy8",
+      "duration": "7:07",
+      "viewCount": 13531,
+      "viewCountText": "13531",
+      "publishedAt": "2026-08-09T18:36:43.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:00.351Z",
+      "metricsCheckedAt": "2026-11-23T02:55:00.351Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "bSMMEhPMAy8"
+      },
+      "isShort": false
+    },
+    {
+      "id": "dRJxyXETD2I",
+      "playlistPosition": 10,
+      "title": "PoE - 3.29 | CWS Ultimatum and Profit | No MB no Nebulis no Problem",
+      "type": "VIDEO",
+      "ver": "3.29",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.29"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=dRJxyXETD2I",
+      "duration": "6:47",
+      "viewCount": 1931,
+      "viewCountText": "1931",
+      "publishedAt": "2026-08-07T15:30:39.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:00.057Z",
+      "metricsCheckedAt": "2026-11-23T02:55:00.057Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "dRJxyXETD2I"
+      },
+      "isShort": false
+    },
+    {
+      "id": "q0KvOolPDTI",
+      "playlistPosition": 11,
+      "title": "PoE - 3.29 | Chieftain Ravaged BoomBoom | Ravaged Blighted Destroyer",
+      "type": "VIDEO",
+      "ver": "3.29",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.29"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=q0KvOolPDTI",
+      "duration": "5:21",
+      "viewCount": 710,
+      "viewCountText": "710",
+      "publishedAt": "2026-07-31T15:13:44.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:00.778Z",
+      "metricsCheckedAt": "2026-11-23T02:55:00.778Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "q0KvOolPDTI"
+      },
+      "isShort": false
+    },
+    {
+      "id": "rycLpogiIYI",
+      "playlistPosition": 12,
+      "title": "PoE - 3.29 | CoWB - The Rest In..One League",
+      "type": "VIDEO",
+      "ver": "3.29",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.29"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=rycLpogiIYI",
+      "duration": "2:52",
+      "viewCount": 1905,
+      "viewCountText": "1905",
+      "publishedAt": "2026-07-23T16:01:30.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:01.136Z",
+      "metricsCheckedAt": "2026-11-23T02:55:01.136Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "rycLpogiIYI"
+      },
+      "isShort": false
+    },
+    {
+      "id": "Vicb2gktJyU",
+      "playlistPosition": 13,
+      "title": "PoE - 3.28 | CoWB Ward Stacker - Upgrade/Downgrade - Multiple Cost Cut",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=Vicb2gktJyU",
+      "duration": "16:01",
+      "viewCount": 1857,
+      "viewCountText": "1857",
+      "publishedAt": "2026-04-08T00:23:27.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:01.255Z",
+      "metricsCheckedAt": "2026-11-23T02:55:01.255Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "Vicb2gktJyU"
+      },
+      "isShort": false
+    },
+    {
+      "id": "xJE7j7LNx88",
+      "playlistPosition": 14,
+      "title": "PoE - 3.28 | CoWB Ward Stacker - Uber Melting",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=xJE7j7LNx88",
+      "duration": "16:37",
+      "viewCount": 4850,
+      "viewCountText": "4850",
+      "publishedAt": "2026-03-31T19:45:58.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:01.389Z",
+      "metricsCheckedAt": "2026-11-23T02:55:01.389Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "xJE7j7LNx88"
+      },
+      "isShort": false
+    },
+    {
+      "id": "1rXt0QGJOfA",
+      "playlistPosition": 15,
+      "title": "PoE - 3.28 | 500% Rarity MF Chieftain Tank/Fast/QoL",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=1rXt0QGJOfA",
+      "duration": "13:03",
+      "viewCount": 6146,
+      "viewCountText": "6146",
+      "publishedAt": "2026-03-28T18:14:01.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:02.380Z",
+      "metricsCheckedAt": "2026-11-23T02:55:02.380Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "1rXt0QGJOfA"
+      },
+      "isShort": false
+    },
+    {
+      "id": "a12y2-lIB14",
+      "playlistPosition": 16,
+      "title": "PoE - 3.28 | CoWB - The Famous Ward Stacker Ever - And How To CoWB by Yourself",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=a12y2-lIB14",
+      "duration": "10:05",
+      "viewCount": 5458,
+      "viewCountText": "5458",
+      "publishedAt": "2026-03-18T09:15:52.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:02.443Z",
+      "metricsCheckedAt": "2026-11-23T02:55:02.443Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "a12y2-lIB14"
+      },
+      "isShort": false
+    },
+    {
+      "id": "kHC2tDWzW2Q",
+      "playlistPosition": 17,
+      "title": "PoE - 3.28 | CoWB - The New Gem Makes The New Game - Ward Stacker Maybe?",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=kHC2tDWzW2Q",
+      "duration": "11:20",
+      "viewCount": 1928,
+      "viewCountText": "1928",
+      "publishedAt": "2026-03-11T16:29:08.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:02.074Z",
+      "metricsCheckedAt": "2026-11-23T02:55:02.074Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "kHC2tDWzW2Q"
+      },
+      "isShort": false
+    },
+    {
+      "id": "W6vJFK-b4wU",
+      "playlistPosition": 18,
+      "title": "PoE - 3.28 | Bane-DA to CA-DA Expedition Capture Day2",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=W6vJFK-b4wU",
+      "duration": "14:00",
+      "viewCount": 1339,
+      "viewCountText": "1339",
+      "publishedAt": "2026-03-08T20:42:50.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:02.669Z",
+      "metricsCheckedAt": "2026-11-23T02:55:02.669Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "W6vJFK-b4wU"
+      },
+      "isShort": false
+    },
+    {
+      "id": "CQGdmHoumUA",
+      "playlistPosition": 19,
+      "title": "PoE - 3.28 | Bane-DA Expedition League Starter",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=CQGdmHoumUA",
+      "duration": "11:07",
+      "viewCount": 2556,
+      "viewCountText": "2556",
+      "publishedAt": "2026-03-04T18:55:36.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:03.341Z",
+      "metricsCheckedAt": "2026-11-23T02:55:03.341Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "CQGdmHoumUA"
+      },
+      "isShort": false
+    },
+    {
+      "id": "UOyrpJCgWis",
+      "playlistPosition": 20,
+      "title": "PoE - 3.28 | Iciclemine WITCH VERSION Test Run",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=UOyrpJCgWis",
+      "duration": "4:12",
+      "viewCount": 472,
+      "viewCountText": "472",
+      "publishedAt": "2026-03-03T16:43:57.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:03.280Z",
+      "metricsCheckedAt": "2026-11-23T02:55:03.280Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "UOyrpJCgWis"
+      },
+      "isShort": false
+    },
+    {
+      "id": "8_NRYSsL_uk",
+      "playlistPosition": 21,
+      "title": "PoE - 3.28 | Iciclemine Defensive Laboratory Result for 3.28",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=8_NRYSsL_uk",
+      "duration": "5:18",
+      "viewCount": 1259,
+      "viewCountText": "1259",
+      "publishedAt": "2026-03-02T16:07:08.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:03.337Z",
+      "metricsCheckedAt": "2026-11-23T02:55:03.337Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "8_NRYSsL_uk"
+      },
+      "isShort": false
+    },
+    {
+      "id": "gXxaxVqKLZU",
+      "playlistPosition": 22,
+      "title": "PoE - 3.28 | Iciclemine Demo Run for 3.28 (I'M NOOB YOU GUYS WILL BE BETTER)",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=gXxaxVqKLZU",
+      "duration": "6:33",
+      "viewCount": 603,
+      "viewCountText": "603",
+      "publishedAt": "2026-03-01T19:38:24.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:04.175Z",
+      "metricsCheckedAt": "2026-11-23T02:55:04.175Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "gXxaxVqKLZU"
+      },
+      "isShort": false
+    },
+    {
+      "id": "53DlWAdDYuU",
+      "playlistPosition": 23,
+      "title": "PoE - 3.28 | Iciclemine Damage Laboratory Result for 3.28",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=53DlWAdDYuU",
+      "duration": "6:31",
+      "viewCount": 2424,
+      "viewCountText": "2424",
+      "publishedAt": "2026-03-01T10:56:44.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:04.135Z",
+      "metricsCheckedAt": "2026-11-23T02:55:04.135Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "53DlWAdDYuU"
+      },
+      "isShort": false
+    },
+    {
+      "id": "sUuBz-tSNfM",
+      "playlistPosition": 24,
+      "title": "PoE - 3.28 | Iciclemine Sanctum 3.28 Ready",
+      "type": "VIDEO",
+      "ver": "3.28",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.28"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=sUuBz-tSNfM",
+      "duration": "5:32",
+      "viewCount": 6339,
+      "viewCountText": "6339",
+      "publishedAt": "2026-02-28T10:55:56.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:04.316Z",
+      "metricsCheckedAt": "2026-11-23T02:55:04.316Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "sUuBz-tSNfM"
+      },
+      "isShort": false
+    },
+    {
+      "id": "lqux_Lixpcc",
+      "playlistPosition": 25,
+      "title": "PoE - Phrecia 2.0 | Phrecia Most Budget Comfy Sanctum Rush Ever",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=lqux_Lixpcc",
+      "duration": "9:39",
+      "viewCount": 1500,
+      "viewCountText": "1500",
+      "publishedAt": "2026-02-02T15:39:40.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:04.848Z",
+      "metricsCheckedAt": "2026-11-23T02:55:04.848Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "lqux_Lixpcc"
+      },
+      "isShort": false
+    },
+    {
+      "id": "C7U0Ds_FPX0",
+      "playlistPosition": 26,
+      "title": "PoE Talent Competition 2026 - Entry | The Fallen Exile - Exiled",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=C7U0Ds_FPX0",
+      "duration": "1:22",
+      "viewCount": 73,
+      "viewCountText": "73",
+      "publishedAt": "2026-01-26T19:56:27.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:05.366Z",
+      "metricsCheckedAt": "2026-11-23T02:55:05.366Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "C7U0Ds_FPX0"
+      },
+      "isShort": false
+    },
+    {
+      "id": "nRzOzTolWBA",
+      "playlistPosition": 27,
+      "title": "PoE - 3.27 | This will be another best alt leveling in PoE 1",
+      "type": "VIDEO",
+      "ver": "3.27",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.27"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=nRzOzTolWBA",
+      "duration": "4:46",
+      "viewCount": 9060,
+      "viewCountText": "9060",
+      "publishedAt": "2025-11-09T17:53:20.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:05.347Z",
+      "metricsCheckedAt": "2026-11-23T02:55:05.347Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "nRzOzTolWBA"
+      },
+      "isShort": false
+    },
+    {
+      "id": "Wzes7TQyrJs",
+      "playlistPosition": 28,
+      "title": "PoE - 3.27 | 1 Button Glad League Start ?",
+      "type": "VIDEO",
+      "ver": "3.27",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.27"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=Wzes7TQyrJs",
+      "duration": "9:38",
+      "viewCount": 1865,
+      "viewCountText": "1865",
+      "publishedAt": "2025-10-28T20:42:58.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:05.544Z",
+      "metricsCheckedAt": "2026-11-23T02:55:05.544Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "Wzes7TQyrJs"
+      },
+      "isShort": false
+    },
+    {
+      "id": "eRWbHWeavf4",
+      "playlistPosition": 29,
+      "title": "PoE | Getting Rich with Aurabot & Merc Culler at 3.26",
+      "type": "VIDEO",
+      "ver": "3.26",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.26"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=eRWbHWeavf4",
+      "duration": "10:03",
+      "viewCount": 1896,
+      "viewCountText": "1896",
+      "publishedAt": "2025-07-27T16:12:19.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:06.630Z",
+      "metricsCheckedAt": "2026-11-23T02:55:06.630Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "eRWbHWeavf4"
+      },
+      "isShort": false
+    },
+    {
+      "id": "hXA5Jm0HR50",
+      "playlistPosition": 30,
+      "title": "PoE | Amateur AFK2.0 in CwS JAIL at 3.26",
+      "type": "VIDEO",
+      "ver": "3.26",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.26"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=hXA5Jm0HR50",
+      "duration": "8:31",
+      "viewCount": 92,
+      "viewCountText": "92",
+      "publishedAt": "2025-07-23T04:10:20.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:06.253Z",
+      "metricsCheckedAt": "2026-11-23T02:55:06.253Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "hXA5Jm0HR50"
+      },
+      "isShort": false
+    },
+    {
+      "id": "lZhgB38mux8",
+      "playlistPosition": 31,
+      "title": "PoE | Amateur AFK in CwS JAIL at 3.26",
+      "type": "VIDEO",
+      "ver": "3.26",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.26"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=lZhgB38mux8",
+      "duration": "10:04",
+      "viewCount": 934,
+      "viewCountText": "934",
+      "publishedAt": "2025-07-19T04:00:50.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:06.258Z",
+      "metricsCheckedAt": "2026-11-23T02:55:06.258Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "lZhgB38mux8"
+      },
+      "isShort": false
+    },
+    {
+      "id": "4IjRCGyhHiA",
+      "playlistPosition": 32,
+      "title": "PoE | Jugg - Tanky Caster Concept 3.26",
+      "type": "VIDEO",
+      "ver": "3.26",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.26"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=4IjRCGyhHiA",
+      "duration": "8:56",
+      "viewCount": 419,
+      "viewCountText": "419",
+      "publishedAt": "2025-07-05T07:50:23.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:07.296Z",
+      "metricsCheckedAt": "2026-11-23T02:55:07.296Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "4IjRCGyhHiA"
+      },
+      "isShort": false
+    },
+    {
+      "id": "Rvb5OlpYa4U",
+      "playlistPosition": 33,
+      "title": "PoE | How I made ~98div with 100 Logbooks - Content still profit able",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=Rvb5OlpYa4U",
+      "duration": "8:45",
+      "viewCount": 110,
+      "viewCountText": "110",
+      "publishedAt": "2025-07-01T01:34:47.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:06.988Z",
+      "metricsCheckedAt": "2026-11-23T02:55:06.988Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "Rvb5OlpYa4U"
+      },
+      "isShort": false
+    },
+    {
+      "id": "uQdRVqS5epk",
+      "playlistPosition": 34,
+      "title": "PoE | Logbook Expedition Proof of Concept & DA Buid/Merc Setup 3.26",
+      "type": "VIDEO",
+      "ver": "3.26",
+      "desc": "",
+      "tags": [
+        "PoE 1",
+        "3.26"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=uQdRVqS5epk",
+      "duration": "12:51",
+      "viewCount": 1153,
+      "viewCountText": "1153",
+      "publishedAt": "2025-06-28T16:36:58.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:08.113Z",
+      "metricsCheckedAt": "2026-11-23T02:55:08.113Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "uQdRVqS5epk"
+      },
+      "isShort": false
+    },
+    {
+      "id": "ttHl5JPHa0Y",
+      "playlistPosition": 35,
+      "title": "PoE | Logbooks Rusher Zero to 83",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=ttHl5JPHa0Y",
+      "duration": "10:11",
+      "viewCount": 89,
+      "viewCountText": "89",
+      "publishedAt": "2025-06-17T04:33:39.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:07.649Z",
+      "metricsCheckedAt": "2026-11-23T02:55:07.649Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "ttHl5JPHa0Y"
+      },
+      "isShort": false
+    },
+    {
+      "id": "tQZm-e75IIE",
+      "playlistPosition": 36,
+      "title": "PoE 1 | Scarvenger Lightning Strike Build Overview",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=tQZm-e75IIE",
+      "duration": "19:42",
+      "viewCount": 88,
+      "viewCountText": "88",
+      "publishedAt": "2025-03-12T16:44:46.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:08.600Z",
+      "metricsCheckedAt": "2026-11-23T02:55:08.600Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "tQZm-e75IIE"
+      },
+      "isShort": false
+    },
+    {
+      "id": "5hly5i_A0vQ",
+      "playlistPosition": 37,
+      "title": "PoE 1 | Scarvenger Hexblast Last Upgrade",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=5hly5i_A0vQ",
+      "duration": "6:27",
+      "viewCount": 506,
+      "viewCountText": "506",
+      "publishedAt": "2025-03-07T18:08:44.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:08.411Z",
+      "metricsCheckedAt": "2026-11-23T02:55:08.411Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "5hly5i_A0vQ"
+      },
+      "isShort": false
+    },
+    {
+      "id": "iASXdfj2hPo",
+      "playlistPosition": 38,
+      "title": "PoE 1 | Scarvenger Hexblast Day 3 Upgrade",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=iASXdfj2hPo",
+      "duration": "9:34",
+      "viewCount": 693,
+      "viewCountText": "693",
+      "publishedAt": "2025-02-25T19:06:46.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:09.097Z",
+      "metricsCheckedAt": "2026-11-23T02:55:09.097Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "iASXdfj2hPo"
+      },
+      "isShort": false
+    },
+    {
+      "id": "5tneOzQ_ajs",
+      "playlistPosition": 39,
+      "title": "PoE 1 | Scarvenger Hexblast Build Overview after two day late start",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=5tneOzQ_ajs",
+      "duration": "10:03",
+      "viewCount": 1003,
+      "viewCountText": "1003",
+      "publishedAt": "2025-02-23T18:39:16.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:09.166Z",
+      "metricsCheckedAt": "2026-11-23T02:55:09.166Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "5tneOzQ_ajs"
+      },
+      "isShort": false
+    },
+    {
+      "id": "YVYyQFs4iSA",
+      "playlistPosition": 40,
+      "title": "PoE 1 | Stormburst Harbinger of Witch Theorycraft",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=YVYyQFs4iSA",
+      "duration": "8:25",
+      "viewCount": 376,
+      "viewCountText": "376",
+      "publishedAt": "2025-02-09T18:44:24.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:09.799Z",
+      "metricsCheckedAt": "2026-11-23T02:55:09.799Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "YVYyQFs4iSA"
+      },
+      "isShort": false
+    },
+    {
+      "id": "Nf9JbhvGc6U",
+      "playlistPosition": 41,
+      "title": "PoE 1 | Gauntlet 3 25 R.I.P",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=Nf9JbhvGc6U",
+      "duration": "0:18",
+      "viewCount": 60,
+      "viewCountText": "60",
+      "publishedAt": "2024-09-28T08:58:53.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:10.062Z",
+      "metricsCheckedAt": "2026-11-23T02:55:10.062Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "Nf9JbhvGc6U"
+      },
+      "isShort": false
+    },
+    {
+      "id": "JelDZ8GyJ5A",
+      "playlistPosition": 42,
+      "title": "PoE 1 | R.I.P1 ToL 3 24",
+      "type": "VIDEO",
+      "ver": "",
+      "desc": "",
+      "tags": [
+        "PoE 1"
+      ],
+      "image": "",
+      "url": "https://www.youtube.com/watch?v=JelDZ8GyJ5A",
+      "duration": "0:28",
+      "viewCount": 437,
+      "viewCountText": "437",
+      "publishedAt": "2024-05-26T16:36:52.000Z",
+      "privacyStatus": "public",
+      "privacyVerifiedAt": "2026-11-23T02:55:10.033Z",
+      "metricsCheckedAt": "2026-11-23T02:55:10.033Z",
+      "publicVerification": {
+        "isUnlisted": false,
+        "isPrivate": false,
+        "playabilityStatus": "OK",
+        "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+        "videoId": "JelDZ8GyJ5A"
+      },
+      "isShort": false
+    }
+  ],
+  "source": {
+    "channelId": "UCGoxZMQWwjm3a77wH3nz3PA",
+    "channelUrl": "https://www.youtube.com/@mistdory",
+    "playlistId": "PLlj4MOKpBOsb-ZAzTmHLpCap5m_mnMeht",
+    "playlistTitle": "POE",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PLlj4MOKpBOsb-ZAzTmHLpCap5m_mnMeht",
+    "importedAt": "2026-10-26T04:47:53.163Z",
+    "publicVideoCount": 42,
+    "unavailableVideoCount": 47,
+    "unavailableNotices": [
+      "47 unavailable videos are hidden"
+    ],
+    "visibilityPolicy": "public-only",
+    "visibilityCheckedAt": "2026-11-23T02:55:53.909Z",
+    "lastVisibilityAudit": {
+      "method": "Complete official playlist plus signed-out watch pages; explicit isUnlisted=false, isPrivate=false, expected owner and playable video ID",
+      "candidateVideoCount": 42,
+      "retainedPublicVideoCount": 42,
+      "removedVideoCounts": {},
+      "removedAdditionalVideoLinks": 0
+    },
+    "metricsCheckedAt": "2026-11-23T02:55:53.909Z",
+    "metricsMethod": "Signed-out watch page videoDetails.viewCount and playerMicroformatRenderer.publishDate",
+    "metricsSource": "https://www.youtube.com/watch",
+    "metricsVideoCount": 42,
+    "refreshedAt": "2026-11-23T02:55:53.909Z",
+    "lastRefresh": {
+      "complete": true,
+      "publicVideoListComplete": true,
+      "startedAt": "2026-11-23T02:54:55.821Z",
+      "completedAt": "2026-11-23T02:55:53.909Z",
+      "reportedPlaylistCount": 89,
+      "visiblePlaylistOccurrences": 42,
+      "hiddenUnavailableCount": 47,
+      "playlistPageCount": 1,
+      "verifiedCandidateCount": 42,
+      "publicVideoCount": 42,
+      "auxiliaryLinksChecked": 7
+    },
+    "shortsCheckedAt": "2026-11-23T02:55:53.909Z"
+  }
+}
