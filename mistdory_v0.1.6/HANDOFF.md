@@ -32,3 +32,11 @@ GitHub Pages workflow targets v0.1.6, runs offline tests and catalog validation,
 6. Scheduling/automation requires a separately authorized tested runner and agreed schedule/report destination. Definitions alone do not execute daily.
 
 Use PROJECT_MAP.md for targeted navigation, STATUS.md for detailed prior work and CHANGELOG.md for history. Prior session detail remains in ../mistdory_v0.1.5/HANDOFF.md and agent-team/TASKS.md; historical statements there are not current delivery status.
+
+## TEAM-006 delivery receipt - 2026-11-25
+
+Release commit: `c8569d638b346c20a17de05e7df6526828a903cb` (`feat(release): consolidate recovered session into v0.1.6 with team handoff`). Push to origin/main succeeded (d26d8b4 -> c8569d6). Independent migration review found no actionable issues; 79/79 offline tests, catalog validation, self-test and six-page packaging passed.
+
+GitHub Pages run for that release: https://github.com/mphCat/MistDory-PoE/actions/runs/45564457407 . Public API returned in_progress at the last check; no deployment success or live-browser verification is claimed in this receipt. This documentation checkpoint follows the application commit and may trigger another Pages run. Next Coordinator verifies the newest run/SHA and live version label before claiming publication.
+
+Release work is complete for the requested version creation, commit and push. Remaining local changes under v0.1.5 and legacy root paths are preserved recovery/unrelated work, deliberately excluded from release commits. Do not stage or restore them implicitly. Future sessions start with root AGENTS.md, active HANDOFF.md and team HANDOFF/TASKS; agents must be started anew.

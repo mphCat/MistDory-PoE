@@ -137,3 +137,11 @@ Existing unstaged v0.1.5 work includes refreshed catalogs, Shorts filtering, tes
 This session only adds the two `agent-team/` documents and a navigation section in the existing website handoff. No product code, installed settings, agent definitions or automation was changed. No commit, push or deployment was performed.
 
 For website continuity, see [the active website handoff](../mistdory_v0.1.5/HANDOFF.md), especially Session transfer to the correct workspace - 2026-11-23.
+
+## TEAM-006 delivery receipt - 2026-11-25
+
+Release commit: `c8569d638b346c20a17de05e7df6526828a903cb` (`feat(release): consolidate recovered session into v0.1.6 with team handoff`). Push to origin/main succeeded (d26d8b4 -> c8569d6). Independent migration review found no actionable issues; 79/79 offline tests, catalog validation, self-test and six-page packaging passed.
+
+GitHub Pages run for that release: https://github.com/mphCat/MistDory-PoE/actions/runs/45564457407 . Public API returned in_progress at the last check; no deployment success or live-browser verification is claimed in this receipt. This documentation checkpoint follows the application commit and may trigger another Pages run. Next Coordinator verifies the newest run/SHA and live version label before claiming publication.
+
+Release work is complete for the requested version creation, commit and push. Remaining local changes under v0.1.5 and legacy root paths are preserved recovery/unrelated work, deliberately excluded from release commits. Do not stage or restore them implicitly. Future sessions start with root AGENTS.md, active HANDOFF.md and team HANDOFF/TASKS; agents must be started anew.

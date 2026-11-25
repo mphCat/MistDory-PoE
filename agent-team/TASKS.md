@@ -1,6 +1,6 @@
 ## TEAM-006 - Recover session and release v0.1.6
 
-- Status: in_progress. Owner: Coordinator.
+- Status: done (requested release commit/push); deployment follow-up belongs to Coordinator.
 - User request/authorization: recover after VS Code crash, gather session results into next website v0.1.6, commit and push, preserve a durable team-aware handoff. Push triggers existing GitHub Pages delivery.
 - Baseline: main at d26d8b43d878d024748f2a31df0db5fd5afd67d1; fetched origin before delivery. Dirty v0.1.5 includes Shorts/catalog and reviewed TEAM-004/005. Root legacy deletions and untracked archives/debug/historical folders are unrelated; preserve and exclude from staging.
 - Ownership: named Builder owns new v0.1.6 migration, active workflow/profile pointers and migration checks. Coordinator owns root/team docs, new release HANDOFF/STATUS/CHANGELOG and Git delivery. Independent Reviewer checks the frozen release; no recursive delegation.
@@ -9,7 +9,7 @@
 - Previous review evidence: TEAM-004/005 approved locally. Three baseline full-language-suite Shorts expectations remain known, not a green full browser suite. No fresh game mechanics/playback/economics certification implied.
 - Builder verification: 79/79 offline tests passed with Code.exe --test --test-isolation=none (default child-process isolation hit sandbox EPERM). verify-catalog passed 42/56 videos; refresh self-test passed without network/catalog writes; six-page runtime packaging passed. Catalogs/Guides JSON byte-identical to recovered v0.1.5. No fresh browser run; prior TEAM-004/005 evidence remains scoped as recorded. Logs: %TEMP%/mist-v016-{tests,verify-catalog,self-test,prepare-pages}.out. These temporary logs supplement this durable result record.
 - Independent review: no actionable findings in migration scope. Reviewer independently reran 79/79 offline tests, catalog validation and six-page packaging; checked hashes and all 103 staged paths. No fresh browser/network refresh or broad security audit claimed.
-- Delivery: reviewed and ready to commit/push; actual delivery receipt follows after Git verification.
+- Delivery: release c8569d6 committed and pushed to origin/main. See TEAM-006 delivery receipt below for Pages status and next owner.
 # MistDorySite Development - task register
 
 ## TEAM-005 — Dedicated Crafting and navigable build guides
@@ -125,3 +125,11 @@ The pre-existing Shorts changes are not assigned to this setup task. Do not publ
 - Concrete site mismatch: local `js/site.js` PoE 1 Builds URL selects `gid=2005846808` (3.27) while the workbook's newest visible patch tab is 3.30 (`17157168`). Future change should expose current and archived patches deliberately. No link was changed.
 - Proposals based on inspected content: start with a PoE 1 Atlas index showing 3.30 choices and separate historical patches; preserve experimental warnings. Build details should group progression variants and distinguish build patch from linked video's patch. Turn current Ultimatum notes into a guide with tree, map requirements, scarabs, build suitability, regex, reward selection and tested date. Treat farming yields as historical sample results, separate raw returns/costs/net, and avoid making profit guarantees or counting rare jackpots as routine yield. Develop item-crafting recipes from owner-selected gaps; do not republish patch-review speculation (`maybe`, `guess`) as verified instructions. Offer patch/strategy labels and copyable regex before considering a planner/editor.
 - Next owner: Coordinator discusses which 3.30 Atlas is recommended now, what 8+2/8 denotes in the user's setup, and the first requested craft items. Then scope a user-authorized implementation and independent review. No agents spawned; no website, Sheet or profile edits; no commit/push/deployment.
+
+## TEAM-006 delivery receipt - 2026-11-25
+
+Release commit: `c8569d638b346c20a17de05e7df6526828a903cb` (`feat(release): consolidate recovered session into v0.1.6 with team handoff`). Push to origin/main succeeded (d26d8b4 -> c8569d6). Independent migration review found no actionable issues; 79/79 offline tests, catalog validation, self-test and six-page packaging passed.
+
+GitHub Pages run for that release: https://github.com/mphCat/MistDory-PoE/actions/runs/45564457407 . Public API returned in_progress at the last check; no deployment success or live-browser verification is claimed in this receipt. This documentation checkpoint follows the application commit and may trigger another Pages run. Next Coordinator verifies the newest run/SHA and live version label before claiming publication.
+
+Release work is complete for the requested version creation, commit and push. Remaining local changes under v0.1.5 and legacy root paths are preserved recovery/unrelated work, deliberately excluded from release commits. Do not stage or restore them implicitly. Future sessions start with root AGENTS.md, active HANDOFF.md and team HANDOFF/TASKS; agents must be started anew.
